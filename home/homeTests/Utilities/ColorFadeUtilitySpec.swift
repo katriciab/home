@@ -9,6 +9,8 @@
 import Quick
 import Nimble
 
+@testable import home
+
 class ColorFadeUtilitySpec: QuickSpec {
     override func spec() {
         describe("when asking to color fade from one color to another") {

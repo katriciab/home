@@ -9,28 +9,34 @@
 import UIKit
 import FutureKit
 
+@testable import home
+
 class MockNetworkClient: Networking {
     
-    init() {
-    }
-    
     var receivedParameters : [String : AnyObject]
+    
+    init() {
+        self.receivedParameters = [:]
+    }
     
     var didReceiveGet = false
     func get(urlString : String, parameters : [String : AnyObject]) -> Future<AnyObject> {
         self.didReceiveGet = true
         self.receivedParameters = parameters
+        return Promise<AnyObject>().future
     }
 
     var didReceivePost = false
     func post(urlString : String, parameters : [String : AnyObject]) -> Future<AnyObject> {
         self.didReceivePost = true
         self.receivedParameters = parameters
+        return Promise<AnyObject>().future
     }
     
     var didReceivePut = false
     func put(urlString : String, parameters : [String : AnyObject]) -> Future<AnyObject> {
         self.didReceivePut = true
         self.receivedParameters = parameters
+        return Promise<AnyObject>().future
     }
 }

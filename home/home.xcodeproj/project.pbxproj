@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE111A4F1C6C3A41007CE029 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4B1C6C3A0A007CE029 /* Nimble.framework */; };
 		EE111A501C6C3A41007CE029 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4C1C6C3A0A007CE029 /* Quick.framework */; };
+		EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */; };
 		EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BC1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m */; };
 		EE48E1CB1C5ECB3100A2305F /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BE1C5ECB3100A2305F /* DDASLLogger.m */; };
 		EE48E1CC1C5ECB3100A2305F /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C01C5ECB3100A2305F /* DDFileLogger.m */; };
@@ -690,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */,
+				EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
