@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>HomeConnections.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Networking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>home.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EE4B36691C6FE1A400C7B88F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE4B36721C6FE1A400C7B88F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE4B36921C71443B00C7B88F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE4B369B1C71443B00C7B88F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE97F71D1C5DB96200C3ED77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE97F7341C5DB96200C3ED77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE97F73F1C5DB96200C3ED77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

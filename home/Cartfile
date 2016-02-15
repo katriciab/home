@@ -1,0 +1,6 @@
+github "Quick/Quick" ~> 0.9.1
+github "Quick/Nimble" ~> 3.1.0
+github "Swinject/Swinject" ~> 1.1.0
+github "yannickl/DynamicColor" ~> 2.3.0
+github "Alamofire/Alamofire" ~> 3.0
+github "FutureKit/FutureKit" ~> 1.2.4
