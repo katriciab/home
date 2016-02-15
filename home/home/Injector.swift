@@ -46,7 +46,7 @@ public class Injector: NSObject {
         container.register(PhilipsHueService.self) { r in
             PhilipsHueService(networking: r.resolve(Networking.self)!,
                 philipsHueConnection: r.resolve(PhilipsHueConnection.self)!,
-                philipsHueCacheWrapper: r.resolve(PhilipsHueCacheWrapper.self)!)
+                philipsHueCacheWrapper: PhilipsHueCacheWrapper())
         }
         
         // Philips Hue
