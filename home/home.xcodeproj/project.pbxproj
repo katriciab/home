@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EE111A4F1C6C3A41007CE029 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4B1C6C3A0A007CE029 /* Nimble.framework */; };
 		EE111A501C6C3A41007CE029 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4C1C6C3A0A007CE029 /* Quick.framework */; };
-		EE2C34881C67EEF0002641C5 /* UIStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C34871C67EEF0002641C5 /* UIStyler.swift */; };
 		EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BC1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m */; };
 		EE48E1CB1C5ECB3100A2305F /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BE1C5ECB3100A2305F /* DDASLLogger.m */; };
 		EE48E1CC1C5ECB3100A2305F /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C01C5ECB3100A2305F /* DDFileLogger.m */; };
@@ -17,58 +16,58 @@
 		EE48E1CE1C5ECB3100A2305F /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C41C5ECB3100A2305F /* DDTTYLogger.m */; };
 		EE48E1CF1C5ECB3100A2305F /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C71C5ECB3100A2305F /* ContextFilterLogFormatter.m */; };
 		EE48E1D01C5ECB3100A2305F /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C91C5ECB3100A2305F /* DispatchQueueLogFormatter.m */; };
-		EE48E1D41C5EDCAA00A2305F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1D31C5EDCAA00A2305F /* NotificationPresenter.swift */; };
-		EE48E1D91C5EF23500A2305F /* NSObject+StringFromClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1D81C5EF23500A2305F /* NSObject+StringFromClass.swift */; };
 		EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */; };
 		EE4B36611C6FDCCF00C7B88F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE4B36601C6FDCCF00C7B88F /* Info.plist */; };
-		EE4B36631C6FDF9100C7B88F /* ColorFadeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC70A701C6EF2F5005AE073 /* ColorFadeUtility.swift */; };
 		EE4C8B501C6C4EC6000F4FA9 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4C8B4F1C6C4EC6000F4FA9 /* Injector.swift */; };
-		EE4C8B521C6C710F000F4FA9 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4C8B511C6C710F000F4FA9 /* RootNavigationController.swift */; };
-		EE5428F11C67D2AA00FEF39D /* SelectBridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5428F01C67D2AA00FEF39D /* SelectBridgeViewController.swift */; };
-		EE5428F31C67D2C200FEF39D /* SelectBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5428F21C67D2C200FEF39D /* SelectBridgeView.swift */; };
-		EE5428F51C67D32400FEF39D /* BridgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5428F41C67D32400FEF39D /* BridgeTableViewCell.swift */; };
 		EE97F7221C5DB96200C3ED77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */; };
 		EE97F72A1C5DB96200C3ED77 /* home.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7281C5DB96200C3ED77 /* home.xcdatamodeld */; };
 		EE97F72C1C5DB96200C3ED77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE97F72B1C5DB96200C3ED77 /* Assets.xcassets */; };
 		EE97F72F1C5DB96200C3ED77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE97F72D1C5DB96200C3ED77 /* LaunchScreen.storyboard */; };
 		EE97F7571C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7561C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m */; };
-		EE97F7641C5DBDF600C3ED77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE97F7601C5DBDF600C3ED77 /* Main.storyboard */; };
-		EE97F76A1C5E9E4200C3ED77 /* UIColor+PhilipsHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7691C5E9E4200C3ED77 /* UIColor+PhilipsHue.swift */; };
-		EEB19DAD1C66C1A800C59E1D /* PushLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB19DAC1C66C1A800C59E1D /* PushLinkView.swift */; };
-		EEB19DAF1C66C22500C59E1D /* UIView+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB19DAE1C66C22500C59E1D /* UIView+LoadingView.swift */; };
-		EEBF37BB1C5EAA91005E0FAF /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF37BA1C5EAA91005E0FAF /* ColorPalette.swift */; };
 		EEBF37C21C5EC70A005E0FAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C11C5EC70A005E0FAF /* UIKit.framework */; };
 		EEBF37C41C5EC710005E0FAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C31C5EC710005E0FAF /* Foundation.framework */; };
 		EEBF37C61C5EC987005E0FAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */; };
-		EEC70A711C6EF2F5005AE073 /* ColorFadeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC70A701C6EF2F5005AE073 /* ColorFadeUtility.swift */; };
 		EEC70A761C6F0408005AE073 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A471C6C359E007CE029 /* DynamicColor.framework */; };
-		EEC7B1C61C66C5880077EA5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC7B1C51C66C5880077EA5F /* LoadingView.swift */; };
 		EEDF43EC1C714739008E9472 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A481C6C359E007CE029 /* Swinject.framework */; };
 		EEDF43EE1C727F34008E9472 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */; };
 		EEDF43EF1C727F3E008E9472 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A471C6C359E007CE029 /* DynamicColor.framework */; };
 		EEDF43F01C727F74008E9472 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE97F7531C5DBAAE00C3ED77 /* HueSDK_iOS.framework */; };
-		EEDF43F11C727FEF008E9472 /* PhilipsHueConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF37BD1C5EBD4E005E0FAF /* PhilipsHueConnection.swift */; };
-		EEDF43F21C727FEF008E9472 /* PhilipsHuePushlinkAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1D11C5ED55600A2305F /* PhilipsHuePushlinkAuthenticator.swift */; };
-		EEDF43F31C727FEF008E9472 /* HueLightsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE111A3D1C699743007CE029 /* HueLightsManager.swift */; };
-		EEDF43F41C727FEF008E9472 /* PhilipsHueCacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B36511C6FC90100C7B88F /* PhilipsHueCacheWrapper.swift */; };
-		EEDF43F51C728007008E9472 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4B76C1C6EC38A00FD2FA2 /* NetworkClient.swift */; };
-		EEDF43F61C72800A008E9472 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4B7721C6ED10900FD2FA2 /* Networking.swift */; };
-		EEDF43F71C72800C008E9472 /* PhilipsHueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4B7741C6ED4E500FD2FA2 /* PhilipsHueService.swift */; };
+		EEDF442F1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FA1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift */; };
+		EEDF44301C7289D2008E9472 /* PhilipsHueConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FB1C7289D2008E9472 /* PhilipsHueConnection.swift */; };
+		EEDF44311C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FC1C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift */; };
+		EEDF44321C7289D2008E9472 /* HueLightsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FE1C7289D2008E9472 /* HueLightsManager.swift */; };
+		EEDF44341C7289D2008E9472 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44031C7289D2008E9472 /* NetworkClient.swift */; };
+		EEDF44351C7289D2008E9472 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44041C7289D2008E9472 /* Networking.swift */; };
+		EEDF44361C7289D2008E9472 /* PhilipsHueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44061C7289D2008E9472 /* PhilipsHueService.swift */; };
+		EEDF44371C7289D2008E9472 /* Audrey-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEDF44081C7289D2008E9472 /* Audrey-Bold.otf */; };
+		EEDF44381C7289D2008E9472 /* Audrey-BoldOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEDF44091C7289D2008E9472 /* Audrey-BoldOblique.otf */; };
+		EEDF44391C7289D2008E9472 /* Audrey-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEDF440A1C7289D2008E9472 /* Audrey-Medium.otf */; };
+		EEDF443A1C7289D2008E9472 /* Audrey-MediumOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEDF440B1C7289D2008E9472 /* Audrey-MediumOblique.otf */; };
+		EEDF443B1C7289D2008E9472 /* Audrey-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEDF440C1C7289D2008E9472 /* Audrey-Normal.otf */; };
+		EEDF443C1C7289D2008E9472 /* Audrey-NormalOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEDF440D1C7289D2008E9472 /* Audrey-NormalOblique.otf */; };
+		EEDF443D1C7289D2008E9472 /* CircadianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44111C7289D2008E9472 /* CircadianViewController.swift */; };
+		EEDF443E1C7289D2008E9472 /* PushLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44121C7289D2008E9472 /* PushLinkViewController.swift */; };
+		EEDF443F1C7289D2008E9472 /* SelectBridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44131C7289D2008E9472 /* SelectBridgeViewController.swift */; };
+		EEDF44401C7289D2008E9472 /* BridgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44151C7289D2008E9472 /* BridgeTableViewCell.swift */; };
+		EEDF44411C7289D2008E9472 /* CircadianView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44161C7289D2008E9472 /* CircadianView.swift */; };
+		EEDF44421C7289D2008E9472 /* LightFluctuationGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44171C7289D2008E9472 /* LightFluctuationGraph.swift */; };
+		EEDF44431C7289D2008E9472 /* PushLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44181C7289D2008E9472 /* PushLinkView.swift */; };
+		EEDF44441C7289D2008E9472 /* SelectBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44191C7289D2008E9472 /* SelectBridgeView.swift */; };
+		EEDF44451C7289D2008E9472 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF441C1C7289D2008E9472 /* HomeViewController.swift */; };
+		EEDF44461C7289D2008E9472 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF441D1C7289D2008E9472 /* RootNavigationController.swift */; };
+		EEDF44471C7289D2008E9472 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF441F1C7289D2008E9472 /* HomeView.swift */; };
+		EEDF44481C7289D2008E9472 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44211C7289D2008E9472 /* LoadingView.swift */; };
+		EEDF44491C7289D2008E9472 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44221C7289D2008E9472 /* PaddedLabel.swift */; };
+		EEDF444A1C7289D2008E9472 /* RectangleLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44231C7289D2008E9472 /* RectangleLoadingView.swift */; };
+		EEDF444B1C7289D2008E9472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDF44251C7289D2008E9472 /* Main.storyboard */; };
+		EEDF444C1C7289D2008E9472 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44271C7289D2008E9472 /* NotificationPresenter.swift */; };
+		EEDF444D1C7289D2008E9472 /* UIStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44281C7289D2008E9472 /* UIStyler.swift */; };
+		EEDF444E1C7289D2008E9472 /* UIView+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44291C7289D2008E9472 /* UIView+LoadingView.swift */; };
+		EEDF444F1C7289D2008E9472 /* ColorFadeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */; };
+		EEDF44501C7289D2008E9472 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442C1C7289D2008E9472 /* ColorPalette.swift */; };
+		EEDF44511C7289D2008E9472 /* NSObject+StringFromClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */; };
+		EEDF44521C7289D2008E9472 /* UIColor+PhilipsHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442E1C7289D2008E9472 /* UIColor+PhilipsHue.swift */; };
 		EEE4B7711C6ECCDB00FD2FA2 /* FutureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */; };
-		EEE9374F1C5F0F53009693ED /* Audrey-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE937491C5F0F53009693ED /* Audrey-Bold.otf */; };
-		EEE937501C5F0F53009693ED /* Audrey-BoldOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE9374A1C5F0F53009693ED /* Audrey-BoldOblique.otf */; };
-		EEE937511C5F0F53009693ED /* Audrey-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE9374B1C5F0F53009693ED /* Audrey-Medium.otf */; };
-		EEE937521C5F0F53009693ED /* Audrey-MediumOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE9374C1C5F0F53009693ED /* Audrey-MediumOblique.otf */; };
-		EEE937531C5F0F53009693ED /* Audrey-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE9374D1C5F0F53009693ED /* Audrey-Normal.otf */; };
-		EEE937541C5F0F53009693ED /* Audrey-NormalOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE9374E1C5F0F53009693ED /* Audrey-NormalOblique.otf */; };
-		EEE9375D1C60394E009693ED /* CircadianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE937571C60394E009693ED /* CircadianViewController.swift */; };
-		EEE9375E1C60394E009693ED /* PushLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE937581C60394E009693ED /* PushLinkViewController.swift */; };
-		EEE9375F1C60394E009693ED /* CircadianView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9375A1C60394E009693ED /* CircadianView.swift */; };
-		EEE937601C60394E009693ED /* LightFluctuationGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9375B1C60394E009693ED /* LightFluctuationGraph.swift */; };
-		EEE937671C6039F3009693ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE937661C6039F3009693ED /* HomeViewController.swift */; };
-		EEE937691C603B3D009693ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE937681C603B3D009693ED /* HomeView.swift */; };
-		EEE9376E1C6044C8009693ED /* RectangleLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE9376D1C6044C8009693ED /* RectangleLoadingView.swift */; };
-		EEE937721C6694AD009693ED /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE937711C6694AC009693ED /* PaddedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,12 +94,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EE111A3D1C699743007CE029 /* HueLightsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueLightsManager.swift; sourceTree = "<group>"; };
-		EE111A471C6C359E007CE029 /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
-		EE111A481C6C359E007CE029 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
-		EE111A4B1C6C3A0A007CE029 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		EE111A4C1C6C3A0A007CE029 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		EE2C34871C67EEF0002641C5 /* UIStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyler.swift; sourceTree = "<group>"; };
+		EE111A471C6C359E007CE029 /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = ../Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
+		EE111A481C6C359E007CE029 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		EE111A4B1C6C3A0A007CE029 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		EE111A4C1C6C3A0A007CE029 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		EE48E1BB1C5ECB3100A2305F /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		EE48E1BC1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		EE48E1BD1C5ECB3100A2305F /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -115,21 +112,13 @@
 		EE48E1C71C5ECB3100A2305F /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
 		EE48E1C81C5ECB3100A2305F /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		EE48E1C91C5ECB3100A2305F /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
-		EE48E1D11C5ED55600A2305F /* PhilipsHuePushlinkAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHuePushlinkAuthenticator.swift; sourceTree = "<group>"; };
-		EE48E1D31C5EDCAA00A2305F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
-		EE48E1D81C5EF23500A2305F /* NSObject+StringFromClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+StringFromClass.swift"; sourceTree = "<group>"; };
-		EE4B36511C6FC90100C7B88F /* PhilipsHueCacheWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueCacheWrapper.swift; sourceTree = "<group>"; };
 		EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFadeUtilitySpec.swift; sourceTree = "<group>"; };
 		EE4B36591C6FD73800C7B88F /* PhilipsHueServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueServiceSpec.swift; sourceTree = "<group>"; };
 		EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 		EE4B365D1C6FDADE00C7B88F /* TestInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestInjector.swift; sourceTree = "<group>"; };
 		EE4B36601C6FDCCF00C7B88F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4C8B4F1C6C4EC6000F4FA9 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
-		EE4C8B511C6C710F000F4FA9 /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
-		EE4C8B531C6D7410000F4FA9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
-		EE5428F01C67D2AA00FEF39D /* SelectBridgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBridgeViewController.swift; sourceTree = "<group>"; };
-		EE5428F21C67D2C200FEF39D /* SelectBridgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBridgeView.swift; sourceTree = "<group>"; };
-		EE5428F41C67D32400FEF39D /* BridgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeTableViewCell.swift; sourceTree = "<group>"; };
+		EE4C8B531C6D7410000F4FA9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = ../Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		EE97F71E1C5DB96200C3ED77 /* home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE97F7291C5DB96200C3ED77 /* home.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = home.xcdatamodel; sourceTree = "<group>"; };
@@ -140,36 +129,46 @@
 		EE97F7531C5DBAAE00C3ED77 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
 		EE97F7551C5DBB5C00C3ED77 /* home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "home-Bridging-Header.h"; sourceTree = "<group>"; };
 		EE97F7561C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Objective-CBridgingHeader.m"; sourceTree = "<group>"; };
-		EE97F7601C5DBDF600C3ED77 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		EE97F7691C5E9E4200C3ED77 /* UIColor+PhilipsHue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PhilipsHue.swift"; sourceTree = "<group>"; };
-		EEB19DAC1C66C1A800C59E1D /* PushLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushLinkView.swift; sourceTree = "<group>"; };
-		EEB19DAE1C66C22500C59E1D /* UIView+LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+LoadingView.swift"; path = "home/Extensions/UIView+LoadingView.swift"; sourceTree = SOURCE_ROOT; };
-		EEBF37BA1C5EAA91005E0FAF /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
-		EEBF37BD1C5EBD4E005E0FAF /* PhilipsHueConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueConnection.swift; sourceTree = "<group>"; };
 		EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EEBF37C11C5EC70A005E0FAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EEBF37C31C5EC710005E0FAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EEC70A701C6EF2F5005AE073 /* ColorFadeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFadeUtility.swift; sourceTree = "<group>"; };
-		EEC7B1C51C66C5880077EA5F /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		EEE4B76C1C6EC38A00FD2FA2 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FutureKit.framework; path = Carthage/Build/iOS/FutureKit.framework; sourceTree = "<group>"; };
-		EEE4B7721C6ED10900FD2FA2 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		EEE4B7741C6ED4E500FD2FA2 /* PhilipsHueService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueService.swift; sourceTree = "<group>"; };
-		EEE937491C5F0F53009693ED /* Audrey-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-Bold.otf"; sourceTree = "<group>"; };
-		EEE9374A1C5F0F53009693ED /* Audrey-BoldOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-BoldOblique.otf"; sourceTree = "<group>"; };
-		EEE9374B1C5F0F53009693ED /* Audrey-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-Medium.otf"; sourceTree = "<group>"; };
-		EEE9374C1C5F0F53009693ED /* Audrey-MediumOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-MediumOblique.otf"; sourceTree = "<group>"; };
-		EEE9374D1C5F0F53009693ED /* Audrey-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-Normal.otf"; sourceTree = "<group>"; };
-		EEE9374E1C5F0F53009693ED /* Audrey-NormalOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-NormalOblique.otf"; sourceTree = "<group>"; };
-		EEE937571C60394E009693ED /* CircadianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircadianViewController.swift; sourceTree = "<group>"; };
-		EEE937581C60394E009693ED /* PushLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushLinkViewController.swift; sourceTree = "<group>"; };
-		EEE9375A1C60394E009693ED /* CircadianView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircadianView.swift; sourceTree = "<group>"; };
-		EEE9375B1C60394E009693ED /* LightFluctuationGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightFluctuationGraph.swift; sourceTree = "<group>"; };
-		EEE937661C6039F3009693ED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		EEE937681C603B3D009693ED /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		EEE9376D1C6044C8009693ED /* RectangleLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLoadingView.swift; sourceTree = "<group>"; };
-		EEE937711C6694AC009693ED /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		EEDF43FA1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueCacheWrapper.swift; sourceTree = "<group>"; };
+		EEDF43FB1C7289D2008E9472 /* PhilipsHueConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueConnection.swift; sourceTree = "<group>"; };
+		EEDF43FC1C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHuePushlinkAuthenticator.swift; sourceTree = "<group>"; };
+		EEDF43FE1C7289D2008E9472 /* HueLightsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueLightsManager.swift; sourceTree = "<group>"; };
+		EEDF44031C7289D2008E9472 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		EEDF44041C7289D2008E9472 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		EEDF44061C7289D2008E9472 /* PhilipsHueService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueService.swift; sourceTree = "<group>"; };
+		EEDF44081C7289D2008E9472 /* Audrey-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-Bold.otf"; sourceTree = "<group>"; };
+		EEDF44091C7289D2008E9472 /* Audrey-BoldOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-BoldOblique.otf"; sourceTree = "<group>"; };
+		EEDF440A1C7289D2008E9472 /* Audrey-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-Medium.otf"; sourceTree = "<group>"; };
+		EEDF440B1C7289D2008E9472 /* Audrey-MediumOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-MediumOblique.otf"; sourceTree = "<group>"; };
+		EEDF440C1C7289D2008E9472 /* Audrey-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-Normal.otf"; sourceTree = "<group>"; };
+		EEDF440D1C7289D2008E9472 /* Audrey-NormalOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audrey-NormalOblique.otf"; sourceTree = "<group>"; };
+		EEDF44111C7289D2008E9472 /* CircadianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircadianViewController.swift; sourceTree = "<group>"; };
+		EEDF44121C7289D2008E9472 /* PushLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushLinkViewController.swift; sourceTree = "<group>"; };
+		EEDF44131C7289D2008E9472 /* SelectBridgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBridgeViewController.swift; sourceTree = "<group>"; };
+		EEDF44151C7289D2008E9472 /* BridgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeTableViewCell.swift; sourceTree = "<group>"; };
+		EEDF44161C7289D2008E9472 /* CircadianView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircadianView.swift; sourceTree = "<group>"; };
+		EEDF44171C7289D2008E9472 /* LightFluctuationGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightFluctuationGraph.swift; sourceTree = "<group>"; };
+		EEDF44181C7289D2008E9472 /* PushLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushLinkView.swift; sourceTree = "<group>"; };
+		EEDF44191C7289D2008E9472 /* SelectBridgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBridgeView.swift; sourceTree = "<group>"; };
+		EEDF441C1C7289D2008E9472 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EEDF441D1C7289D2008E9472 /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		EEDF441F1C7289D2008E9472 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EEDF44211C7289D2008E9472 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		EEDF44221C7289D2008E9472 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		EEDF44231C7289D2008E9472 /* RectangleLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLoadingView.swift; sourceTree = "<group>"; };
+		EEDF44251C7289D2008E9472 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EEDF44271C7289D2008E9472 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
+		EEDF44281C7289D2008E9472 /* UIStyler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyler.swift; sourceTree = "<group>"; };
+		EEDF44291C7289D2008E9472 /* UIView+LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LoadingView.swift"; sourceTree = "<group>"; };
+		EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFadeUtility.swift; sourceTree = "<group>"; };
+		EEDF442C1C7289D2008E9472 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+StringFromClass.swift"; sourceTree = "<group>"; };
+		EEDF442E1C7289D2008E9472 /* UIColor+PhilipsHue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PhilipsHue.swift"; sourceTree = "<group>"; };
+		EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FutureKit.framework; path = ../Carthage/Build/iOS/FutureKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,13 +200,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE111A3F1C6ABE5E007CE029 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		EE48E1BA1C5ECB3100A2305F /* Lumberjack */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,14 +260,6 @@
 		EE97F7151C5DB96200C3ED77 = {
 			isa = PBXGroup;
 			children = (
-				EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */,
-				EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */,
-				EE4C8B531C6D7410000F4FA9 /* AFNetworking.framework */,
-				EE111A4B1C6C3A0A007CE029 /* Nimble.framework */,
-				EE111A4C1C6C3A0A007CE029 /* Quick.framework */,
-				EE111A471C6C359E007CE029 /* DynamicColor.framework */,
-				EE111A481C6C359E007CE029 /* Swinject.framework */,
-				EEBF37C31C5EC710005E0FAF /* Foundation.framework */,
 				EE97F7521C5DBAAE00C3ED77 /* Externals */,
 				EE97F7201C5DB96200C3ED77 /* home */,
 				EE4B36541C6FD5D200C7B88F /* homeTests */,
@@ -295,16 +279,12 @@
 		EE97F7201C5DB96200C3ED77 /* home */ = {
 			isa = PBXGroup;
 			children = (
-				EE97F7681C5E9DB600C3ED77 /* Extensions */,
-				EEBF37BC1C5EBD39005E0FAF /* Home Connections */,
-				EEE937551C60394E009693ED /* Lights UI */,
-				EEE937611C60397A009693ED /* Main UI */,
-				EE111A3F1C6ABE5E007CE029 /* Models */,
-				EEE4B76B1C6EC36000FD2FA2 /* Networking */,
-				EEE9376C1C6043AE009693ED /* Shared UI */,
-				EEE937481C5F0F53009693ED /* Resources */,
-				EE97F75F1C5DBDF600C3ED77 /* Storyboards */,
-				EEBF37B91C5EAA81005E0FAF /* Utilities */,
+				EEDF43F81C7289D2008E9472 /* Home Connections */,
+				EEDF43FF1C7289D2008E9472 /* Models */,
+				EEDF44011C7289D2008E9472 /* Networking */,
+				EEDF44071C7289D2008E9472 /* Resources */,
+				EEDF440E1C7289D2008E9472 /* User Interface */,
+				EEDF442A1C7289D2008E9472 /* Utilities */,
 				EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */,
 				EE97F72B1C5DB96200C3ED77 /* Assets.xcassets */,
 				EE97F7551C5DBB5C00C3ED77 /* home-Bridging-Header.h */,
@@ -320,6 +300,14 @@
 		EE97F7521C5DBAAE00C3ED77 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */,
+				EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */,
+				EE4C8B531C6D7410000F4FA9 /* AFNetworking.framework */,
+				EE111A4B1C6C3A0A007CE029 /* Nimble.framework */,
+				EE111A4C1C6C3A0A007CE029 /* Quick.framework */,
+				EE111A471C6C359E007CE029 /* DynamicColor.framework */,
+				EE111A481C6C359E007CE029 /* Swinject.framework */,
+				EEBF37C31C5EC710005E0FAF /* Foundation.framework */,
 				EEBF37C11C5EC70A005E0FAF /* UIKit.framework */,
 				EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */,
 				EE48E1BA1C5ECB3100A2305F /* Lumberjack */,
@@ -328,134 +316,185 @@
 			path = Externals;
 			sourceTree = "<group>";
 		};
-		EE97F75F1C5DBDF600C3ED77 /* Storyboards */ = {
+		EEDF43F81C7289D2008E9472 /* Home Connections */ = {
 			isa = PBXGroup;
 			children = (
-				EE97F7601C5DBDF600C3ED77 /* Main.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		EE97F7681C5E9DB600C3ED77 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				EE97F7691C5E9E4200C3ED77 /* UIColor+PhilipsHue.swift */,
-				EE48E1D81C5EF23500A2305F /* NSObject+StringFromClass.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		EEBF37B91C5EAA81005E0FAF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				EEBF37BA1C5EAA91005E0FAF /* ColorPalette.swift */,
-				EE48E1D31C5EDCAA00A2305F /* NotificationPresenter.swift */,
-				EE2C34871C67EEF0002641C5 /* UIStyler.swift */,
-				EEC70A701C6EF2F5005AE073 /* ColorFadeUtility.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		EEBF37BC1C5EBD39005E0FAF /* Home Connections */ = {
-			isa = PBXGroup;
-			children = (
-				EEBF37BD1C5EBD4E005E0FAF /* PhilipsHueConnection.swift */,
-				EE48E1D11C5ED55600A2305F /* PhilipsHuePushlinkAuthenticator.swift */,
-				EE111A3D1C699743007CE029 /* HueLightsManager.swift */,
-				EE4B36511C6FC90100C7B88F /* PhilipsHueCacheWrapper.swift */,
+				EEDF43F91C7289D2008E9472 /* Authentication */,
+				EEDF43FD1C7289D2008E9472 /* Lights */,
 			);
 			path = "Home Connections";
 			sourceTree = "<group>";
 		};
-		EEE4B76B1C6EC36000FD2FA2 /* Networking */ = {
+		EEDF43F91C7289D2008E9472 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				EEE4B76C1C6EC38A00FD2FA2 /* NetworkClient.swift */,
-				EEE4B7721C6ED10900FD2FA2 /* Networking.swift */,
-				EEE4B7741C6ED4E500FD2FA2 /* PhilipsHueService.swift */,
+				EEDF43FA1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift */,
+				EEDF43FB1C7289D2008E9472 /* PhilipsHueConnection.swift */,
+				EEDF43FC1C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EEDF43FD1C7289D2008E9472 /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF43FE1C7289D2008E9472 /* HueLightsManager.swift */,
+			);
+			path = Lights;
+			sourceTree = "<group>";
+		};
+		EEDF43FF1C7289D2008E9472 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEDF44011C7289D2008E9472 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF44021C7289D2008E9472 /* Network Clients */,
+				EEDF44051C7289D2008E9472 /* Services */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		EEE937481C5F0F53009693ED /* Resources */ = {
+		EEDF44021C7289D2008E9472 /* Network Clients */ = {
 			isa = PBXGroup;
 			children = (
-				EEE937491C5F0F53009693ED /* Audrey-Bold.otf */,
-				EEE9374A1C5F0F53009693ED /* Audrey-BoldOblique.otf */,
-				EEE9374B1C5F0F53009693ED /* Audrey-Medium.otf */,
-				EEE9374C1C5F0F53009693ED /* Audrey-MediumOblique.otf */,
-				EEE9374D1C5F0F53009693ED /* Audrey-Normal.otf */,
-				EEE9374E1C5F0F53009693ED /* Audrey-NormalOblique.otf */,
+				EEDF44031C7289D2008E9472 /* NetworkClient.swift */,
+				EEDF44041C7289D2008E9472 /* Networking.swift */,
+			);
+			path = "Network Clients";
+			sourceTree = "<group>";
+		};
+		EEDF44051C7289D2008E9472 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF44061C7289D2008E9472 /* PhilipsHueService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EEDF44071C7289D2008E9472 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF44081C7289D2008E9472 /* Audrey-Bold.otf */,
+				EEDF44091C7289D2008E9472 /* Audrey-BoldOblique.otf */,
+				EEDF440A1C7289D2008E9472 /* Audrey-Medium.otf */,
+				EEDF440B1C7289D2008E9472 /* Audrey-MediumOblique.otf */,
+				EEDF440C1C7289D2008E9472 /* Audrey-Normal.otf */,
+				EEDF440D1C7289D2008E9472 /* Audrey-NormalOblique.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EEE937551C60394E009693ED /* Lights UI */ = {
+		EEDF440E1C7289D2008E9472 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				EEE937561C60394E009693ED /* View Controllers */,
-				EEE937591C60394E009693ED /* Views */,
+				EEDF440F1C7289D2008E9472 /* Lights UI */,
+				EEDF441A1C7289D2008E9472 /* Main UI */,
+				EEDF44201C7289D2008E9472 /* Shared UI */,
+				EEDF44241C7289D2008E9472 /* Storyboards */,
+				EEDF44261C7289D2008E9472 /* Utilities */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		EEDF440F1C7289D2008E9472 /* Lights UI */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF44101C7289D2008E9472 /* View Controllers */,
+				EEDF44141C7289D2008E9472 /* Views */,
 			);
 			path = "Lights UI";
 			sourceTree = "<group>";
 		};
-		EEE937561C60394E009693ED /* View Controllers */ = {
+		EEDF44101C7289D2008E9472 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EEE937571C60394E009693ED /* CircadianViewController.swift */,
-				EEE937581C60394E009693ED /* PushLinkViewController.swift */,
-				EE5428F01C67D2AA00FEF39D /* SelectBridgeViewController.swift */,
+				EEDF44111C7289D2008E9472 /* CircadianViewController.swift */,
+				EEDF44121C7289D2008E9472 /* PushLinkViewController.swift */,
+				EEDF44131C7289D2008E9472 /* SelectBridgeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		EEE937591C60394E009693ED /* Views */ = {
+		EEDF44141C7289D2008E9472 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EEE9375A1C60394E009693ED /* CircadianView.swift */,
-				EEE9375B1C60394E009693ED /* LightFluctuationGraph.swift */,
-				EEB19DAC1C66C1A800C59E1D /* PushLinkView.swift */,
-				EE5428F21C67D2C200FEF39D /* SelectBridgeView.swift */,
-				EE5428F41C67D32400FEF39D /* BridgeTableViewCell.swift */,
+				EEDF44151C7289D2008E9472 /* BridgeTableViewCell.swift */,
+				EEDF44161C7289D2008E9472 /* CircadianView.swift */,
+				EEDF44171C7289D2008E9472 /* LightFluctuationGraph.swift */,
+				EEDF44181C7289D2008E9472 /* PushLinkView.swift */,
+				EEDF44191C7289D2008E9472 /* SelectBridgeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EEE937611C60397A009693ED /* Main UI */ = {
+		EEDF441A1C7289D2008E9472 /* Main UI */ = {
 			isa = PBXGroup;
 			children = (
-				EEE937641C6039E1009693ED /* View Controllers */,
-				EEE937651C6039E1009693ED /* Views */,
+				EEDF441B1C7289D2008E9472 /* View Controllers */,
+				EEDF441E1C7289D2008E9472 /* Views */,
 			);
 			path = "Main UI";
 			sourceTree = "<group>";
 		};
-		EEE937641C6039E1009693ED /* View Controllers */ = {
+		EEDF441B1C7289D2008E9472 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EEE937661C6039F3009693ED /* HomeViewController.swift */,
-				EE4C8B511C6C710F000F4FA9 /* RootNavigationController.swift */,
+				EEDF441C1C7289D2008E9472 /* HomeViewController.swift */,
+				EEDF441D1C7289D2008E9472 /* RootNavigationController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		EEE937651C6039E1009693ED /* Views */ = {
+		EEDF441E1C7289D2008E9472 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EEE937681C603B3D009693ED /* HomeView.swift */,
+				EEDF441F1C7289D2008E9472 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EEE9376C1C6043AE009693ED /* Shared UI */ = {
+		EEDF44201C7289D2008E9472 /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
-				EEE9376D1C6044C8009693ED /* RectangleLoadingView.swift */,
-				EEE937711C6694AC009693ED /* PaddedLabel.swift */,
-				EEB19DAE1C66C22500C59E1D /* UIView+LoadingView.swift */,
-				EEC7B1C51C66C5880077EA5F /* LoadingView.swift */,
+				EEDF44211C7289D2008E9472 /* LoadingView.swift */,
+				EEDF44221C7289D2008E9472 /* PaddedLabel.swift */,
+				EEDF44231C7289D2008E9472 /* RectangleLoadingView.swift */,
 			);
 			path = "Shared UI";
+			sourceTree = "<group>";
+		};
+		EEDF44241C7289D2008E9472 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF44251C7289D2008E9472 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EEDF44261C7289D2008E9472 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF44271C7289D2008E9472 /* NotificationPresenter.swift */,
+				EEDF44281C7289D2008E9472 /* UIStyler.swift */,
+				EEDF44291C7289D2008E9472 /* UIView+LoadingView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EEDF442A1C7289D2008E9472 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */,
+				EEDF442C1C7289D2008E9472 /* ColorPalette.swift */,
+				EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */,
+				EEDF442E1C7289D2008E9472 /* UIColor+PhilipsHue.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,14 +581,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEE937531C5F0F53009693ED /* Audrey-Normal.otf in Resources */,
-				EEE937511C5F0F53009693ED /* Audrey-Medium.otf in Resources */,
-				EEE937521C5F0F53009693ED /* Audrey-MediumOblique.otf in Resources */,
-				EEE937501C5F0F53009693ED /* Audrey-BoldOblique.otf in Resources */,
-				EE97F7641C5DBDF600C3ED77 /* Main.storyboard in Resources */,
-				EEE937541C5F0F53009693ED /* Audrey-NormalOblique.otf in Resources */,
+				EEDF443C1C7289D2008E9472 /* Audrey-NormalOblique.otf in Resources */,
+				EEDF443B1C7289D2008E9472 /* Audrey-Normal.otf in Resources */,
 				EE97F72F1C5DB96200C3ED77 /* LaunchScreen.storyboard in Resources */,
-				EEE9374F1C5F0F53009693ED /* Audrey-Bold.otf in Resources */,
+				EEDF44371C7289D2008E9472 /* Audrey-Bold.otf in Resources */,
+				EEDF44381C7289D2008E9472 /* Audrey-BoldOblique.otf in Resources */,
+				EEDF44391C7289D2008E9472 /* Audrey-Medium.otf in Resources */,
+				EEDF444B1C7289D2008E9472 /* Main.storyboard in Resources */,
+				EEDF443A1C7289D2008E9472 /* Audrey-MediumOblique.otf in Resources */,
 				EE97F72C1C5DB96200C3ED77 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,45 +643,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEDF44511C7289D2008E9472 /* NSObject+StringFromClass.swift in Sources */,
 				EE48E1D01C5ECB3100A2305F /* DispatchQueueLogFormatter.m in Sources */,
-				EE5428F31C67D2C200FEF39D /* SelectBridgeView.swift in Sources */,
+				EEDF443E1C7289D2008E9472 /* PushLinkViewController.swift in Sources */,
 				EE48E1CC1C5ECB3100A2305F /* DDFileLogger.m in Sources */,
+				EEDF44471C7289D2008E9472 /* HomeView.swift in Sources */,
+				EEDF444E1C7289D2008E9472 /* UIView+LoadingView.swift in Sources */,
+				EEDF44431C7289D2008E9472 /* PushLinkView.swift in Sources */,
+				EEDF44351C7289D2008E9472 /* Networking.swift in Sources */,
+				EEDF444C1C7289D2008E9472 /* NotificationPresenter.swift in Sources */,
 				EE97F7571C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m in Sources */,
-				EE2C34881C67EEF0002641C5 /* UIStyler.swift in Sources */,
-				EEE937601C60394E009693ED /* LightFluctuationGraph.swift in Sources */,
-				EEB19DAD1C66C1A800C59E1D /* PushLinkView.swift in Sources */,
-				EEE937691C603B3D009693ED /* HomeView.swift in Sources */,
-				EEC70A711C6EF2F5005AE073 /* ColorFadeUtility.swift in Sources */,
-				EEE937721C6694AD009693ED /* PaddedLabel.swift in Sources */,
-				EEC7B1C61C66C5880077EA5F /* LoadingView.swift in Sources */,
-				EE4C8B521C6C710F000F4FA9 /* RootNavigationController.swift in Sources */,
-				EEB19DAF1C66C22500C59E1D /* UIView+LoadingView.swift in Sources */,
-				EEE937671C6039F3009693ED /* HomeViewController.swift in Sources */,
-				EE5428F51C67D32400FEF39D /* BridgeTableViewCell.swift in Sources */,
-				EEDF43F41C727FEF008E9472 /* PhilipsHueCacheWrapper.swift in Sources */,
-				EEDF43F71C72800C008E9472 /* PhilipsHueService.swift in Sources */,
-				EE48E1D41C5EDCAA00A2305F /* NotificationPresenter.swift in Sources */,
+				EEDF442F1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift in Sources */,
 				EE48E1CB1C5ECB3100A2305F /* DDASLLogger.m in Sources */,
-				EE48E1D91C5EF23500A2305F /* NSObject+StringFromClass.swift in Sources */,
-				EEDF43F61C72800A008E9472 /* Networking.swift in Sources */,
-				EEDF43F21C727FEF008E9472 /* PhilipsHuePushlinkAuthenticator.swift in Sources */,
+				EEDF444A1C7289D2008E9472 /* RectangleLoadingView.swift in Sources */,
+				EEDF44461C7289D2008E9472 /* RootNavigationController.swift in Sources */,
 				EE48E1CE1C5ECB3100A2305F /* DDTTYLogger.m in Sources */,
+				EEDF444F1C7289D2008E9472 /* ColorFadeUtility.swift in Sources */,
+				EEDF44421C7289D2008E9472 /* LightFluctuationGraph.swift in Sources */,
 				EE97F7221C5DB96200C3ED77 /* AppDelegate.swift in Sources */,
+				EEDF44491C7289D2008E9472 /* PaddedLabel.swift in Sources */,
+				EEDF44341C7289D2008E9472 /* NetworkClient.swift in Sources */,
 				EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */,
+				EEDF44521C7289D2008E9472 /* UIColor+PhilipsHue.swift in Sources */,
 				EE48E1CF1C5ECB3100A2305F /* ContextFilterLogFormatter.m in Sources */,
 				EE48E1CD1C5ECB3100A2305F /* DDLog.m in Sources */,
-				EEBF37BB1C5EAA91005E0FAF /* ColorPalette.swift in Sources */,
-				EEE9375E1C60394E009693ED /* PushLinkViewController.swift in Sources */,
-				EEE9375F1C60394E009693ED /* CircadianView.swift in Sources */,
+				EEDF44401C7289D2008E9472 /* BridgeTableViewCell.swift in Sources */,
+				EEDF44411C7289D2008E9472 /* CircadianView.swift in Sources */,
+				EEDF44441C7289D2008E9472 /* SelectBridgeView.swift in Sources */,
+				EEDF44451C7289D2008E9472 /* HomeViewController.swift in Sources */,
+				EEDF443F1C7289D2008E9472 /* SelectBridgeViewController.swift in Sources */,
+				EEDF44301C7289D2008E9472 /* PhilipsHueConnection.swift in Sources */,
+				EEDF44321C7289D2008E9472 /* HueLightsManager.swift in Sources */,
 				EE97F72A1C5DB96200C3ED77 /* home.xcdatamodeld in Sources */,
+				EEDF44501C7289D2008E9472 /* ColorPalette.swift in Sources */,
+				EEDF44311C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift in Sources */,
+				EEDF444D1C7289D2008E9472 /* UIStyler.swift in Sources */,
+				EEDF443D1C7289D2008E9472 /* CircadianViewController.swift in Sources */,
 				EE4C8B501C6C4EC6000F4FA9 /* Injector.swift in Sources */,
-				EEE9375D1C60394E009693ED /* CircadianViewController.swift in Sources */,
-				EE97F76A1C5E9E4200C3ED77 /* UIColor+PhilipsHue.swift in Sources */,
-				EEDF43F31C727FEF008E9472 /* HueLightsManager.swift in Sources */,
-				EE5428F11C67D2AA00FEF39D /* SelectBridgeViewController.swift in Sources */,
-				EEE9376E1C6044C8009693ED /* RectangleLoadingView.swift in Sources */,
-				EEDF43F51C728007008E9472 /* NetworkClient.swift in Sources */,
-				EEDF43F11C727FEF008E9472 /* PhilipsHueConnection.swift in Sources */,
+				EEDF44481C7289D2008E9472 /* LoadingView.swift in Sources */,
+				EEDF44361C7289D2008E9472 /* PhilipsHueService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,7 +690,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */,
-				EE4B36631C6FDF9100C7B88F /* ColorFadeUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
