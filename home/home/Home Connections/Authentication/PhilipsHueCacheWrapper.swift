@@ -8,7 +8,11 @@
 
 import UIKit
 
-class PhilipsHueCacheWrapper: NSObject {
+protocol CacheWrapper {
+    func getBridgeInformation() -> (username : String?, ipAddress : String?);
+}
+
+class PhilipsHueCacheWrapper: CacheWrapper {
 
     func getBridgeInformation() -> (username : String?, ipAddress : String?) {
         let cache = PHBridgeResourcesReader.readBridgeResourcesCache()

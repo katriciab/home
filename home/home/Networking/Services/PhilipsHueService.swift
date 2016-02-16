@@ -33,17 +33,19 @@ struct AlarmRecurrence : OptionSetType {
 class PhilipsHueService {
     var networkClient : Networking
     var philipsHueConnection : PhilipsHueConnection
-    var philipsHueCacheWrapper : PhilipsHueCacheWrapper
+    var philipsHueCacheWrapper : CacheWrapper
     
-    init(networking: Networking, philipsHueConnection: PhilipsHueConnection, philipsHueCacheWrapper: PhilipsHueCacheWrapper) {
+    init(networking: Networking, philipsHueConnection: PhilipsHueConnection, philipsHueCacheWrapper: CacheWrapper) {
         self.networkClient = networking
         self.philipsHueConnection = philipsHueConnection
         self.philipsHueCacheWrapper = philipsHueCacheWrapper
     }
     
-    func scheduleDailyRecurringAlarmForTime(time: NSDate, lightColor: UIColor, transitionTime: Int) {
+    func scheduleDailyRecurringAlarmForTime(time: NSDate, timeZone: NSTimeZone, lightColor: UIColor, transitionTime: Int) {
         let calendar = NSCalendar(calendarIdentifier:NSCalendarIdentifierGregorian)
-        let dateComponents = calendar?.components([.Hour, .Minute, .Second], fromDate:NSDate())
+        calendar?.timeZone = timeZone
+        
+        let dateComponents = calendar?.components([.Hour, .Minute, .Second], fromDate:time)
         if let components = dateComponents {
             setScheduleForColor(lightColor,
                 transitionTimeInMs: transitionTime,

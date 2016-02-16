@@ -10,6 +10,9 @@
 		EE111A4F1C6C3A41007CE029 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4B1C6C3A0A007CE029 /* Nimble.framework */; };
 		EE111A501C6C3A41007CE029 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4C1C6C3A0A007CE029 /* Quick.framework */; };
 		EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */; };
+		EE260C121C7297E7004202C1 /* PhilipsHueServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B36591C6FD73800C7B88F /* PhilipsHueServiceSpec.swift */; };
+		EE260C131C729898004202C1 /* TestInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B365D1C6FDADE00C7B88F /* TestInjector.swift */; };
+		EE260C151C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE260C141C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift */; };
 		EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BC1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m */; };
 		EE48E1CB1C5ECB3100A2305F /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BE1C5ECB3100A2305F /* DDASLLogger.m */; };
 		EE48E1CC1C5ECB3100A2305F /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C01C5ECB3100A2305F /* DDFileLogger.m */; };
@@ -18,7 +21,6 @@
 		EE48E1CF1C5ECB3100A2305F /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C71C5ECB3100A2305F /* ContextFilterLogFormatter.m */; };
 		EE48E1D01C5ECB3100A2305F /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C91C5ECB3100A2305F /* DispatchQueueLogFormatter.m */; };
 		EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */; };
-		EE4B36611C6FDCCF00C7B88F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE4B36601C6FDCCF00C7B88F /* Info.plist */; };
 		EE4C8B501C6C4EC6000F4FA9 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4C8B4F1C6C4EC6000F4FA9 /* Injector.swift */; };
 		EE97F7221C5DB96200C3ED77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */; };
 		EE97F72A1C5DB96200C3ED77 /* home.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7281C5DB96200C3ED77 /* home.xcdatamodeld */; };
@@ -99,6 +101,7 @@
 		EE111A481C6C359E007CE029 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		EE111A4B1C6C3A0A007CE029 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		EE111A4C1C6C3A0A007CE029 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		EE260C141C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockPhilipsHueCacheWrapper.swift; path = ../../../Home/homeTests/Networking/MockPhilipsHueCacheWrapper.swift; sourceTree = "<group>"; };
 		EE48E1BB1C5ECB3100A2305F /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		EE48E1BC1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		EE48E1BD1C5ECB3100A2305F /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -254,6 +257,7 @@
 			children = (
 				EE4B36591C6FD73800C7B88F /* PhilipsHueServiceSpec.swift */,
 				EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */,
+				EE260C141C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -598,7 +602,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE4B36611C6FDCCF00C7B88F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +695,9 @@
 			files = (
 				EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */,
 				EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */,
+				EE260C151C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift in Sources */,
+				EE260C121C7297E7004202C1 /* PhilipsHueServiceSpec.swift in Sources */,
+				EE260C131C729898004202C1 /* TestInjector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
