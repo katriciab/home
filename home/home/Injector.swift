@@ -20,7 +20,7 @@ public class Injector: NSObject {
         container.registerForStoryboard(PushLinkViewController.self) { r, c in }
         
         container.registerForStoryboard(CircadianViewController.self) { r, c in
-            c.hueLightsManager = r.resolve(HueLightsManager.self)
+            c.hueLightsManager = r.resolve(PhilipsHueLightsManager.self)
         }
         
         container.registerForStoryboard(SelectBridgeViewController.self) { r, c in }
@@ -34,8 +34,8 @@ public class Injector: NSObject {
         }
         
         // Managers
-        container.register(HueLightsManager.self) { r in
-            HueLightsManager(philipsHueService: r.resolve(PhilipsHueService.self)!)
+        container.register(PhilipsHueLightsManager.self) { r in
+            PhilipsHueLightsManager(philipsHueService: r.resolve(PhilipsHueService.self)!)
         }
         
         // Networking and Services

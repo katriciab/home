@@ -38,7 +38,7 @@
 		EEDF442F1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FA1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift */; };
 		EEDF44301C7289D2008E9472 /* PhilipsHueConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FB1C7289D2008E9472 /* PhilipsHueConnection.swift */; };
 		EEDF44311C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FC1C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift */; };
-		EEDF44321C7289D2008E9472 /* HueLightsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FE1C7289D2008E9472 /* HueLightsManager.swift */; };
+		EEDF44321C7289D2008E9472 /* PhilipsHueLightsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF43FE1C7289D2008E9472 /* PhilipsHueLightsManager.swift */; };
 		EEDF44341C7289D2008E9472 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44031C7289D2008E9472 /* NetworkClient.swift */; };
 		EEDF44351C7289D2008E9472 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44041C7289D2008E9472 /* Networking.swift */; };
 		EEDF44361C7289D2008E9472 /* PhilipsHueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF44061C7289D2008E9472 /* PhilipsHueService.swift */; };
@@ -69,7 +69,6 @@
 		EEDF444F1C7289D2008E9472 /* ColorFadeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */; };
 		EEDF44501C7289D2008E9472 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442C1C7289D2008E9472 /* ColorPalette.swift */; };
 		EEDF44511C7289D2008E9472 /* NSObject+StringFromClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */; };
-		EEDF44521C7289D2008E9472 /* UIColor+PhilipsHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442E1C7289D2008E9472 /* UIColor+PhilipsHue.swift */; };
 		EEE4B7711C6ECCDB00FD2FA2 /* FutureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,7 +138,7 @@
 		EEDF43FA1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueCacheWrapper.swift; sourceTree = "<group>"; };
 		EEDF43FB1C7289D2008E9472 /* PhilipsHueConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueConnection.swift; sourceTree = "<group>"; };
 		EEDF43FC1C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHuePushlinkAuthenticator.swift; sourceTree = "<group>"; };
-		EEDF43FE1C7289D2008E9472 /* HueLightsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueLightsManager.swift; sourceTree = "<group>"; };
+		EEDF43FE1C7289D2008E9472 /* PhilipsHueLightsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueLightsManager.swift; sourceTree = "<group>"; };
 		EEDF44031C7289D2008E9472 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EEDF44041C7289D2008E9472 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		EEDF44061C7289D2008E9472 /* PhilipsHueService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueService.swift; sourceTree = "<group>"; };
@@ -170,7 +169,6 @@
 		EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFadeUtility.swift; sourceTree = "<group>"; };
 		EEDF442C1C7289D2008E9472 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+StringFromClass.swift"; sourceTree = "<group>"; };
-		EEDF442E1C7289D2008E9472 /* UIColor+PhilipsHue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PhilipsHue.swift"; sourceTree = "<group>"; };
 		EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FutureKit.framework; path = ../Carthage/Build/iOS/FutureKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -343,7 +341,7 @@
 		EEDF43FD1C7289D2008E9472 /* Lights */ = {
 			isa = PBXGroup;
 			children = (
-				EEDF43FE1C7289D2008E9472 /* HueLightsManager.swift */,
+				EEDF43FE1C7289D2008E9472 /* PhilipsHueLightsManager.swift */,
 			);
 			path = Lights;
 			sourceTree = "<group>";
@@ -497,7 +495,6 @@
 				EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */,
 				EEDF442C1C7289D2008E9472 /* ColorPalette.swift */,
 				EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */,
-				EEDF442E1C7289D2008E9472 /* UIColor+PhilipsHue.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -668,7 +665,6 @@
 				EEDF44491C7289D2008E9472 /* PaddedLabel.swift in Sources */,
 				EEDF44341C7289D2008E9472 /* NetworkClient.swift in Sources */,
 				EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */,
-				EEDF44521C7289D2008E9472 /* UIColor+PhilipsHue.swift in Sources */,
 				EE48E1CF1C5ECB3100A2305F /* ContextFilterLogFormatter.m in Sources */,
 				EE48E1CD1C5ECB3100A2305F /* DDLog.m in Sources */,
 				EEDF44401C7289D2008E9472 /* BridgeTableViewCell.swift in Sources */,
@@ -677,7 +673,7 @@
 				EEDF44451C7289D2008E9472 /* HomeViewController.swift in Sources */,
 				EEDF443F1C7289D2008E9472 /* SelectBridgeViewController.swift in Sources */,
 				EEDF44301C7289D2008E9472 /* PhilipsHueConnection.swift in Sources */,
-				EEDF44321C7289D2008E9472 /* HueLightsManager.swift in Sources */,
+				EEDF44321C7289D2008E9472 /* PhilipsHueLightsManager.swift in Sources */,
 				EE97F72A1C5DB96200C3ED77 /* home.xcdatamodeld in Sources */,
 				EEDF44501C7289D2008E9472 /* ColorPalette.swift in Sources */,
 				EEDF44311C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift in Sources */,

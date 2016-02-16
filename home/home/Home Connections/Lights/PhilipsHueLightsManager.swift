@@ -1,5 +1,5 @@
 //
-//  HueLightsManager.swift
+//  PhilipsHueLightsManager.swift
 //  home
 //
 //  Created by Katricia Barleta on 2016-02-08.
@@ -9,7 +9,7 @@
 import UIKit
 import DynamicColor
 
-class HueLightsManager {
+class PhilipsHueLightsManager {
     
     var philipsHueService : PhilipsHueService
     
@@ -17,19 +17,9 @@ class HueLightsManager {
         self.philipsHueService = philipsHueService
     }
     
-    func setLightColor(color: UIColor) {
-        let cache = PHBridgeResourcesReader.readBridgeResourcesCache()
-        let lights = cache.lights
-        for (key, light) in lights {
-            print("Light with id \(key) and phLight \(light.identifier!)")            
-            if (light.identifier == "1") {
-                let lightState = color.phXYLightState("LST001")
-                let bridgeSendAPI = PHBridgeSendAPI()
-                bridgeSendAPI.updateLightStateForId(light.identifier, withLightState: lightState, completionHandler:  { (errors: [AnyObject]!) -> Void in
-                    print("UPDATED LIGHT!")
-                })
-            }
-        }
+    func scheduleCircadianLights(wakeUpTime: NSDateComponents, wakeUpTransitionTime: Int, sunDownStartTime: NSDateComponents, sunDownTransitionTime:Int, bedTime:NSDateComponents) {
+        // wake - transition to brightness a minute before hand to full brightness of color 1
+        // sundown - transition to dark around this time for an hour
     }
     
     func removeAllSchedules() {
@@ -46,8 +36,5 @@ class HueLightsManager {
                 }
             }
         }
-    }
-    
-    func scheduleCircadianLights() {
     }
 }

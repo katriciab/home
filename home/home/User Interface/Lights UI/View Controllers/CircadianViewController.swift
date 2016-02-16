@@ -11,7 +11,7 @@ import Swinject
 
 class CircadianViewController: UIViewController {
     
-    var hueLightsManager : HueLightsManager?
+    var hueLightsManager : PhilipsHueLightsManager?
     
     static func create() -> CircadianViewController {
         let sb = SwinjectStoryboard.create(name: "Main", bundle: nil, container: Injector.container)
@@ -36,10 +36,8 @@ class CircadianViewController: UIViewController {
     }
 
     @IBAction func fluxUp(sender: AnyObject) {
-        self.hueLightsManager?.setLightColor(UIColor.redColor())
     }
     
     @IBAction func fluxDown(sender: AnyObject) {
-        self.hueLightsManager?.scheduleCircadianLights()
     }
 }
