@@ -17,6 +17,13 @@ class ColorPalette {
         return UIColor(hex:0xFFD6AA);
     }
     
+    class func deepTungsten() -> UIColor {
+        return UIColor(hex:0xFFC58F)
+    }
+    
+    class func halogen() -> UIColor {
+        return UIColor(hex:0xFFF1E0)
+    }
     class func candle() -> UIColor {
         return UIColor(hex:0xF0A91A);
     }

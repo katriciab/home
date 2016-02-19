@@ -16,17 +16,15 @@ class PhilipsHueServiceSpec: QuickSpec {
     override func spec() {
         
         describe("when scheduling recurring alarm for time, light color and transition time") {
-            let date = NSDate(timeIntervalSinceReferenceDate:0);
-            let subject = TestInjector.container.resolve(PhilipsHueService.self, name:"test")
-            let networkClientMock = subject!.networkClient as! MockNetworkClient
+            let subject = TestInjector.container.resolve(HueService.self, name:"test") as! PhilipsHueService
+            let networkClientMock = subject.networkClient as! MockNetworkClient
             
             var parameters = [String: AnyObject]()
             var command = [String: AnyObject]()
             var body = [String: AnyObject]()
             
             beforeEach {
-                let utcTimeZone = NSTimeZone(abbreviation: "UTC")
-                subject?.scheduleDailyRecurringAlarmForTime(date, timeZone:utcTimeZone!, lightColor: UIColor.redColor(), transitionTime: 500)
+                subject.scheduleDailyRecurringAlarmForHours(0, mins: 0, seconds: 0, forColor: UIColor.redColor(), transitionTime: 5)
                 
                 parameters = networkClientMock.receivedParameters
                 command = parameters["command"] as! Dictionary<String, AnyObject>
@@ -45,7 +43,7 @@ class PhilipsHueServiceSpec: QuickSpec {
                 expect(body["hue"] as? Double).to(equal(0.0))
             }
             
-            it("should set transition time") {
+            it("should set transition time in milliseconds") {
                 expect(body["transitiontime"] as? Int).to(equal(500))
             }
         }

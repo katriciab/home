@@ -39,5 +39,25 @@ class CircadianViewController: UIViewController {
     }
     
     @IBAction func fluxDown(sender: AnyObject) {
+        let wakeComponents = NSDateComponents()
+        wakeComponents.hour = 8
+        wakeComponents.minute = 0
+        wakeComponents.second = 0
+        
+        let sundownComponents = NSDateComponents()
+        sundownComponents.hour = 18
+        sundownComponents.minute = 30
+        sundownComponents.second = 0
+        
+        let bedTimeComponents = NSDateComponents()
+        bedTimeComponents.hour = 0
+        bedTimeComponents.minute = 0
+        bedTimeComponents.second = 0
+        
+        self.hueLightsManager?.scheduleCircadianLights(wakeComponents,
+            wakeUpTransitionTime: 60,
+            sunDownStartTime: sundownComponents,
+            sunDownTransitionTime: 60,
+            bedTime: bedTimeComponents)
     }
 }

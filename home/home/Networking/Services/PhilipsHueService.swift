@@ -30,7 +30,11 @@ struct AlarmRecurrence : OptionSetType {
         AlarmRecurrence.Sunday]
 }
 
-class PhilipsHueService {
+protocol HueService {
+    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, transitionTime: NSTimeInterval)
+}
+
+class PhilipsHueService : HueService {
     var networkClient : Networking
     var philipsHueConnection : PhilipsHueConnection
     var philipsHueCacheWrapper : CacheWrapper
@@ -41,23 +45,8 @@ class PhilipsHueService {
         self.philipsHueCacheWrapper = philipsHueCacheWrapper
     }
     
-    func scheduleDailyRecurringAlarmForTime(time: NSDate, timeZone: NSTimeZone, lightColor: UIColor, transitionTime: Int) {
-        let calendar = NSCalendar(calendarIdentifier:NSCalendarIdentifierGregorian)
-        calendar?.timeZone = timeZone
-        
-        let dateComponents = calendar?.components([.Hour, .Minute, .Second], fromDate:time)
-        if let components = dateComponents {
-            setScheduleForColor(lightColor,
-                transitionTimeInMs: transitionTime,
-                hours: components.hour,
-                mins: components.minute,
-                seconds: components.second)
-        } else {
-            print("Error: Failed to schedule alarm because components do not exist.")
-        }
-    }
-    
-    private func setScheduleForColor(forColor: UIColor, transitionTimeInMs: Int, hours: Int, mins: Int, seconds: Int) {
+    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, transitionTime: NSTimeInterval) {
+        let transitionTimeInMs = transitionTime * 100
         let hue = forColor.toHSLAComponents().h * 65535.0
         if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
             username = self.philipsHueCacheWrapper.getBridgeInformation().username {

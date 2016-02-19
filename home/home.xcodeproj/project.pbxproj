@@ -27,6 +27,8 @@
 		EE97F72C1C5DB96200C3ED77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE97F72B1C5DB96200C3ED77 /* Assets.xcassets */; };
 		EE97F72F1C5DB96200C3ED77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE97F72D1C5DB96200C3ED77 /* LaunchScreen.storyboard */; };
 		EE97F7571C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7561C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m */; };
+		EEAC78591C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC78581C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift */; };
+		EEAC785B1C75677400DD6E85 /* MockPhilipsHueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC785A1C75677400DD6E85 /* MockPhilipsHueService.swift */; };
 		EEBF37C21C5EC70A005E0FAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C11C5EC70A005E0FAF /* UIKit.framework */; };
 		EEBF37C41C5EC710005E0FAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C31C5EC710005E0FAF /* Foundation.framework */; };
 		EEBF37C61C5EC987005E0FAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */; };
@@ -132,6 +134,8 @@
 		EE97F7531C5DBAAE00C3ED77 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
 		EE97F7551C5DBB5C00C3ED77 /* home-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "home-Bridging-Header.h"; sourceTree = "<group>"; };
 		EE97F7561C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Objective-CBridgingHeader.m"; sourceTree = "<group>"; };
+		EEAC78581C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueLightsManagerSpec.swift; sourceTree = "<group>"; };
+		EEAC785A1C75677400DD6E85 /* MockPhilipsHueService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockPhilipsHueService.swift; path = ../../../Home/homeTests/Networking/MockPhilipsHueService.swift; sourceTree = "<group>"; };
 		EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EEBF37C11C5EC70A005E0FAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EEBF37C31C5EC710005E0FAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -234,6 +238,7 @@
 		EE4B36541C6FD5D200C7B88F /* homeTests */ = {
 			isa = PBXGroup;
 			children = (
+				EEAC78561C7566D400DD6E85 /* Home Connections */,
 				EE4B36581C6FD72100C7B88F /* Networking */,
 				EE4B36551C6FD5D200C7B88F /* Utilities */,
 				EE4B36601C6FDCCF00C7B88F /* Info.plist */,
@@ -256,6 +261,7 @@
 				EE4B36591C6FD73800C7B88F /* PhilipsHueServiceSpec.swift */,
 				EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */,
 				EE260C141C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift */,
+				EEAC785A1C75677400DD6E85 /* MockPhilipsHueService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -317,6 +323,23 @@
 				EE97F7531C5DBAAE00C3ED77 /* HueSDK_iOS.framework */,
 			);
 			path = Externals;
+			sourceTree = "<group>";
+		};
+		EEAC78561C7566D400DD6E85 /* Home Connections */ = {
+			isa = PBXGroup;
+			children = (
+				EEAC78571C7566D400DD6E85 /* Lights */,
+			);
+			name = "Home Connections";
+			path = "../../Home/homeTests/Home Connections";
+			sourceTree = "<group>";
+		};
+		EEAC78571C7566D400DD6E85 /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				EEAC78581C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift */,
+			);
+			path = Lights;
 			sourceTree = "<group>";
 		};
 		EEDF43F81C7289D2008E9472 /* Home Connections */ = {
@@ -693,6 +716,8 @@
 				EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */,
 				EE260C151C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift in Sources */,
 				EE260C121C7297E7004202C1 /* PhilipsHueServiceSpec.swift in Sources */,
+				EEAC785B1C75677400DD6E85 /* MockPhilipsHueService.swift in Sources */,
+				EEAC78591C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift in Sources */,
 				EE260C131C729898004202C1 /* TestInjector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

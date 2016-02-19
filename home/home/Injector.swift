@@ -35,7 +35,7 @@ public class Injector: NSObject {
         
         // Managers
         container.register(PhilipsHueLightsManager.self) { r in
-            PhilipsHueLightsManager(philipsHueService: r.resolve(PhilipsHueService.self)!)
+            PhilipsHueLightsManager(philipsHueService: r.resolve(HueService.self)!)
         }
         
         // Networking and Services
@@ -43,7 +43,7 @@ public class Injector: NSObject {
             NetworkClient()
         }
         
-        container.register(PhilipsHueService.self) { r in
+        container.register(HueService.self) { r in
             PhilipsHueService(networking: r.resolve(Networking.self)!,
                 philipsHueConnection: r.resolve(PhilipsHueConnection.self)!,
                 philipsHueCacheWrapper: PhilipsHueCacheWrapper())

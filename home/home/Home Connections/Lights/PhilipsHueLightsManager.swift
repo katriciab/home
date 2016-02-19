@@ -11,15 +11,33 @@ import DynamicColor
 
 class PhilipsHueLightsManager {
     
-    var philipsHueService : PhilipsHueService
+    var hueService : HueService
     
-    init(philipsHueService: PhilipsHueService) {
-        self.philipsHueService = philipsHueService
+    init(philipsHueService: HueService) {
+        self.hueService = philipsHueService
     }
     
-    func scheduleCircadianLights(wakeUpTime: NSDateComponents, wakeUpTransitionTime: Int, sunDownStartTime: NSDateComponents, sunDownTransitionTime:Int, bedTime:NSDateComponents) {
+    func scheduleCircadianLights(wakeUpTime: NSDateComponents, wakeUpTransitionTime: NSTimeInterval, sunDownStartTime: NSDateComponents, sunDownTransitionTime:NSTimeInterval, bedTime:NSDateComponents) {
         // wake - transition to brightness a minute before hand to full brightness of color 1
         // sundown - transition to dark around this time for an hour
+        self.scheduleWakeUp(wakeUpTime, wakeUpTransitionTime: wakeUpTransitionTime)
+    }
+    
+    private func scheduleWakeUp(wakeUpTime: NSDateComponents, wakeUpTransitionTime: NSTimeInterval) {
+        let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        
+        if let calendar = gregorianCalendar {
+            let date = calendar.dateFromComponents(wakeUpTime)
+            let newDate = date!.dateByAddingTimeInterval(-wakeUpTransitionTime);
+            
+            let newComponents = calendar.components([.Hour, .Minute, .Second], fromDate: newDate);
+            
+            self.hueService.scheduleDailyRecurringAlarmForHours(newComponents.hour,
+                mins: newComponents.minute,
+                seconds: newComponents.second,
+                forColor: ColorPalette.halogen(),
+                transitionTime: wakeUpTransitionTime)
+        }
     }
     
     func removeAllSchedules() {

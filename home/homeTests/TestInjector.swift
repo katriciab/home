@@ -15,7 +15,7 @@ class TestInjector {
     static let container = Container(parent:Injector.container) { container in
         
         // Services
-        container.register(PhilipsHueService.self, name: "test") { r in
+        container.register(HueService.self, name: "test") { r in
             PhilipsHueService(networking: r.resolve(Networking.self, name: "mock")!,
                 philipsHueConnection: r.resolve(PhilipsHueConnection.self)!,
                 philipsHueCacheWrapper: MockPhilipsHueCacheWrapper())
