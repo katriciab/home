@@ -127,6 +127,9 @@ class PhilipsHueConnection : PHPushLinkDelegate {
         if (self.phHueSDK.localConnected()) {
             print("Hue -> Connection made")
             self.connectionState = .Authenticated
+            
+            let cache = PHBridgeResourcesReader.readBridgeResourcesCache()
+            print("Bridge time \(cache.bridgeConfiguration.time) and local time \(cache.bridgeConfiguration.localTime)");
         } else {
             print("Hue -> No connection")
             self.connectionState = .NotConnected

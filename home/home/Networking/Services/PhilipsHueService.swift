@@ -31,7 +31,7 @@ struct AlarmRecurrence : OptionSetType {
 }
 
 protocol HueService {
-    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, transitionTime: NSTimeInterval)
+    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval)
 }
 
 class PhilipsHueService : HueService {
@@ -45,13 +45,26 @@ class PhilipsHueService : HueService {
         self.philipsHueCacheWrapper = philipsHueCacheWrapper
     }
     
-    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, transitionTime: NSTimeInterval) {
+    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
         let transitionTimeInMs = transitionTime * 100
         let hue = forColor.toHSLAComponents().h * 65535.0
         if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
             username = self.philipsHueCacheWrapper.getBridgeInformation().username {
                 
                 let urlString = String(format: "http://%@/api/%@/schedules", ipAddress, username)
+                
+                let body = [
+                    "hue" : hue,
+                    "on" : true,
+                    "bri" : brightness,
+                ]
+                
+                let mutableBody = body.mutableCopy() as! NSMutableDictionary
+                
+                if transitionTime > 0 {
+                    mutableBody["transitiontime"] = NSNumber(double: transitionTimeInMs)
+                }
+                
                 let request = [ "status" : "enabled",
                     "description" : "",
                     "name" : "Circadian",
@@ -63,12 +76,7 @@ class PhilipsHueService : HueService {
                     "command" : [
                         "address" : String(format:"/api/%@/groups/0/action", username),
                         "method" : "PUT",
-                        "body" : [
-                            "hue" : hue,
-                            "on" : true,
-                            "bri" : 200,
-                            "transitiontime" : transitionTimeInMs
-                        ]
+                        "body" : mutableBody
                     ]
                 ]
                 

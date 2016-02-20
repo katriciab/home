@@ -35,7 +35,15 @@ class PhilipsHueLightsManager {
             self.hueService.scheduleDailyRecurringAlarmForHours(newComponents.hour,
                 mins: newComponents.minute,
                 seconds: newComponents.second,
-                forColor: ColorPalette.halogen(),
+                forColor: UIColor.redColor(),
+                brightness: 5,
+                transitionTime: wakeUpTransitionTime)
+            
+            self.hueService.scheduleDailyRecurringAlarmForHours(wakeUpTime.hour,
+                mins: wakeUpTime.minute,
+                seconds: wakeUpTime.second,
+                forColor: UIColor.redColor(),
+                brightness: 254,
                 transitionTime: wakeUpTransitionTime)
         }
     }

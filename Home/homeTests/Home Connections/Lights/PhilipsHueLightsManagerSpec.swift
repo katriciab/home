@@ -43,9 +43,15 @@ class PhilipsHueLightsManagerSpec: QuickSpec {
             }
             
             it("should transition to full brightness and color at wake time, using the transition duration") {
-                expect(mockHueService.receivedHours).to(equal(7))
-                expect(mockHueService.receivedMins).to(equal(59))
-                expect(mockHueService.receivedSeconds).to(equal(0))
+                expect(mockHueService.receivedHours).to(contain(7))
+                expect(mockHueService.receivedMins).to(contain(59))
+                expect(mockHueService.receivedSeconds).to(contain(0))
+            }
+            
+            it("should transition to full brightness and color at wake time, using the transition duration") {
+                expect(mockHueService.receivedHours).to(contain(8))
+                expect(mockHueService.receivedMins).to(contain(0))
+                expect(mockHueService.receivedSeconds).to(contain(0))
             }
         }
     }

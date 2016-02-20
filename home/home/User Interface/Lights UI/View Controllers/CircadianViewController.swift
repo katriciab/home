@@ -40,8 +40,8 @@ class CircadianViewController: UIViewController {
     
     @IBAction func fluxDown(sender: AnyObject) {
         let wakeComponents = NSDateComponents()
-        wakeComponents.hour = 8
-        wakeComponents.minute = 0
+        wakeComponents.hour = 21
+        wakeComponents.minute = 8
         wakeComponents.second = 0
         
         let sundownComponents = NSDateComponents()

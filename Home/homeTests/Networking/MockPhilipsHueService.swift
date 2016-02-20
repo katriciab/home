@@ -13,18 +13,29 @@ import UIKit
 class MockPhilipsHueService : HueService {
     var didReceiveScheduleDailyRecurringAlarmForTime = false
     
-    var receivedHours : Int?
-    var receivedMins : Int?
-    var receivedSeconds : Int?
-    var receivedLightColor : UIColor?
-    var receivedTransitionTime : NSTimeInterval?
+    var receivedHours = Set<Int>()
+    var receivedMins = Set<Int>()
+    var receivedSeconds = Set<Int>()
+    var receivedLightColor = Set<UIColor>()
+    var brightness = Set<Int>()
+    var receivedTransitionTime = Set<NSTimeInterval>()
     
-    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, transitionTime: NSTimeInterval) {
+    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
         self.didReceiveScheduleDailyRecurringAlarmForTime = true
-        self.receivedHours = hours
-        self.receivedMins = mins
-        self.receivedSeconds = seconds
-        self.receivedLightColor = forColor
-        self.receivedTransitionTime = transitionTime
+        self.receivedHours.insert(hours)
+        self.receivedMins.insert(mins)
+        self.receivedSeconds.insert(seconds)
+        self.receivedLightColor.insert(forColor)
+        self.brightness.insert(brightness)
+        self.receivedTransitionTime.insert(transitionTime)
+    }
+    
+    func resetMessages() {
+        self.receivedHours.removeAll()
+        self.receivedMins.removeAll()
+        self.receivedSeconds.removeAll()
+        self.receivedLightColor.removeAll()
+        self.brightness.removeAll()
+        self.receivedTransitionTime.removeAll()
     }
 }

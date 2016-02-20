@@ -24,7 +24,7 @@ class PhilipsHueServiceSpec: QuickSpec {
             var body = [String: AnyObject]()
             
             beforeEach {
-                subject.scheduleDailyRecurringAlarmForHours(0, mins: 0, seconds: 0, forColor: UIColor.redColor(), transitionTime: 5)
+                subject.scheduleDailyRecurringAlarmForHours(0, mins: 0, seconds: 0, forColor: UIColor.redColor(), brightness:200, transitionTime: 5)
                 
                 parameters = networkClientMock.receivedParameters
                 command = parameters["command"] as! Dictionary<String, AnyObject>
