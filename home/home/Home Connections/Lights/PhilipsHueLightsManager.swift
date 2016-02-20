@@ -18,9 +18,11 @@ class PhilipsHueLightsManager {
     }
     
     func scheduleCircadianLights(wakeUpTime: NSDateComponents, wakeUpTransitionTime: NSTimeInterval, sunDownStartTime: NSDateComponents, sunDownTransitionTime:NSTimeInterval, bedTime:NSDateComponents) {
-        // wake - transition to brightness a minute before hand to full brightness of color 1
-        // sundown - transition to dark around this time for an hour
         self.scheduleWakeUp(wakeUpTime, wakeUpTransitionTime: wakeUpTransitionTime)
+        
+        self.scheduleSundown(sunDownStartTime, sunDownTransitionTime: sunDownTransitionTime)
+        
+        self.scheduleBedTime(bedTime)
     }
     
     private func scheduleWakeUp(wakeUpTime: NSDateComponents, wakeUpTransitionTime: NSTimeInterval) {
@@ -35,17 +37,35 @@ class PhilipsHueLightsManager {
             self.hueService.scheduleDailyRecurringAlarmForHours(newComponents.hour,
                 mins: newComponents.minute,
                 seconds: newComponents.second,
-                forColor: UIColor.redColor(),
+                forColor: ColorPalette.halogen(),
                 brightness: 5,
                 transitionTime: wakeUpTransitionTime)
             
             self.hueService.scheduleDailyRecurringAlarmForHours(wakeUpTime.hour,
                 mins: wakeUpTime.minute,
                 seconds: wakeUpTime.second,
-                forColor: UIColor.redColor(),
+                forColor: ColorPalette.halogen(),
                 brightness: 254,
                 transitionTime: wakeUpTransitionTime)
         }
+    }
+    
+    private func scheduleSundown(sunDownStartTime: NSDateComponents, sunDownTransitionTime: NSTimeInterval) {
+        self.hueService.scheduleDailyRecurringAlarmForHours(sunDownStartTime.hour,
+            mins: sunDownStartTime.minute,
+            seconds: sunDownStartTime.second,
+            forColor: ColorPalette.tungsten(),
+            brightness: 254,
+            transitionTime: sunDownTransitionTime)
+    }
+
+    private func scheduleBedTime(bedTime: NSDateComponents) {
+        self.hueService.scheduleDailyRecurringAlarmForHours(bedTime.hour,
+            mins: bedTime.minute,
+            seconds: bedTime.second,
+            forColor: ColorPalette.deepTungsten(),
+            brightness: 100,
+            transitionTime: 60)
     }
     
     func removeAllSchedules() {

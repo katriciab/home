@@ -52,6 +52,20 @@ class PhilipsHueLightsManagerSpec: QuickSpec {
                 expect(mockHueService.receivedHours).to(contain(8))
                 expect(mockHueService.receivedMins).to(contain(0))
                 expect(mockHueService.receivedSeconds).to(contain(0))
+                expect(mockHueService.receivedTransitionTime).to(contain(60))
+            }
+            
+            it("should transition to tungsten color at sun down with transtion time") {
+                expect(mockHueService.receivedHours).to(contain(18))
+                expect(mockHueService.receivedMins).to(contain(15))
+                expect(mockHueService.receivedSeconds).to(contain(5))
+                expect(mockHueService.receivedTransitionTime).to(contain(100))
+            }
+            
+            it("should transition to deep tungsten color at bed time with transition time") {
+                expect(mockHueService.receivedHours).to(contain(0))
+                expect(mockHueService.receivedMins).to(contain(0))
+                expect(mockHueService.receivedSeconds).to(contain(0))
             }
         }
     }
