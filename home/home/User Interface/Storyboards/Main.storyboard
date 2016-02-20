@@ -6,8 +6,12 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Audrey-Bold.otf">
+            <string>Audrey-Bold</string>
+        </mutableArray>
         <mutableArray key="Audrey-Normal.otf">
             <string>Audrey-Normal</string>
         </mutableArray>
@@ -139,47 +143,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-bL-sUp" userLabel="Bedtime Background">
+                                <rect key="frame" x="0.0" y="333" width="375" height="333.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfP-rh-xK0" userLabel="Light Fluctuation Graph" customClass="LightFluctuationGraph" customModule="home" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="146.5" width="375" height="375"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzg-JP-wfK">
-                                        <rect key="frame" x="158" y="115" width="58" height="30"/>
-                                        <state key="normal" title="FLUXUP"/>
-                                        <connections>
-                                            <action selector="fluxUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WF5-C6-TkC"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
-                                        <rect key="frame" x="145" y="237" width="84" height="30"/>
-                                        <state key="normal" title="FLUXDOWN"/>
-                                        <connections>
-                                            <action selector="fluxDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ijD-f3-qwz"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IfP-rh-xK0" secondAttribute="height" multiplier="1:1" id="MlC-ao-jzj"/>
-                                    <constraint firstItem="zzg-JP-wfK" firstAttribute="centerX" secondItem="IfP-rh-xK0" secondAttribute="centerX" id="YfO-kO-6vM"/>
-                                    <constraint firstItem="zzg-JP-wfK" firstAttribute="top" secondItem="IfP-rh-xK0" secondAttribute="top" constant="115" id="gEp-Yz-6Cy"/>
-                                    <constraint firstItem="RkP-RC-3UT" firstAttribute="centerX" secondItem="IfP-rh-xK0" secondAttribute="centerX" id="hUl-gv-OWQ"/>
-                                    <constraint firstItem="RkP-RC-3UT" firstAttribute="top" secondItem="IfP-rh-xK0" secondAttribute="top" constant="237" id="voZ-aD-eVp"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SkE-Re-x8k" appends="YES" id="bCb-bE-Heb"/>
+                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
+                                <rect key="frame" x="118" y="599" width="139" height="43"/>
+                                <fontDescription key="fontDescription" name="Audrey-Bold" family="Audrey" pointSize="25"/>
+                                <state key="normal" title="SCHEDULE">
+                                    <color key="titleColor" red="0.94117647058823528" green="0.52156862745098043" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="schedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdd-Na-pWw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.55915392817964271" green="1" blue="0.63647666896971045" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2dc-LZ-acS"/>
+                            <constraint firstItem="NtY-bL-sUp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="9nD-j6-je7"/>
                             <constraint firstAttribute="trailing" secondItem="IfP-rh-xK0" secondAttribute="trailing" id="EeJ-k2-ibR"/>
+                            <constraint firstItem="RkP-RC-3UT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ekL-ee-vlq"/>
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerYWithinMargins" id="fDR-5P-Jc6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RkP-RC-3UT" secondAttribute="bottom" constant="25" id="hEY-2p-mZc"/>
+                            <constraint firstItem="NtY-bL-sUp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lKI-ph-dp8"/>
+                            <constraint firstAttribute="trailing" secondItem="NtY-bL-sUp" secondAttribute="trailing" id="q8R-8i-Rym"/>
+                            <constraint firstAttribute="bottom" secondItem="NtY-bL-sUp" secondAttribute="bottom" id="taR-Cq-TQ9"/>
                         </constraints>
                         <connections>
+                            <outlet property="bedTimeBackground" destination="NtY-bL-sUp" id="S7x-DZ-B8U"/>
                             <outlet property="lightFluctuationGraph" destination="IfP-rh-xK0" id="kes-Ma-pdP"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SkE-Re-x8k">
+                    <connections>
+                        <action selector="circleTapped:" destination="BYZ-38-t0r" id="YFa-Gb-5FC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1164.5" y="252.5"/>
         </scene>

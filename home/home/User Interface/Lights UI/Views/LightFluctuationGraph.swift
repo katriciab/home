@@ -15,6 +15,9 @@ class LightFluctuationGraph: UIView {
     var outerMargin = 50.0
     var lineStrokeColor = UIColor.whiteColor()
     
+    var wakeTimeColor : UIColor?
+    var bedTimeColor : UIColor?
+    
     var centerOrigin : CGPoint {
         get {
             return CGPoint(x: self.frame.width/2.0, y:self.frame.height/2.0)
@@ -23,11 +26,11 @@ class LightFluctuationGraph: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let layer = CAShapeLayer()
+        let dotLayer = CAShapeLayer()
         let dotSize = CGFloat(14.0);
-        layer.path = UIBezierPath(roundedRect: CGRect(x:0 - (dotSize/2), y:0 - (dotSize/2), width:dotSize, height:dotSize), cornerRadius:(dotSize/2)).CGPath
-        layer.fillColor = UIColor.whiteColor().CGColor
-        self.layer.addSublayer(layer)
+        dotLayer.path = UIBezierPath(roundedRect: CGRect(x:0 - (dotSize/2), y:0 - (dotSize/2), width:dotSize, height:dotSize), cornerRadius:(dotSize/2)).CGPath
+        dotLayer.fillColor = UIColor.whiteColor().CGColor
+        self.layer.addSublayer(dotLayer)
         
         let path = getFullPath()
         let pathAnimation = CAKeyframeAnimation(keyPath: "position");
@@ -36,29 +39,38 @@ class LightFluctuationGraph: UIView {
         pathAnimation.fillMode = kCAFillModeForwards
         pathAnimation.removedOnCompletion = false
         pathAnimation.path = path.CGPath;
-        layer.addAnimation(pathAnimation, forKey: "movingAnimation")
+        dotLayer.addAnimation(pathAnimation, forKey: "movingAnimation")
     }
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect);
         
+        if (self.wakeTimeColor == nil) {
+            self.wakeTimeColor = ColorPalette.halogen()
+        }
+        
         let sunPath = getSunPath()
         self.lineStrokeColor.setStroke()
         sunPath.lineWidth = self.lineWidth
-        ColorPalette.tungsten().setFill()
+        self.wakeTimeColor?.setFill()
         sunPath.stroke()
         sunPath.fill()
+        
+        if (self.bedTimeColor == nil) {
+            self.bedTimeColor = ColorPalette.tungsten()
+        }
         
         let moonPath = getMoonPath()
         self.lineStrokeColor.setStroke()
         moonPath.lineWidth = self.lineWidth
-        ColorPalette.candle().setFill()
+        self.bedTimeColor?.setFill()
         moonPath.stroke()
         moonPath.fill()
     }
     
+    // MARK: Bezier Paths
     func getSunPath() -> UIBezierPath {
-        let sunPath = getArcPath(180.degreesToRadians, endAngle: 0)
+        let sunPath = getArcPath(0.degreesToRadians, endAngle: 80)
         return sunPath()
     }
     

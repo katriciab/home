@@ -34,14 +34,16 @@ class CircadianViewController: UIViewController {
     func circadianView() -> CircadianView {
         return self.view as! CircadianView;
     }
-
-    @IBAction func fluxUp(sender: AnyObject) {
+    
+    @IBAction func circleTapped(sender: AnyObject) {
+        print("Circle tapped")
     }
     
-    @IBAction func fluxDown(sender: AnyObject) {
+    @IBAction func schedule(sender: AnyObject) {
+         print("Scheduling something")
         let wakeComponents = NSDateComponents()
-        wakeComponents.hour = 21
-        wakeComponents.minute = 8
+        wakeComponents.hour = 8
+        wakeComponents.minute = 0
         wakeComponents.second = 0
         
         let sundownComponents = NSDateComponents()

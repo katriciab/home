@@ -63,7 +63,7 @@ class PhilipsHueLightsManager {
         self.hueService.scheduleDailyRecurringAlarmForHours(bedTime.hour,
             mins: bedTime.minute,
             seconds: bedTime.second,
-            forColor: ColorPalette.deepTungsten(),
+            forColor: ColorPalette.candle(),
             brightness: 100,
             transitionTime: 60)
     }

@@ -24,7 +24,12 @@ class ColorPalette {
     class func halogen() -> UIColor {
         return UIColor(hex:0xFFF1E0)
     }
+    
     class func candle() -> UIColor {
         return UIColor(hex:0xF0A91A);
+    }
+    
+    class func bedtimeBlue() -> UIColor {
+        return UIColor(hex:0x89ACD3);
     }
 }
