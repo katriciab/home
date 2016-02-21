@@ -20,6 +20,7 @@ class CircadianViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.circadianView().lightFluctuationGraph.animateDot()
     }
     
     override func didReceiveMemoryWarning() {

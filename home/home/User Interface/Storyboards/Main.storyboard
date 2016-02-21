@@ -143,9 +143,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-bL-sUp" userLabel="Bedtime Background">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-bL-sUp" userLabel="Sundown Background">
                                 <rect key="frame" x="0.0" y="333" width="375" height="333.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvx-gC-ciz" userLabel="Bedtime Background">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.27450980392156865" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfP-rh-xK0" userLabel="Light Fluctuation Graph" customClass="LightFluctuationGraph" customModule="home" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
@@ -158,6 +162,13 @@
                                     <outletCollection property="gestureRecognizers" destination="SkE-Re-x8k" appends="YES" id="bCb-bE-Heb"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5m-ek-qqM" customClass="ExpandingCircleBedTimeView" customModule="home" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="146.5" width="375" height="375"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
                                 <rect key="frame" x="118" y="599" width="139" height="43"/>
                                 <fontDescription key="fontDescription" name="Audrey-Bold" family="Audrey" pointSize="25"/>
@@ -171,10 +182,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.55915392817964271" green="1" blue="0.63647666896971045" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gvx-gC-ciz" secondAttribute="trailing" id="2BK-Tf-TH3"/>
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2dc-LZ-acS"/>
+                            <constraint firstAttribute="bottom" secondItem="Gvx-gC-ciz" secondAttribute="bottom" id="965-Gs-Jt8"/>
                             <constraint firstItem="NtY-bL-sUp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="9nD-j6-je7"/>
+                            <constraint firstItem="Gvx-gC-ciz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Cr9-EF-onD"/>
                             <constraint firstAttribute="trailing" secondItem="IfP-rh-xK0" secondAttribute="trailing" id="EeJ-k2-ibR"/>
+                            <constraint firstItem="b5m-ek-qqM" firstAttribute="width" secondItem="IfP-rh-xK0" secondAttribute="width" id="KYC-LY-o0E"/>
+                            <constraint firstItem="b5m-ek-qqM" firstAttribute="centerY" secondItem="IfP-rh-xK0" secondAttribute="centerY" id="Kqe-IT-IIn"/>
+                            <constraint firstItem="Gvx-gC-ciz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c3W-bl-I6F"/>
+                            <constraint firstItem="b5m-ek-qqM" firstAttribute="height" secondItem="IfP-rh-xK0" secondAttribute="height" id="dia-II-WBz"/>
                             <constraint firstItem="RkP-RC-3UT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ekL-ee-vlq"/>
+                            <constraint firstItem="b5m-ek-qqM" firstAttribute="centerX" secondItem="IfP-rh-xK0" secondAttribute="centerX" id="etW-tU-G99"/>
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerYWithinMargins" id="fDR-5P-Jc6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RkP-RC-3UT" secondAttribute="bottom" constant="25" id="hEY-2p-mZc"/>
                             <constraint firstItem="NtY-bL-sUp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lKI-ph-dp8"/>
@@ -182,8 +201,10 @@
                             <constraint firstAttribute="bottom" secondItem="NtY-bL-sUp" secondAttribute="bottom" id="taR-Cq-TQ9"/>
                         </constraints>
                         <connections>
-                            <outlet property="bedTimeBackground" destination="NtY-bL-sUp" id="S7x-DZ-B8U"/>
+                            <outlet property="bedTimeBackground" destination="Gvx-gC-ciz" id="eFs-nr-ItB"/>
+                            <outlet property="expandedCircleView" destination="b5m-ek-qqM" id="8fG-Hg-JDD"/>
                             <outlet property="lightFluctuationGraph" destination="IfP-rh-xK0" id="kes-Ma-pdP"/>
+                            <outlet property="sundownBackground" destination="NtY-bL-sUp" id="yiC-ou-IJo"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

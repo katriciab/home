@@ -32,6 +32,7 @@
 		EEBF37C21C5EC70A005E0FAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C11C5EC70A005E0FAF /* UIKit.framework */; };
 		EEBF37C41C5EC710005E0FAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C31C5EC710005E0FAF /* Foundation.framework */; };
 		EEBF37C61C5EC987005E0FAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */; };
+		EEBF5CDD1C793B750000A734 /* ExpandingCircleBedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF5CDC1C793B750000A734 /* ExpandingCircleBedTimeView.swift */; };
 		EEC70A761C6F0408005AE073 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A471C6C359E007CE029 /* DynamicColor.framework */; };
 		EEDF43EC1C714739008E9472 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A481C6C359E007CE029 /* Swinject.framework */; };
 		EEDF43EE1C727F34008E9472 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */; };
@@ -139,6 +140,7 @@
 		EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EEBF37C11C5EC70A005E0FAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EEBF37C31C5EC710005E0FAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EEBF5CDC1C793B750000A734 /* ExpandingCircleBedTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandingCircleBedTimeView.swift; path = "../../../../../Home/Home/User Interface/Lights UI/Views/ExpandingCircleBedTimeView.swift"; sourceTree = "<group>"; };
 		EEDF43FA1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueCacheWrapper.swift; sourceTree = "<group>"; };
 		EEDF43FB1C7289D2008E9472 /* PhilipsHueConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueConnection.swift; sourceTree = "<group>"; };
 		EEDF43FC1C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHuePushlinkAuthenticator.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				EEDF44171C7289D2008E9472 /* LightFluctuationGraph.swift */,
 				EEDF44181C7289D2008E9472 /* PushLinkView.swift */,
 				EEDF44191C7289D2008E9472 /* SelectBridgeView.swift */,
+				EEBF5CDC1C793B750000A734 /* ExpandingCircleBedTimeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				EEDF44311C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift in Sources */,
 				EEDF444D1C7289D2008E9472 /* UIStyler.swift in Sources */,
 				EEDF443D1C7289D2008E9472 /* CircadianViewController.swift in Sources */,
+				EEBF5CDD1C793B750000A734 /* ExpandingCircleBedTimeView.swift in Sources */,
 				EE4C8B501C6C4EC6000F4FA9 /* Injector.swift in Sources */,
 				EEDF44481C7289D2008E9472 /* LoadingView.swift in Sources */,
 				EEDF44361C7289D2008E9472 /* PhilipsHueService.swift in Sources */,

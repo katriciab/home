@@ -11,35 +11,66 @@ import UIKit
 @IBDesignable
 class LightFluctuationGraph: UIView {
     
-    var lineWidth = CGFloat(2.0)
-    var outerMargin = 50.0
-    var lineStrokeColor = UIColor.whiteColor()
+    private var lineWidth = CGFloat(2.0)
+    private var outerMargin = 50.0
+    private var lineStrokeColor = UIColor.whiteColor()
+    private var dotSize = 14.0;
+    private var dotLayer : CAShapeLayer!
     
     var wakeTimeColor : UIColor?
     var bedTimeColor : UIColor?
     
-    var centerOrigin : CGPoint {
+    private var centerOrigin : CGPoint {
         get {
             return CGPoint(x: self.frame.width/2.0, y:self.frame.height/2.0)
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let dotLayer = CAShapeLayer()
-        let dotSize = CGFloat(14.0);
-        dotLayer.path = UIBezierPath(roundedRect: CGRect(x:0 - (dotSize/2), y:0 - (dotSize/2), width:dotSize, height:dotSize), cornerRadius:(dotSize/2)).CGPath
-        dotLayer.fillColor = UIColor.whiteColor().CGColor
-        self.layer.addSublayer(dotLayer)
-        
-        let path = getFullPath()
+    func animateDot() {
+        let path = getSunPath()
         let pathAnimation = CAKeyframeAnimation(keyPath: "position");
         pathAnimation.calculationMode = kCAAnimationPaced;
-        pathAnimation.duration = 4.0;
+        pathAnimation.duration = 0.8;
         pathAnimation.fillMode = kCAFillModeForwards
         pathAnimation.removedOnCompletion = false
         pathAnimation.path = path.CGPath;
-        dotLayer.addAnimation(pathAnimation, forKey: "movingAnimation")
+        pathAnimation.delegate = self
+        self.dotLayer = getDotLayer()
+        self.layer.addSublayer(self.dotLayer)
+        self.dotLayer.addAnimation(pathAnimation, forKey: "overAnimation")
+    }
+    
+    func hideDot() {
+        self.dotLayer.removeFromSuperlayer()
+    }
+    
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        let path = getMoonPath()
+        let pathAnimation = CAKeyframeAnimation(keyPath: "position");
+        pathAnimation.calculationMode = kCAAnimationPaced;
+        pathAnimation.duration = 0.8;
+        pathAnimation.fillMode = kCAFillModeForwards
+        pathAnimation.removedOnCompletion = false
+        pathAnimation.path = path.CGPath;
+        self.dotLayer.addAnimation(pathAnimation, forKey: "underAnimation")
+    }
+    
+    func getDotLayer() -> CAShapeLayer {
+        if self.dotLayer == nil {
+            self.dotLayer = CAShapeLayer()
+            
+            let dotSize = CGFloat(self.dotSize)
+            self.dotLayer.path = UIBezierPath(roundedRect: CGRect(x:0 - (dotSize/2),
+                y:0 - (dotSize/2),
+                width:dotSize,
+                height:dotSize),
+                cornerRadius:(dotSize/2)).CGPath
+            self.dotLayer!.fillColor = UIColor.whiteColor().CGColor
+            
+            return self.dotLayer
+        } else {
+            return self.dotLayer
+        }
     }
     
     override func drawRect(rect: CGRect) {
@@ -70,7 +101,7 @@ class LightFluctuationGraph: UIView {
     
     // MARK: Bezier Paths
     func getSunPath() -> UIBezierPath {
-        let sunPath = getArcPath(0.degreesToRadians, endAngle: 80)
+        let sunPath = getArcPath(180.degreesToRadians, endAngle: 0)
         return sunPath()
     }
     
@@ -80,7 +111,7 @@ class LightFluctuationGraph: UIView {
     }
     
     func getFullPath() -> UIBezierPath {
-        let path = getArcPath(0, endAngle: 360.degreesToRadians)
+        let path = getArcPath(180.degreesToRadians, endAngle: 0.degreesToRadians)
         return path()
     }
     

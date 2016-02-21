@@ -30,6 +30,10 @@ class ColorPalette {
     }
     
     class func bedtimeBlue() -> UIColor {
-        return UIColor(hex:0x89ACD3);
+        return UIColor(hex:0x1746D1);
+    }
+    
+    class func sundownBlue() -> UIColor {
+         return UIColor(hex:0x89ACD3);
     }
 }

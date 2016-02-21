@@ -11,10 +11,18 @@ import Foundation
 class CircadianView : UIView {
     
     @IBOutlet weak var lightFluctuationGraph: LightFluctuationGraph!
+    @IBOutlet weak var expandedCircleView: ExpandingCircleBedTimeView!
+    @IBOutlet weak var sundownBackground: UIView!
     @IBOutlet weak var bedTimeBackground: UIView!
     
     override func awakeFromNib() {
+        self.sundownBackground.backgroundColor = ColorPalette.sundownBlue()
         self.bedTimeBackground.backgroundColor = ColorPalette.bedtimeBlue()
     }
     
+    func bedTime() {
+        self.lightFluctuationGraph.hideDot()
+        self.bedTimeBackground.hidden = false;
+        self.expandedCircleView.expand()
+    }
 }
