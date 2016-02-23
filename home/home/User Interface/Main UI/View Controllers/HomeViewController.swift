@@ -24,6 +24,16 @@ class HomeViewController: UIViewController, HasLoadingView, PHConnectionDelegate
         self.philipsHueConnection!.delegate = self
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.setNavigationBarHidden(true, animated: false);
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false);
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

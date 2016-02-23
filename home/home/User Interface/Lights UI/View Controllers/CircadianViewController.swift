@@ -41,7 +41,7 @@ class CircadianViewController: UIViewController {
     }
     
     @IBAction func schedule(sender: AnyObject) {
-         print("Scheduling something")
+        print("Scheduling circadian lights")
         let wakeComponents = NSDateComponents()
         wakeComponents.hour = 8
         wakeComponents.minute = 0

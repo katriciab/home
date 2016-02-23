@@ -22,6 +22,7 @@
 		EE48E1D01C5ECB3100A2305F /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C91C5ECB3100A2305F /* DispatchQueueLogFormatter.m */; };
 		EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */; };
 		EE4C8B501C6C4EC6000F4FA9 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4C8B4F1C6C4EC6000F4FA9 /* Injector.swift */; };
+		EE523C0C1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE523C0B1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift */; };
 		EE97F7221C5DB96200C3ED77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */; };
 		EE97F72A1C5DB96200C3ED77 /* home.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7281C5DB96200C3ED77 /* home.xcdatamodeld */; };
 		EE97F72C1C5DB96200C3ED77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE97F72B1C5DB96200C3ED77 /* Assets.xcassets */; };
@@ -125,6 +126,7 @@
 		EE4B36601C6FDCCF00C7B88F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4C8B4F1C6C4EC6000F4FA9 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		EE4C8B531C6D7410000F4FA9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = ../Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		EE523C0B1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewContoller+BackButton.swift"; path = "../../../Home/Home/Utilities/UIViewContoller+BackButton.swift"; sourceTree = "<group>"; };
 		EE97F71E1C5DB96200C3ED77 /* home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE97F7291C5DB96200C3ED77 /* home.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = home.xcdatamodel; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */,
 				EEDF442C1C7289D2008E9472 /* ColorPalette.swift */,
 				EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */,
+				EE523C0B1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				EEDF444D1C7289D2008E9472 /* UIStyler.swift in Sources */,
 				EEDF443D1C7289D2008E9472 /* CircadianViewController.swift in Sources */,
 				EEBF5CDD1C793B750000A734 /* ExpandingCircleBedTimeView.swift in Sources */,
+				EE523C0C1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift in Sources */,
 				EE4C8B501C6C4EC6000F4FA9 /* Injector.swift in Sources */,
 				EEDF44481C7289D2008E9472 /* LoadingView.swift in Sources */,
 				EEDF44361C7289D2008E9472 /* PhilipsHueService.swift in Sources */,
