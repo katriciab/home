@@ -23,6 +23,8 @@
 		EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */; };
 		EE4C8B501C6C4EC6000F4FA9 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4C8B4F1C6C4EC6000F4FA9 /* Injector.swift */; };
 		EE523C0C1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE523C0B1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift */; };
+		EE523C141C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE523C131C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift */; };
+		EE72D90C1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE72D90B1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift */; };
 		EE97F7221C5DB96200C3ED77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */; };
 		EE97F72A1C5DB96200C3ED77 /* home.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7281C5DB96200C3ED77 /* home.xcdatamodeld */; };
 		EE97F72C1C5DB96200C3ED77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE97F72B1C5DB96200C3ED77 /* Assets.xcassets */; };
@@ -127,6 +129,8 @@
 		EE4C8B4F1C6C4EC6000F4FA9 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		EE4C8B531C6D7410000F4FA9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = ../Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		EE523C0B1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewContoller+BackButton.swift"; path = "../../../Home/Home/Utilities/UIViewContoller+BackButton.swift"; sourceTree = "<group>"; };
+		EE523C131C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircadianLightForTimeUtility.swift; path = ../../../Home/Home/Utilities/CircadianLightForTimeUtility.swift; sourceTree = "<group>"; };
+		EE72D90B1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircadianLightForTimeUtilitySpec.swift; path = ../../../Home/homeTests/Utilities/CircadianLightForTimeUtilitySpec.swift; sourceTree = "<group>"; };
 		EE97F71E1C5DB96200C3ED77 /* home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE97F7211C5DB96200C3ED77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE97F7291C5DB96200C3ED77 /* home.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = home.xcdatamodel; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */,
+				EE72D90B1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 				EEDF442C1C7289D2008E9472 /* ColorPalette.swift */,
 				EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */,
 				EE523C0B1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift */,
+				EE523C131C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				EEDF442F1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift in Sources */,
 				EE48E1CB1C5ECB3100A2305F /* DDASLLogger.m in Sources */,
 				EEDF444A1C7289D2008E9472 /* RectangleLoadingView.swift in Sources */,
+				EE523C141C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift in Sources */,
 				EEDF44461C7289D2008E9472 /* RootNavigationController.swift in Sources */,
 				EE48E1CE1C5ECB3100A2305F /* DDTTYLogger.m in Sources */,
 				EEDF444F1C7289D2008E9472 /* ColorFadeUtility.swift in Sources */,
@@ -724,6 +731,7 @@
 				EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */,
 				EE260C151C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift in Sources */,
 				EE260C121C7297E7004202C1 /* PhilipsHueServiceSpec.swift in Sources */,
+				EE72D90C1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift in Sources */,
 				EEAC785B1C75677400DD6E85 /* MockPhilipsHueService.swift in Sources */,
 				EEAC78591C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift in Sources */,
 				EE260C131C729898004202C1 /* TestInjector.swift in Sources */,

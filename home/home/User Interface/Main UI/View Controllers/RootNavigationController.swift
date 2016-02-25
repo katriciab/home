@@ -13,8 +13,4 @@ class RootNavigationController : UINavigationController {
         super.viewDidLoad()
         UIStyler.styleNavigationController(self)
     }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
-    }
 }

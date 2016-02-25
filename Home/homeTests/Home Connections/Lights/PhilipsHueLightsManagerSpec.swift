@@ -15,31 +15,16 @@ import Nimble
 class PhilipsHueLightsManagerSpec: QuickSpec {
     
     override func spec() {
-        
-        let philipsHueLightsManager = PhilipsHueLightsManager(philipsHueService: MockPhilipsHueService())
+        let philipsHueLightsManager = PhilipsHueLightsManager(philipsHueService: MockPhilipsHueService(), circadianLightForTimeUtility: CircadianLightForTimeUtility())
         let mockHueService = philipsHueLightsManager.hueService as! MockPhilipsHueService
         
         describe("schedule circadian lights") {
-            let wakeDateComponents = NSDateComponents()
-            wakeDateComponents.hour = 8
-            wakeDateComponents.minute = 0
-            wakeDateComponents.second = 0
-            
-            let sundownDateComponents = NSDateComponents()
-            sundownDateComponents.hour = 18
-            sundownDateComponents.minute = 15
-            sundownDateComponents.second = 5
-            
-            let bedTimeDateComponents = NSDateComponents()
-            bedTimeDateComponents.hour = 0
-            bedTimeDateComponents.minute = 0
-            bedTimeDateComponents.second = 0
             
             beforeEach {
-                philipsHueLightsManager.scheduleCircadianLights(wakeDateComponents, wakeUpTransitionTime: 60,
-                    sunDownStartTime: sundownDateComponents,
+                philipsHueLightsManager.scheduleCircadianLights(
+                    wakeUpTransitionTime: 60,
                     sunDownTransitionTime: 100,
-                    bedTime: bedTimeDateComponents)
+                    bedTimeTransitionTime: 60)
             }
             
             it("should transition to full brightness and color at wake time, using the transition duration") {
@@ -57,8 +42,8 @@ class PhilipsHueLightsManagerSpec: QuickSpec {
             
             it("should transition to tungsten color at sun down with transtion time") {
                 expect(mockHueService.receivedHours).to(contain(18))
-                expect(mockHueService.receivedMins).to(contain(15))
-                expect(mockHueService.receivedSeconds).to(contain(5))
+                expect(mockHueService.receivedMins).to(contain(30))
+                expect(mockHueService.receivedSeconds).to(contain(0))
                 expect(mockHueService.receivedTransitionTime).to(contain(100))
             }
             

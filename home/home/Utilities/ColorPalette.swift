@@ -10,7 +10,7 @@ import Foundation
 
 class ColorPalette {
     class func coolGray() -> UIColor {
-        return UIColor(hex:0xE4E3E1)
+        return UIColor(hex:0xC9CCCB)
     }
     
     class func tungsten() -> UIColor {

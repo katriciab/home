@@ -33,9 +33,12 @@ public class Injector: NSObject {
             NotificationPresenter(presenter: r.resolve(RootNavigationController.self)!)
         }
         
+        
         // Managers
         container.register(PhilipsHueLightsManager.self) { r in
-            PhilipsHueLightsManager(philipsHueService: r.resolve(HueService.self)!)
+            PhilipsHueLightsManager(
+                philipsHueService: r.resolve(HueService.self)!,
+                circadianLightForTimeUtility: r.resolve(CircadianLightForTimeUtility.self)!)
         }
         
         // Networking and Services
@@ -48,6 +51,11 @@ public class Injector: NSObject {
                 philipsHueConnection: r.resolve(PhilipsHueConnection.self)!,
                 philipsHueCacheWrapper: PhilipsHueCacheWrapper())
         }
+        
+        // Utilities
+        container.register(CircadianLightForTimeUtility.self) { r in
+            return CircadianLightForTimeUtility()
+        }.inObjectScope(.Container)
         
         // Philips Hue
         container.register(PHHueSDK.self) { _ in

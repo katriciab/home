@@ -15,5 +15,12 @@ class UIStyler {
         navigationController.navigationBar.translucent = true
         navigationController.view.backgroundColor = UIColor.clearColor()
         navigationController.navigationBar.tintColor = UIColor.whiteColor()
+        
+        if let font = UIFont(name: "Audrey", size: 16) {
+            UINavigationBar.appearance().titleTextAttributes = [
+                NSFontAttributeName : font,
+                NSForegroundColorAttributeName : UIColor.whiteColor()
+            ]
+        }
     }
 }
