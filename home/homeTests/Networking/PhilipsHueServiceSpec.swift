@@ -24,7 +24,12 @@ class PhilipsHueServiceSpec: QuickSpec {
             var body = [String: AnyObject]()
             
             beforeEach {
-                subject.scheduleDailyRecurringAlarmForHours(0, mins: 0, seconds: 0, forColor: UIColor.redColor(), brightness:200, transitionTime: 5)
+                subject.scheduleDailyRecurringAlarmForHours(0,
+                    mins: 0,
+                    seconds: 0,
+                    forColor: UIColor.redColor(),
+                    brightness:200,
+                    transitionTime: 5)
                 
                 parameters = networkClientMock.receivedParameters
                 command = parameters["command"] as! Dictionary<String, AnyObject>
@@ -40,11 +45,15 @@ class PhilipsHueServiceSpec: QuickSpec {
             }
             
             it("should send light hue color information") {
-                expect(body["hue"] as? Double).to(equal(0.0))
+                expect(body["hue"] as? Int).to(equal(0))
+            }
+            
+            it("should set saturation based on rgb") {
+                expect(body["sat"] as? Int).to(equal(254))
             }
             
             it("should set transition time in milliseconds") {
-                expect(body["transitiontime"] as? Int).to(equal(500))
+                expect(body["transitiontime"] as? Int).to(equal(50))
             }
         }
     }

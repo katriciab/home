@@ -46,8 +46,9 @@ class PhilipsHueService : HueService {
     }
     
     func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
-        let transitionTimeInMs = transitionTime * 100
-        let hue = forColor.toHSLAComponents().h * 65535.0
+        let transitionTimeInMs = transitionTime * 10
+        let hue = Int(forColor.toHSLAComponents().h * 65535.0)
+        let sat = Int(forColor.toHSLAComponents().s * 254)
         if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
             username = self.philipsHueCacheWrapper.getBridgeInformation().username {
                 
@@ -55,6 +56,7 @@ class PhilipsHueService : HueService {
                 
                 let body = [
                     "hue" : hue,
+                    "sat" : sat,
                     "on" : true,
                     "bri" : brightness,
                 ]
