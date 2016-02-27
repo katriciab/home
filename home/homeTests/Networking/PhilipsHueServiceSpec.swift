@@ -44,12 +44,9 @@ class PhilipsHueServiceSpec: QuickSpec {
                 expect(networkClientMock.receivedParameters["localtime"] as? String).to(equal("W127/T00:00:00"))
             }
             
-            it("should send light hue color information") {
-                expect(body["hue"] as? Int).to(equal(0))
-            }
-            
-            it("should set saturation based on rgb") {
-                expect(body["sat"] as? Int).to(equal(254))
+            it("should send light xy color information for light bulb model") {
+                let light = PHUtilities.calculateXY(UIColor.redColor(), forModel: "LCT007")
+                expect(body["xy"] as? [CGFloat]).to(equal([CGFloat(light.x), CGFloat(light.y)]))
             }
             
             it("should set transition time in milliseconds") {

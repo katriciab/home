@@ -9,7 +9,8 @@
 import UIKit
 
 protocol CacheWrapper {
-    func getBridgeInformation() -> (username : String?, ipAddress : String?);
+    func getBridgeInformation() -> (username : String?, ipAddress : String?)
+    func getAllLights() -> [PHLight]
 }
 
 class PhilipsHueCacheWrapper: CacheWrapper {
@@ -17,5 +18,15 @@ class PhilipsHueCacheWrapper: CacheWrapper {
     func getBridgeInformation() -> (username : String?, ipAddress : String?) {
         let cache = PHBridgeResourcesReader.readBridgeResourcesCache()
         return (cache.bridgeConfiguration.username, cache.bridgeConfiguration.ipaddress)
+    }
+    
+    func getAllLights() -> [PHLight] {
+        var lights = [PHLight]()
+        let cache = PHBridgeResourcesReader.readBridgeResourcesCache()
+        let myLights = cache.lights;
+        for (_, value) in myLights {
+            lights.append(value as! PHLight)
+        }
+        return lights
     }
 }

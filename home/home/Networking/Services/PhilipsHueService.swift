@@ -47,42 +47,42 @@ class PhilipsHueService : HueService {
     
     func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
         let transitionTimeInMs = transitionTime * 10
-        let hue = Int(forColor.toHSLAComponents().h * 65535.0)
-        let sat = Int(forColor.toHSLAComponents().s * 254)
         if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
             username = self.philipsHueCacheWrapper.getBridgeInformation().username {
                 
-                let urlString = String(format: "http://%@/api/%@/schedules", ipAddress, username)
-                
-                let body = [
-                    "hue" : hue,
-                    "sat" : sat,
-                    "on" : true,
-                    "bri" : brightness,
-                ]
-                
-                let mutableBody = body.mutableCopy() as! NSMutableDictionary
-                
-                if transitionTime > 0 {
-                    mutableBody["transitiontime"] = NSNumber(double: transitionTimeInMs)
-                }
-                
-                let request = [ "status" : "enabled",
-                    "description" : "",
-                    "name" : "Circadian",
-                    "localtime" : recurringTimeInLocalTime(hours: hours,
-                        mins: mins,
-                        seconds: seconds,
-                        recurrences: AlarmRecurrence.Everyday
-                    ),
-                    "command" : [
-                        "address" : String(format:"/api/%@/groups/0/action", username),
-                        "method" : "PUT",
-                        "body" : mutableBody
+                for light in self.philipsHueCacheWrapper.getAllLights() {
+                    let lightModel = light.modelNumber
+                    let lightColorPoint = PHUtilities.calculateXY(forColor, forModel: lightModel)
+                    let body = [
+                        "xy" : [lightColorPoint.x, lightColorPoint.y],
+                        "on" : true,
+                        "bri" : brightness,
                     ]
-                ]
-                
-                self.networkClient.post(urlString, parameters:request as! [String : AnyObject])
+                    
+                    let mutableBody = body.mutableCopy() as! NSMutableDictionary
+                    
+                    if transitionTime > 0 {
+                        mutableBody["transitiontime"] = NSNumber(double: transitionTimeInMs)
+                    }
+                    
+                    let request = [ "status" : "enabled",
+                        "description" : "",
+                        "name" : "Welcome Home Circadian Lights",
+                        "localtime" : recurringTimeInLocalTime(hours: hours,
+                            mins: mins,
+                            seconds: seconds,
+                            recurrences: AlarmRecurrence.Everyday
+                        ),
+                        "command" : [
+                            "address" : String(format:"/api/%@/lights/%@/state", username, light.identifier),
+                            "method" : "PUT",
+                            "body" : mutableBody
+                        ]
+                    ]
+                    
+                    let urlString = String(format: "http://%@/api/%@/schedules", ipAddress, username)
+                    self.networkClient.post(urlString, parameters:request as! [String : AnyObject])
+                }
         }
     }
     

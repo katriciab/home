@@ -12,9 +12,21 @@ import UIKit
 
 class MockPhilipsHueCacheWrapper: CacheWrapper {
     
-    var didReceiveGetBridgeInformation = false;
+    var didReceiveGetBridgeInformation = false
     func getBridgeInformation() -> (username: String?, ipAddress: String?) {
         self.didReceiveGetBridgeInformation = true
         return ("Fake Username", "Fake IP Address")
+    }
+    
+    var didReceiveGetAllLights = false
+    var returnedLights = [PHLight]()
+    func getAllLights() -> [PHLight] {
+        self.didReceiveGetAllLights = true
+        
+        let light = PHLight()
+        light.identifier = "Identifier"
+        light.modelNumber = "LCT007"
+        self.returnedLights.append(light)
+        return self.returnedLights
     }
 }
