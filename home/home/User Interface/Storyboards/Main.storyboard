@@ -176,7 +176,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
                                 <rect key="frame" x="118" y="599" width="139" height="43"/>
                                 <fontDescription key="fontDescription" name="Audrey-Bold" family="Audrey" pointSize="25"/>
                                 <state key="normal" title="SCHEDULE">
@@ -186,7 +186,7 @@
                                     <action selector="schedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdd-Na-pWw"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-7I-lxW" userLabel="Sundown Time Container">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-7I-lxW" userLabel="Sundown Time Container">
                                 <rect key="frame" x="0.0" y="146" width="326" height="188"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bg7-6x-vf8" userLabel="Line View">
@@ -196,7 +196,7 @@
                                             <constraint firstAttribute="width" constant="1" id="NPz-Lk-1nJ"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwt-1M-7Mf" userLabel="6:30 PM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwt-1M-7Mf" userLabel="Sundown Time Label">
                                         <rect key="frame" x="274" y="0.0" width="52" height="31"/>
                                         <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="15"/>
                                         <state key="normal" title="6:30 PM">
@@ -213,10 +213,10 @@
                                     <constraint firstItem="cwt-1M-7Mf" firstAttribute="top" secondItem="qCd-7I-lxW" secondAttribute="top" id="WWC-ws-YTY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmL-4v-nK7" userLabel="Wake Up Time Container">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmL-4v-nK7" userLabel="Wake Up Time Container">
                                 <rect key="frame" x="49" y="333" width="326" height="188"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-BH-fc1" userLabel="6:30 PM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-BH-fc1" userLabel="Hidden Wake Up Time Label">
                                         <rect key="frame" x="0.0" y="157" width="53" height="31"/>
                                         <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="15"/>
                                         <state key="normal" title="8:00 AM">
@@ -240,11 +240,19 @@
                                     <constraint firstItem="tQf-BH-fc1" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="ugz-IZ-7jN"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rO-Fy-Maj" userLabel="Real Wake Up Time Label">
+                                <rect key="frame" x="49" y="490" width="53" height="31"/>
+                                <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="15"/>
+                                <state key="normal" title="8:00 AM">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.78823529411764703" green="1" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gvx-gC-ciz" secondAttribute="trailing" id="2BK-Tf-TH3"/>
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2dc-LZ-acS"/>
+                            <constraint firstItem="5rO-Fy-Maj" firstAttribute="bottom" secondItem="hmL-4v-nK7" secondAttribute="bottom" id="3db-zl-QRs"/>
                             <constraint firstItem="hmL-4v-nK7" firstAttribute="trailing" secondItem="IfP-rh-xK0" secondAttribute="trailing" id="67r-IJ-TRv"/>
                             <constraint firstAttribute="bottom" secondItem="Gvx-gC-ciz" secondAttribute="bottom" id="965-Gs-Jt8"/>
                             <constraint firstItem="NtY-bL-sUp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="9nD-j6-je7"/>
@@ -253,6 +261,7 @@
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="trailing" secondItem="qCd-7I-lxW" secondAttribute="trailing" constant="49" id="HeX-u9-QZD"/>
                             <constraint firstItem="b5m-ek-qqM" firstAttribute="width" secondItem="IfP-rh-xK0" secondAttribute="width" id="KYC-LY-o0E"/>
                             <constraint firstItem="b5m-ek-qqM" firstAttribute="centerY" secondItem="IfP-rh-xK0" secondAttribute="centerY" id="Kqe-IT-IIn"/>
+                            <constraint firstItem="5rO-Fy-Maj" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="RIX-N7-q37"/>
                             <constraint firstItem="hmL-4v-nK7" firstAttribute="leading" secondItem="IfP-rh-xK0" secondAttribute="leading" constant="49" id="Sj9-Tz-g6W"/>
                             <constraint firstItem="qCd-7I-lxW" firstAttribute="top" secondItem="IfP-rh-xK0" secondAttribute="top" id="Tr9-a7-Fri"/>
                             <constraint firstItem="Gvx-gC-ciz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c3W-bl-I6F"/>
@@ -273,7 +282,12 @@
                             <outlet property="bedTimeBackground" destination="Gvx-gC-ciz" id="eFs-nr-ItB"/>
                             <outlet property="expandedCircleView" destination="b5m-ek-qqM" id="8fG-Hg-JDD"/>
                             <outlet property="lightFluctuationGraph" destination="IfP-rh-xK0" id="kes-Ma-pdP"/>
+                            <outlet property="sunDownTimeContainer" destination="qCd-7I-lxW" id="egF-lb-5Hi"/>
+                            <outlet property="sunDownTimeLabel" destination="cwt-1M-7Mf" id="77E-HP-ihT"/>
                             <outlet property="sundownBackground" destination="NtY-bL-sUp" id="yiC-ou-IJo"/>
+                            <outlet property="wakeUpLineView" destination="JP4-Eh-bSg" id="JKJ-2h-46s"/>
+                            <outlet property="wakeUpTimeContainer" destination="hmL-4v-nK7" id="Wbr-bP-2r0"/>
+                            <outlet property="wakeUpTimeLabel" destination="5rO-Fy-Maj" id="gLn-NP-9fK"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZM5-EO-jPO">
@@ -307,32 +321,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-Bk-BkA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFJ-Bk-BkA">
                                 <rect key="frame" x="32" y="116" width="267.5" height="60"/>
                                 <fontDescription key="fontDescription" name="Audrey-Normal" family="Audrey" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="back" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhf-lW-8NO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="back" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhf-lW-8NO">
                                 <rect key="frame" x="178" y="170" width="121.5" height="72"/>
                                 <fontDescription key="fontDescription" name="Audrey-Normal" family="Audrey" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="my3-Ys-Put" userLabel="Line View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="my3-Ys-Put" userLabel="Line View">
                                 <rect key="frame" x="0.0" y="242" width="300" height="6"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="6" id="r2i-bz-NE3"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="HOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-It-khS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="HOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-It-khS">
                                 <rect key="frame" x="26" y="268" width="274" height="102"/>
                                 <fontDescription key="fontDescription" name="Audrey-MediumOblique" family="Audrey" pointSize="85"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-wx-grC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-wx-grC">
                                 <rect key="frame" x="118" y="469" width="182" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="iK4-ie-lGJ"/>
@@ -345,14 +359,14 @@
                                     <action selector="lightsButtonTapped:" destination="Brc-yI-n54" eventType="touchUpInside" id="FWk-8L-xkZ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rt-qW-wDU" userLabel="Underline">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rt-qW-wDU" userLabel="Underline">
                                 <rect key="frame" x="118" y="503" width="257" height="3"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="fZt-ag-XYS"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-0E-C2p" userLabel="Loading View" customClass="RectangleLoadingView" customModule="home" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-0E-C2p" userLabel="Loading View" customClass="RectangleLoadingView" customModule="home" customModuleProvider="target">
                                 <rect key="frame" x="118" y="390" width="257" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
