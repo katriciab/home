@@ -60,53 +60,33 @@ class CircadianLightForTimeUtility {
         print("Bed time: \(bedtimeComponents.hour), \(bedtimeComponents.minute), \(bedtimeComponents.second)")
     }
     
-    func isTime(time: NSDateComponents, lessThan otherTime: NSDateComponents) -> Bool {
-        print("Time: \(time.hour), \(time.minute), \(time.second)")
-        print("Other time: \(otherTime.hour), \(otherTime.minute), \(otherTime.second)\n---\n")
-        
-        if time.hour < otherTime.hour {
-            return true
-        } else if time.hour == otherTime.hour {
-            if time.minute < otherTime.minute {
-                return true
-            } else if time.minute == otherTime.minute {
-                if time.second < otherTime.second {
-                    return true
-                } else if time.second == otherTime.second {
-                    return true
-                }
-            }
-        }
-        return false
-    }
-    
     func colorForTime(time: NSDateComponents) -> UIColor {
-        if isTime(wakeComponents, lessThan: bedtimeComponents) {
+        if wakeComponents.isTimeLessThan(bedtimeComponents) {
             // Sleep same day
-            if isTime(midnight, lessThan: time) && isTime(time, lessThan: wakeComponents) {
+            if midnight.isTimeLessThan(time) && time.isTimeLessThan(wakeComponents) {
                 return colorForTimeOfDay(TimeOfDay.BeforeWake)
             
-            } else if isTime(wakeComponents, lessThan:time) && isTime(time, lessThan:sundownComponents ) {
+            } else if wakeComponents.isTimeLessThan(time) && time.isTimeLessThan(sundownComponents ) {
                 return colorForTimeOfDay(TimeOfDay.Wake)
                 
-            } else if isTime(sundownComponents, lessThan: time) && isTime(time, lessThan: bedtimeComponents) {
+            } else if sundownComponents.isTimeLessThan(time) && time.isTimeLessThan(bedtimeComponents) {
                 return colorForTimeOfDay(TimeOfDay.AfterSundown)
                 
-            } else if isTime(bedtimeComponents, lessThan: time) {
+            } else if bedtimeComponents.isTimeLessThan(time) {
                 return colorForTimeOfDay(TimeOfDay.Bedtime)
             }
         } else {
             // Sleep next day
-            if isTime(bedtimeComponents, lessThan: time) && isTime(time, lessThan: wakeComponents) {
+            if bedtimeComponents.isTimeLessThan(time) && time.isTimeLessThan(wakeComponents) {
                 return colorForTimeOfDay(TimeOfDay.BeforeWake)
                 
-            } else if isTime(wakeComponents, lessThan:time) && isTime(time, lessThan:sundownComponents ) {
+            } else if wakeComponents.isTimeLessThan(time) && time.isTimeLessThan(sundownComponents ) {
                 return colorForTimeOfDay(TimeOfDay.Wake)
                 
-            } else if isTime(sundownComponents, lessThan: time) {
+            } else if sundownComponents.isTimeLessThan(time) {
                 return colorForTimeOfDay(TimeOfDay.AfterSundown)
                 
-            } else if isTime(midnight, lessThan: time) && isTime(time, lessThan: bedtimeComponents) {
+            } else if midnight.isTimeLessThan(time) && time.isTimeLessThan(bedtimeComponents) {
                 return colorForTimeOfDay(TimeOfDay.BeforeWake)
             }
         }

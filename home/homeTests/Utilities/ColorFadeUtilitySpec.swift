@@ -20,7 +20,7 @@ class ColorFadeUtilitySpec: QuickSpec {
             
             context("given a number of steps to take") {
                 beforeEach({
-                    colorFadeArray = ColorFadeUtility.colorFade(fromColor: fromColor, toColor: toColor, numberOfSteps: 4)
+                    colorFadeArray = ColorFadeUtility().colorFade(fromColor: fromColor, toColor: toColor, numberOfSteps: 4)
                 })
                 
                 it("should return a list of all the colors in between") {

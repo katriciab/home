@@ -21,6 +21,7 @@ public class Injector: NSObject {
         
         container.registerForStoryboard(CircadianViewController.self) { r, c in
             c.hueLightsManager = r.resolve(PhilipsHueLightsManager.self)
+            c.circadianLightForTimeUtility = r.resolve(CircadianLightForTimeUtility.self)
         }
         
         container.registerForStoryboard(SelectBridgeViewController.self) { r, c in }
@@ -32,7 +33,6 @@ public class Injector: NSObject {
         container.register(NotificationPresenter.self) { r in
             NotificationPresenter(presenter: r.resolve(RootNavigationController.self)!)
         }
-        
         
         // Managers
         container.register(PhilipsHueLightsManager.self) { r in

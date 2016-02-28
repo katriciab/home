@@ -8,68 +8,35 @@
 
 import UIKit
 
+protocol LightFluctuationGraphDelegate {
+    func startBedTimeAnimation()
+}
+
+enum AnimationState {
+    case AnimateTopOnly
+    case AnimateBottom(Int)
+    case AnimateBedtime(Int)
+}
+
 @IBDesignable
 class LightFluctuationGraph: UIView {
+    
+    var delegate : LightFluctuationGraphDelegate?
     
     private var lineWidth = CGFloat(2.0)
     private var outerMargin = 50.0
     private var lineStrokeColor = UIColor.whiteColor()
-    private var dotSize = 14.0;
-    private var dotLayer : CAShapeLayer!
     
     var wakeTimeColor : UIColor?
     var bedTimeColor : UIColor?
     
+    private var dotSize = 14.0;
+    private var dotLayer : CAShapeLayer!
+    var animationState = AnimationState.AnimateTopOnly
+    
     private var centerOrigin : CGPoint {
         get {
             return CGPoint(x: self.frame.width/2.0, y:self.frame.height/2.0)
-        }
-    }
-    
-    func animateDot() {
-        let path = getSunPath()
-        let pathAnimation = CAKeyframeAnimation(keyPath: "position");
-        pathAnimation.calculationMode = kCAAnimationPaced;
-        pathAnimation.duration = 0.8;
-        pathAnimation.fillMode = kCAFillModeForwards
-        pathAnimation.removedOnCompletion = false
-        pathAnimation.path = path.CGPath;
-        pathAnimation.delegate = self
-        self.dotLayer = getDotLayer()
-        self.layer.addSublayer(self.dotLayer)
-        self.dotLayer.addAnimation(pathAnimation, forKey: "overAnimation")
-    }
-    
-    func hideDot() {
-        self.dotLayer.removeFromSuperlayer()
-    }
-    
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        let path = getMoonPath()
-        let pathAnimation = CAKeyframeAnimation(keyPath: "position");
-        pathAnimation.calculationMode = kCAAnimationPaced;
-        pathAnimation.duration = 0.8;
-        pathAnimation.fillMode = kCAFillModeForwards
-        pathAnimation.removedOnCompletion = false
-        pathAnimation.path = path.CGPath;
-        self.dotLayer.addAnimation(pathAnimation, forKey: "underAnimation")
-    }
-    
-    func getDotLayer() -> CAShapeLayer {
-        if self.dotLayer == nil {
-            self.dotLayer = CAShapeLayer()
-            
-            let dotSize = CGFloat(self.dotSize)
-            self.dotLayer.path = UIBezierPath(roundedRect: CGRect(x:0 - (dotSize/2),
-                y:0 - (dotSize/2),
-                width:dotSize,
-                height:dotSize),
-                cornerRadius:(dotSize/2)).CGPath
-            self.dotLayer!.fillColor = UIColor.whiteColor().CGColor
-            
-            return self.dotLayer
-        } else {
-            return self.dotLayer
         }
     }
     
@@ -97,6 +64,95 @@ class LightFluctuationGraph: UIView {
         self.bedTimeColor?.setFill()
         moonPath.stroke()
         moonPath.fill()
+    }
+    
+    func getDotLayer() -> CAShapeLayer {
+        if self.dotLayer == nil {
+            self.dotLayer = CAShapeLayer()
+            
+            let dotSize = CGFloat(self.dotSize)
+            self.dotLayer.path = UIBezierPath(roundedRect: CGRect(x:0 - (dotSize/2),
+                y:0 - (dotSize/2),
+                width:dotSize,
+                height:dotSize),
+                cornerRadius:(dotSize/2)).CGPath
+            self.dotLayer!.fillColor = UIColor.whiteColor().CGColor
+            
+            return self.dotLayer
+        } else {
+            return self.dotLayer
+        }
+    }
+    
+    func hideDot() {
+        self.dotLayer.removeFromSuperlayer()
+    }
+    
+    // MARK: Animate Dot
+    func addAnimationToDotLayer(animation: CAAnimation) {
+        if (self.dotLayer == nil) {
+            self.dotLayer = getDotLayer()
+            self.layer.addSublayer(self.dotLayer)
+        }
+        self.dotLayer.addAnimation(animation, forKey: "underAnimation")
+    }
+    
+    func animateDotToTime(time: NSDateComponents, utility: CircadianLightForTimeUtility) {
+        let calculator = CircularTimeToAngleCalculator()
+        let angle = calculator.angleForCurrentTime(time, withWakeTime: utility.wakeComponents, withSundownTime: utility.sundownComponents, withBedTime: utility.bedtimeComponents)
+        
+        var path = getSunPath()
+        if angle == 360 {
+            self.animationState = .AnimateBedtime(360)
+        } else if angle > 180 {
+            self.animationState = .AnimateBottom(Int(angle) - 180)
+        }  else {
+            self.animationState = .AnimateTopOnly
+            path = getArcPath(Int(angle).degreesToRadians, endAngle: 0)()
+        }
+        
+        let pathAnimation = CAKeyframeAnimation(keyPath: "position");
+        pathAnimation.calculationMode = kCAAnimationPaced;
+        pathAnimation.duration = 1.0;
+        pathAnimation.fillMode = kCAFillModeForwards
+        pathAnimation.removedOnCompletion = false
+        pathAnimation.path = path.CGPath;
+        pathAnimation.delegate = self
+        addAnimationToDotLayer(pathAnimation)
+        
+    }
+    
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        switch self.animationState {
+        case .AnimateBottom(let belowAngle):
+            let path = getArcPath(0, endAngle: belowAngle.degreesToRadians)()
+            let pathAnimation = CAKeyframeAnimation(keyPath: "position");
+            pathAnimation.calculationMode = kCAAnimationPaced;
+            pathAnimation.duration = 0.5;
+            pathAnimation.fillMode = kCAFillModeForwards
+            pathAnimation.removedOnCompletion = false
+            pathAnimation.path = path.CGPath;
+            addAnimationToDotLayer(pathAnimation)
+            break;
+        case .AnimateBedtime(let angleLeft):
+            if angleLeft - 180 > 0 {
+                self.animationState = .AnimateBedtime(angleLeft - 180)
+                let path = getMoonPath()
+                let pathAnimation = CAKeyframeAnimation(keyPath: "position");
+                pathAnimation.calculationMode = kCAAnimationPaced;
+                pathAnimation.duration = 0.8;
+                pathAnimation.fillMode = kCAFillModeForwards
+                pathAnimation.removedOnCompletion = false
+                pathAnimation.path = path.CGPath;
+                pathAnimation.delegate = self
+                addAnimationToDotLayer(pathAnimation)
+            } else {
+                self.delegate?.startBedTimeAnimation()
+            }
+            break;
+        case .AnimateTopOnly:
+            break;
+        }
     }
     
     // MARK: Bezier Paths

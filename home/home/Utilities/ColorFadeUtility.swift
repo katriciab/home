@@ -9,9 +9,9 @@
 import UIKit
 import DynamicColor
 
-public class ColorFadeUtility {
+struct ColorFadeUtility {
     
-    public class func colorFade(fromColor fromColor:UIColor, toColor:UIColor, numberOfSteps: Int) -> [UIColor]{
+    func colorFade(fromColor fromColor:UIColor, toColor:UIColor, numberOfSteps: Int) -> [UIColor]{
         var arrayOfColors = [UIColor]()
         arrayOfColors.append(fromColor)
         

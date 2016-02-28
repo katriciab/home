@@ -37,6 +37,9 @@
 		EEBF37C61C5EC987005E0FAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */; };
 		EEBF5CDD1C793B750000A734 /* ExpandingCircleBedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBF5CDC1C793B750000A734 /* ExpandingCircleBedTimeView.swift */; };
 		EEC70A761C6F0408005AE073 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A471C6C359E007CE029 /* DynamicColor.framework */; };
+		EED08C651C82306F00378C00 /* CircularTimeToAngleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED08C641C82306F00378C00 /* CircularTimeToAngleCalculator.swift */; };
+		EED08C671C8235EC00378C00 /* CircularTimeToAngleCalculatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED08C661C8235EC00378C00 /* CircularTimeToAngleCalculatorSpec.swift */; };
+		EED08C691C823D7100378C00 /* NSDateComponents+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED08C681C823D7100378C00 /* NSDateComponents+Calculations.swift */; };
 		EEDF43EC1C714739008E9472 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A481C6C359E007CE029 /* Swinject.framework */; };
 		EEDF43EE1C727F34008E9472 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */; };
 		EEDF43EF1C727F3E008E9472 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A471C6C359E007CE029 /* DynamicColor.framework */; };
@@ -147,6 +150,9 @@
 		EEBF37C11C5EC70A005E0FAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EEBF37C31C5EC710005E0FAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EEBF5CDC1C793B750000A734 /* ExpandingCircleBedTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandingCircleBedTimeView.swift; path = "../../../../../Home/Home/User Interface/Lights UI/Views/ExpandingCircleBedTimeView.swift"; sourceTree = "<group>"; };
+		EED08C641C82306F00378C00 /* CircularTimeToAngleCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularTimeToAngleCalculator.swift; path = ../../../Home/Home/Utilities/CircularTimeToAngleCalculator.swift; sourceTree = "<group>"; };
+		EED08C661C8235EC00378C00 /* CircularTimeToAngleCalculatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularTimeToAngleCalculatorSpec.swift; path = ../../../Home/homeTests/Utilities/CircularTimeToAngleCalculatorSpec.swift; sourceTree = "<group>"; };
+		EED08C681C823D7100378C00 /* NSDateComponents+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDateComponents+Calculations.swift"; path = "../../../Home/Home/Utilities/NSDateComponents+Calculations.swift"; sourceTree = "<group>"; };
 		EEDF43FA1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueCacheWrapper.swift; sourceTree = "<group>"; };
 		EEDF43FB1C7289D2008E9472 /* PhilipsHueConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueConnection.swift; sourceTree = "<group>"; };
 		EEDF43FC1C7289D2008E9472 /* PhilipsHuePushlinkAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHuePushlinkAuthenticator.swift; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 			children = (
 				EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */,
 				EE72D90B1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift */,
+				EED08C661C8235EC00378C00 /* CircularTimeToAngleCalculatorSpec.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -530,6 +537,8 @@
 				EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */,
 				EE523C0B1C7C1B6300AF5FD5 /* UIViewContoller+BackButton.swift */,
 				EE523C131C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift */,
+				EED08C641C82306F00378C00 /* CircularTimeToAngleCalculator.swift */,
+				EED08C681C823D7100378C00 /* NSDateComponents+Calculations.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -679,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED08C651C82306F00378C00 /* CircularTimeToAngleCalculator.swift in Sources */,
 				EEDF44511C7289D2008E9472 /* NSObject+StringFromClass.swift in Sources */,
 				EE48E1D01C5ECB3100A2305F /* DispatchQueueLogFormatter.m in Sources */,
 				EEDF443E1C7289D2008E9472 /* PushLinkViewController.swift in Sources */,
@@ -698,6 +708,7 @@
 				EEDF444F1C7289D2008E9472 /* ColorFadeUtility.swift in Sources */,
 				EEDF44421C7289D2008E9472 /* LightFluctuationGraph.swift in Sources */,
 				EE97F7221C5DB96200C3ED77 /* AppDelegate.swift in Sources */,
+				EED08C691C823D7100378C00 /* NSDateComponents+Calculations.swift in Sources */,
 				EEDF44491C7289D2008E9472 /* PaddedLabel.swift in Sources */,
 				EEDF44341C7289D2008E9472 /* NetworkClient.swift in Sources */,
 				EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */,
@@ -729,6 +740,7 @@
 			files = (
 				EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */,
 				EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */,
+				EED08C671C8235EC00378C00 /* CircularTimeToAngleCalculatorSpec.swift in Sources */,
 				EE260C151C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift in Sources */,
 				EE260C121C7297E7004202C1 /* PhilipsHueServiceSpec.swift in Sources */,
 				EE72D90C1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift in Sources */,
