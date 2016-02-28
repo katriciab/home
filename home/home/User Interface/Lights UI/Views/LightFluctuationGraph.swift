@@ -108,7 +108,7 @@ class LightFluctuationGraph: UIView {
             self.animationState = .AnimateBottom(Int(angle) - 180)
         }  else {
             self.animationState = .AnimateTopOnly
-            path = getArcPath(Int(angle).degreesToRadians, endAngle: 0)()
+            path = getArcPath(180, endAngle: Int(180 + angle).degreesToRadians)()
         }
         
         let pathAnimation = CAKeyframeAnimation(keyPath: "position");
