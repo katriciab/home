@@ -7,15 +7,35 @@
 //
 
 import UIKit
+import FutureKit
 
-class SchedulesDataController: NSObject {
+class SchedulesDataController {
+    var hueLightsManager : PhilipsHueLightsManager!
+    var schedulesIds : Set<String>!
     
-    func setSchedules() {
+    init(philipsHueLightsManager: PhilipsHueLightsManager) {
+        self.hueLightsManager = philipsHueLightsManager
+        self.schedulesIds = Set<String>() // TODO get from cache
+    }
+    
+    func setCircadianLightSchedules() -> Future<AnyObject> {
+        let p = Promise<AnyObject>()
+        self.hueLightsManager?.scheduleCircadianLights(
+            wakeUpTransitionTime: 60,
+            sunDownTransitionTime: 60,
+            bedTimeTransitionTime: 60)
+            .onSuccess(block: { results in
+                self.schedulesIds = results as? Set<String> // TODO add to cache
+                p.completeWithSuccess(results)
+            })
+            .onFail(block: { error in
+                p.completeWithFail(error)
+            })
         
+        return p.future
     }
     
-    func hasSchedulesBeenSet() -> Bool {
-        return false
+    func isCircadianLightSchedulesSet() -> Bool {
+        return self.schedulesIds.count > 0
     }
-
 }

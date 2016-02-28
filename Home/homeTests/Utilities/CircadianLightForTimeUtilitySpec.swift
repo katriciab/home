@@ -62,7 +62,7 @@ class CircadianLightForTimeUtilitySpec: QuickSpec {
                     time.hour = 20
                     time.minute = 0
                     time.second = 0
-                    expect(circadianLightForTimeUtility.colorForTime(time)).to(equal(ColorPalette.tungsten()))
+                    expect(circadianLightForTimeUtility.colorForTime(time)).to(equal(ColorPalette.deepTungsten()))
                 }
                 
                 it("when time is after bedtime / after midnight, return tungsten") {
@@ -129,7 +129,7 @@ class CircadianLightForTimeUtilitySpec: QuickSpec {
                     time.hour = 20
                     time.minute = 0
                     time.second = 0
-                    expect(circadianLightForTimeUtility.colorForTime(time)).to(equal(ColorPalette.tungsten()))
+                    expect(circadianLightForTimeUtility.colorForTime(time)).to(equal(ColorPalette.deepTungsten()))
                 }
                 
                 it("when time is after bedtime / after midnight, return candle") {

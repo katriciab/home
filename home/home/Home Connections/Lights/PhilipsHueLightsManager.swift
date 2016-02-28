@@ -20,6 +20,14 @@ class PhilipsHueLightsManager {
         self.circadianLightForTimeUtility = circadianLightForTimeUtility
     }
     
+    func syncLightColorToTimeOfDay() {
+        let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        if let calendar = gregorianCalendar {
+            let color = self.circadianLightForTimeUtility.colorForTime(calendar.components([.Hour, .Minute, .Second], fromDate: NSDate()))
+            self.hueService.setLightsToColor(color, brightness: 254, transitionTime: 50)
+        }
+    }
+    
     func turnOffLights() {
         self.hueService.turnOffLights();
     }

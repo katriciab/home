@@ -12,6 +12,7 @@ import Swinject
 class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
     
     var hueLightsManager : PhilipsHueLightsManager!
+    var schedulesDataController : SchedulesDataController!
     var circadianLightForTimeUtility : CircadianLightForTimeUtility!
     
     static func create() -> CircadianViewController {
@@ -36,6 +37,12 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if self.schedulesDataController.isCircadianLightSchedulesSet() {
+            self.circadianView().updateBottomActionLabel(BottomActionState.Sync)
+        } else {
+            self.circadianView().updateBottomActionLabel(BottomActionState.Schedule)
+        }
+        
         self.setupGraphForCurrentTime()
     }
     
@@ -51,13 +58,16 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
         }
     }
     
-    @IBAction func schedule(sender: AnyObject) {
+    @IBAction func bottomActionTapped(sender: AnyObject) {
         print("Scheduling circadian lights")
-        self.hueLightsManager?.scheduleCircadianLights(
-            wakeUpTransitionTime: 60,
-            sunDownTransitionTime: 60,
-            bedTimeTransitionTime: 60
-        )
+        switch(self.circadianView().bottomActionState) {
+        case .Schedule:
+            self.schedulesDataController.setCircadianLightSchedules()
+            break;
+        case .Sync:
+            self.hueLightsManager.syncLightColorToTimeOfDay()
+            break;
+        }
     }
     
     @IBAction func goodNightTapped(sender: AnyObject) {

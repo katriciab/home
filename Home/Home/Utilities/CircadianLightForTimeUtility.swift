@@ -101,7 +101,7 @@ class CircadianLightForTimeUtility {
         case .Wake:
             return ColorPalette.halogen()
         case .AfterSundown:
-            return ColorPalette.tungsten()
+            return ColorPalette.deepTungsten()
         case .Bedtime:
             return ColorPalette.candle()
         }
