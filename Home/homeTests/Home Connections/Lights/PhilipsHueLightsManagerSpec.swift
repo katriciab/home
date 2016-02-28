@@ -28,29 +28,29 @@ class PhilipsHueLightsManagerSpec: QuickSpec {
             }
             
             it("should transition to full brightness and color at wake time, using the transition duration") {
-                expect(mockHueService.receivedHours).to(contain(7))
-                expect(mockHueService.receivedMins).to(contain(59))
-                expect(mockHueService.receivedSeconds).to(contain(0))
+                expect(mockHueService.receivedScheduleHours).to(contain(7))
+                expect(mockHueService.receivedScheduleMins).to(contain(59))
+                expect(mockHueService.receivedScheduleSeconds).to(contain(0))
             }
             
             it("should transition to full brightness and color at wake time, using the transition duration") {
-                expect(mockHueService.receivedHours).to(contain(8))
-                expect(mockHueService.receivedMins).to(contain(0))
-                expect(mockHueService.receivedSeconds).to(contain(0))
-                expect(mockHueService.receivedTransitionTime).to(contain(60))
+                expect(mockHueService.receivedScheduleHours).to(contain(8))
+                expect(mockHueService.receivedScheduleMins).to(contain(0))
+                expect(mockHueService.receivedScheduleSeconds).to(contain(0))
+                expect(mockHueService.receivedScheduleTransitionTime).to(contain(60))
             }
             
             it("should transition to tungsten color at sun down with transtion time") {
-                expect(mockHueService.receivedHours).to(contain(18))
-                expect(mockHueService.receivedMins).to(contain(30))
-                expect(mockHueService.receivedSeconds).to(contain(0))
-                expect(mockHueService.receivedTransitionTime).to(contain(100))
+                expect(mockHueService.receivedScheduleHours).to(contain(18))
+                expect(mockHueService.receivedScheduleMins).to(contain(30))
+                expect(mockHueService.receivedScheduleSeconds).to(contain(0))
+                expect(mockHueService.receivedScheduleTransitionTime).to(contain(100))
             }
             
             it("should transition to deep tungsten color at bed time with transition time") {
-                expect(mockHueService.receivedHours).to(contain(0))
-                expect(mockHueService.receivedMins).to(contain(0))
-                expect(mockHueService.receivedSeconds).to(contain(0))
+                expect(mockHueService.receivedScheduleHours).to(contain(0))
+                expect(mockHueService.receivedScheduleMins).to(contain(0))
+                expect(mockHueService.receivedScheduleSeconds).to(contain(0))
             }
         }
     }

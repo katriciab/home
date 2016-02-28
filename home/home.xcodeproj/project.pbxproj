@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE100B491C82C14400B4DF7D /* CoffeeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE100B481C82C14400B4DF7D /* CoffeeButton.swift */; };
 		EE111A4F1C6C3A41007CE029 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4B1C6C3A0A007CE029 /* Nimble.framework */; };
 		EE111A501C6C3A41007CE029 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4C1C6C3A0A007CE029 /* Quick.framework */; };
 		EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */; };
@@ -105,6 +106,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EE100B481C82C14400B4DF7D /* CoffeeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeButton.swift; path = "../../../../../Home/Home/User Interface/Lights UI/Views/CoffeeButton.swift"; sourceTree = "<group>"; };
 		EE111A471C6C359E007CE029 /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = ../Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
 		EE111A481C6C359E007CE029 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		EE111A4B1C6C3A0A007CE029 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				EEDF44181C7289D2008E9472 /* PushLinkView.swift */,
 				EEDF44191C7289D2008E9472 /* SelectBridgeView.swift */,
 				EEBF5CDC1C793B750000A734 /* ExpandingCircleBedTimeView.swift */,
+				EE100B481C82C14400B4DF7D /* CoffeeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				EEDF444E1C7289D2008E9472 /* UIView+LoadingView.swift in Sources */,
 				EEDF44431C7289D2008E9472 /* PushLinkView.swift in Sources */,
 				EEDF44351C7289D2008E9472 /* Networking.swift in Sources */,
+				EE100B491C82C14400B4DF7D /* CoffeeButton.swift in Sources */,
 				EEDF444C1C7289D2008E9472 /* NotificationPresenter.swift in Sources */,
 				EE97F7571C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m in Sources */,
 				EEDF442F1C7289D2008E9472 /* PhilipsHueCacheWrapper.swift in Sources */,

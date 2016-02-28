@@ -19,8 +19,9 @@ class CircadianView : UIView {
     @IBOutlet weak var sunDownTimeLabel: UIButton!
 
     @IBOutlet weak var wakeUpTimeContainer: UIView!
-    @IBOutlet weak var wakeUpTimeLabel: UIButton!
     @IBOutlet weak var wakeUpLineView: UIView!
+    
+    @IBOutlet weak var coffee: CoffeeButton!
     
     override func awakeFromNib() {
         self.sundownBackground.backgroundColor = ColorPalette.sundownBlue()

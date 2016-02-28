@@ -176,7 +176,7 @@
                                     <action selector="goodNightTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kir-vj-JuT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
                                 <rect key="frame" x="118" y="599" width="139" height="43"/>
                                 <fontDescription key="fontDescription" name="Audrey-Bold" family="Audrey" pointSize="25"/>
                                 <state key="normal" title="SCHEDULE">
@@ -240,6 +240,14 @@
                                     <constraint firstItem="tQf-BH-fc1" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="ugz-IZ-7jN"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frI-Od-3gy" userLabel="Coffee" customClass="CoffeeButton" customModule="home" customModuleProvider="target">
+                                <rect key="frame" x="162.5" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5t8-cW-HsD"/>
+                                    <constraint firstAttribute="width" constant="50" id="FKn-tT-9he"/>
+                                </constraints>
+                                <state key="normal" image="coffee"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.78823529411764703" green="1" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -256,6 +264,7 @@
                             <constraint firstItem="hmL-4v-nK7" firstAttribute="leading" secondItem="IfP-rh-xK0" secondAttribute="leading" constant="49" id="Sj9-Tz-g6W"/>
                             <constraint firstItem="qCd-7I-lxW" firstAttribute="top" secondItem="IfP-rh-xK0" secondAttribute="top" id="Tr9-a7-Fri"/>
                             <constraint firstItem="Gvx-gC-ciz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c3W-bl-I6F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="frI-Od-3gy" secondAttribute="bottom" constant="30" id="cqF-ai-HmE"/>
                             <constraint firstItem="b5m-ek-qqM" firstAttribute="height" secondItem="IfP-rh-xK0" secondAttribute="height" id="dia-II-WBz"/>
                             <constraint firstItem="qCd-7I-lxW" firstAttribute="leading" secondItem="IfP-rh-xK0" secondAttribute="leading" id="dpM-OP-ZC2"/>
                             <constraint firstItem="RkP-RC-3UT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ekL-ee-vlq"/>
@@ -265,12 +274,14 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RkP-RC-3UT" secondAttribute="bottom" constant="25" id="hEY-2p-mZc"/>
                             <constraint firstItem="hmL-4v-nK7" firstAttribute="height" secondItem="IfP-rh-xK0" secondAttribute="height" multiplier="0.5" id="jBg-0O-DC8"/>
                             <constraint firstItem="NtY-bL-sUp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lKI-ph-dp8"/>
+                            <constraint firstItem="frI-Od-3gy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q34-XG-KcR"/>
                             <constraint firstItem="qCd-7I-lxW" firstAttribute="height" secondItem="IfP-rh-xK0" secondAttribute="height" multiplier="0.5" id="q7Y-P7-XoB"/>
                             <constraint firstAttribute="trailing" secondItem="NtY-bL-sUp" secondAttribute="trailing" id="q8R-8i-Rym"/>
                             <constraint firstAttribute="bottom" secondItem="NtY-bL-sUp" secondAttribute="bottom" id="taR-Cq-TQ9"/>
                         </constraints>
                         <connections>
                             <outlet property="bedTimeBackground" destination="Gvx-gC-ciz" id="eFs-nr-ItB"/>
+                            <outlet property="coffee" destination="frI-Od-3gy" id="dxs-xP-KrA"/>
                             <outlet property="expandedCircleView" destination="b5m-ek-qqM" id="8fG-Hg-JDD"/>
                             <outlet property="lightFluctuationGraph" destination="IfP-rh-xK0" id="kes-Ma-pdP"/>
                             <outlet property="sunDownTimeContainer" destination="qCd-7I-lxW" id="egF-lb-5Hi"/>
@@ -519,6 +530,7 @@
     </scenes>
     <resources>
         <image name="Back" width="29" height="29"/>
+        <image name="coffee" width="29" height="29"/>
         <image name="press_smartbridge" width="516" height="475"/>
     </resources>
 </document>
