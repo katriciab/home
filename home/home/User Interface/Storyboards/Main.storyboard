@@ -165,16 +165,16 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IfP-rh-xK0" secondAttribute="height" multiplier="1:1" id="MlC-ao-jzj"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="SkE-Re-x8k" appends="YES" id="bCb-bE-Heb"/>
-                                </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5m-ek-qqM" customClass="ExpandingCircleBedTimeView" customModule="home" customModuleProvider="target">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5m-ek-qqM" customClass="ExpandingCircleBedTimeView" customModule="home" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="goodNightTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kir-vj-JuT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
                                 <rect key="frame" x="118" y="599" width="139" height="43"/>
@@ -216,7 +216,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmL-4v-nK7" userLabel="Wake Up Time Container">
                                 <rect key="frame" x="49" y="333" width="326" height="188"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-BH-fc1" userLabel="Hidden Wake Up Time Label">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-BH-fc1" userLabel="Wake Up Time Label">
                                         <rect key="frame" x="0.0" y="157" width="53" height="31"/>
                                         <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="15"/>
                                         <state key="normal" title="8:00 AM">
@@ -240,19 +240,11 @@
                                     <constraint firstItem="tQf-BH-fc1" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="ugz-IZ-7jN"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rO-Fy-Maj" userLabel="Real Wake Up Time Label">
-                                <rect key="frame" x="49" y="490" width="53" height="31"/>
-                                <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="15"/>
-                                <state key="normal" title="8:00 AM">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.78823529411764703" green="1" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gvx-gC-ciz" secondAttribute="trailing" id="2BK-Tf-TH3"/>
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2dc-LZ-acS"/>
-                            <constraint firstItem="5rO-Fy-Maj" firstAttribute="bottom" secondItem="hmL-4v-nK7" secondAttribute="bottom" id="3db-zl-QRs"/>
                             <constraint firstItem="hmL-4v-nK7" firstAttribute="trailing" secondItem="IfP-rh-xK0" secondAttribute="trailing" id="67r-IJ-TRv"/>
                             <constraint firstAttribute="bottom" secondItem="Gvx-gC-ciz" secondAttribute="bottom" id="965-Gs-Jt8"/>
                             <constraint firstItem="NtY-bL-sUp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="9nD-j6-je7"/>
@@ -261,7 +253,6 @@
                             <constraint firstItem="IfP-rh-xK0" firstAttribute="trailing" secondItem="qCd-7I-lxW" secondAttribute="trailing" constant="49" id="HeX-u9-QZD"/>
                             <constraint firstItem="b5m-ek-qqM" firstAttribute="width" secondItem="IfP-rh-xK0" secondAttribute="width" id="KYC-LY-o0E"/>
                             <constraint firstItem="b5m-ek-qqM" firstAttribute="centerY" secondItem="IfP-rh-xK0" secondAttribute="centerY" id="Kqe-IT-IIn"/>
-                            <constraint firstItem="5rO-Fy-Maj" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="RIX-N7-q37"/>
                             <constraint firstItem="hmL-4v-nK7" firstAttribute="leading" secondItem="IfP-rh-xK0" secondAttribute="leading" constant="49" id="Sj9-Tz-g6W"/>
                             <constraint firstItem="qCd-7I-lxW" firstAttribute="top" secondItem="IfP-rh-xK0" secondAttribute="top" id="Tr9-a7-Fri"/>
                             <constraint firstItem="Gvx-gC-ciz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c3W-bl-I6F"/>
@@ -287,7 +278,6 @@
                             <outlet property="sundownBackground" destination="NtY-bL-sUp" id="yiC-ou-IJo"/>
                             <outlet property="wakeUpLineView" destination="JP4-Eh-bSg" id="JKJ-2h-46s"/>
                             <outlet property="wakeUpTimeContainer" destination="hmL-4v-nK7" id="Wbr-bP-2r0"/>
-                            <outlet property="wakeUpTimeLabel" destination="5rO-Fy-Maj" id="gLn-NP-9fK"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZM5-EO-jPO">
@@ -301,11 +291,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="SkE-Re-x8k">
-                    <connections>
-                        <action selector="circleTapped:" destination="BYZ-38-t0r" id="YFa-Gb-5FC"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1164.5" y="252.5"/>
         </scene>

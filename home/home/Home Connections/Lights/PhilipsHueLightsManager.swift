@@ -19,6 +19,10 @@ class PhilipsHueLightsManager {
         self.circadianLightForTimeUtility = circadianLightForTimeUtility
     }
     
+    func turnOffLights() {
+        self.hueService.turnOffLights();
+    }
+    
     func scheduleCircadianLights(wakeUpTransitionTime wakeUpTransitionTime: NSTimeInterval, sunDownTransitionTime: NSTimeInterval, bedTimeTransitionTime: NSTimeInterval) {
         self.scheduleWakeUp(self.circadianLightForTimeUtility.wakeComponents, wakeUpTransitionTime: wakeUpTransitionTime)
         

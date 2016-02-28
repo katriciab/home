@@ -31,6 +31,7 @@ struct AlarmRecurrence : OptionSetType {
 }
 
 protocol HueService {
+    func turnOffLights()
     func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval)
 }
 
@@ -43,6 +44,20 @@ class PhilipsHueService : HueService {
         self.networkClient = networking
         self.philipsHueConnection = philipsHueConnection
         self.philipsHueCacheWrapper = philipsHueCacheWrapper
+    }
+    
+    func turnOffLights() {
+        if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
+            username = self.philipsHueCacheWrapper.getBridgeInformation().username {
+                for light in self.philipsHueCacheWrapper.getAllLights() {
+                    let body = [
+                        "on" : false,
+                    ]
+                    
+                    let urlString = String(format: "http://%@/api/%@/lights/%@/state", ipAddress, username, light.identifier)
+                    self.networkClient.put(urlString, parameters:body)
+                }
+        }
     }
     
     func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {

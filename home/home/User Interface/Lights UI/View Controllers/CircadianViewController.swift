@@ -51,10 +51,6 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
         }
     }
     
-    @IBAction func circleTapped(sender: AnyObject) {
-        print("Circle tapped")
-    }
-    
     @IBAction func schedule(sender: AnyObject) {
         print("Scheduling circadian lights")
         self.hueLightsManager?.scheduleCircadianLights(
@@ -62,6 +58,10 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
             sunDownTransitionTime: 60,
             bedTimeTransitionTime: 60
         )
+    }
+    
+    @IBAction func goodNightTapped(sender: AnyObject) {
+        self.hueLightsManager.turnOffLights()
     }
     
     // MARK: Light Fluctuation Graph Delegate

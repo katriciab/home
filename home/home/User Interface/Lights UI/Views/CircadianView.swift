@@ -56,5 +56,6 @@ class CircadianView : UIView {
         self.lightFluctuationGraph.hideDot()
         self.bedTimeBackground.hidden = false;
         self.expandedCircleView.expand()
+        self.expandedCircleView.userInteractionEnabled = true
     }
 }

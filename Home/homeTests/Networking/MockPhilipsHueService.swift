@@ -20,6 +20,11 @@ class MockPhilipsHueService : HueService {
     var brightness = Set<Int>()
     var receivedTransitionTime = Set<NSTimeInterval>()
     
+    var didReceiveTurnOffLights = false
+    func turnOffLights() {
+        self.didReceiveTurnOffLights = true
+    }
+    
     func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
         self.didReceiveScheduleDailyRecurringAlarmForTime = true
         self.receivedHours.insert(hours)
