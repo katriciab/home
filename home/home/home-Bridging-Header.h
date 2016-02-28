@@ -3,3 +3,4 @@
 //
 
 #import <HueSDK_iOS/HueSDK.h>
+#import "BackgroundEraser.h"

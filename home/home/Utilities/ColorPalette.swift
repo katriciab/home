@@ -29,6 +29,10 @@ class ColorPalette {
         return UIColor(hex:0xF0A91A);
     }
     
+    class func boldYellow() -> UIColor {
+        return UIColor(hex:0xFECE30);
+    }
+    
     class func bedtimeBlue() -> UIColor {
         return UIColor(hex:0x1746D1);
     }

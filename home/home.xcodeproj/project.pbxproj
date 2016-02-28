@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE100B491C82C14400B4DF7D /* CoffeeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE100B481C82C14400B4DF7D /* CoffeeButton.swift */; };
+		EE100B4F1C82C6B000B4DF7D /* BackgroundEraser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE100B4E1C82C6B000B4DF7D /* BackgroundEraser.m */; };
 		EE111A4F1C6C3A41007CE029 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4B1C6C3A0A007CE029 /* Nimble.framework */; };
 		EE111A501C6C3A41007CE029 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4C1C6C3A0A007CE029 /* Quick.framework */; };
 		EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */; };
@@ -107,6 +108,8 @@
 
 /* Begin PBXFileReference section */
 		EE100B481C82C14400B4DF7D /* CoffeeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeButton.swift; path = "../../../../../Home/Home/User Interface/Lights UI/Views/CoffeeButton.swift"; sourceTree = "<group>"; };
+		EE100B4D1C82C6B000B4DF7D /* BackgroundEraser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundEraser.h; path = "../../../../Home/Home/User Interface/Utilities/BackgroundEraser.h"; sourceTree = "<group>"; };
+		EE100B4E1C82C6B000B4DF7D /* BackgroundEraser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundEraser.m; path = "../../../../Home/Home/User Interface/Utilities/BackgroundEraser.m"; sourceTree = "<group>"; };
 		EE111A471C6C359E007CE029 /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = ../Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
 		EE111A481C6C359E007CE029 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		EE111A4B1C6C3A0A007CE029 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -528,6 +531,8 @@
 				EEDF44271C7289D2008E9472 /* NotificationPresenter.swift */,
 				EEDF44281C7289D2008E9472 /* UIStyler.swift */,
 				EEDF44291C7289D2008E9472 /* UIView+LoadingView.swift */,
+				EE100B4D1C82C6B000B4DF7D /* BackgroundEraser.h */,
+				EE100B4E1C82C6B000B4DF7D /* BackgroundEraser.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -718,6 +723,7 @@
 				EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */,
 				EE48E1CF1C5ECB3100A2305F /* ContextFilterLogFormatter.m in Sources */,
 				EE48E1CD1C5ECB3100A2305F /* DDLog.m in Sources */,
+				EE100B4F1C82C6B000B4DF7D /* BackgroundEraser.m in Sources */,
 				EEDF44401C7289D2008E9472 /* BridgeTableViewCell.swift in Sources */,
 				EEDF44411C7289D2008E9472 /* CircadianView.swift in Sources */,
 				EEDF44441C7289D2008E9472 /* SelectBridgeView.swift in Sources */,
