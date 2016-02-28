@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import FutureKit
+
+enum PhilipsHueServiceError : ErrorType {
+    case GeneralError
+}
 
 struct AlarmRecurrence : OptionSetType {
     let rawValue : Int
@@ -31,9 +36,18 @@ struct AlarmRecurrence : OptionSetType {
 }
 
 protocol HueService {
-    func setLightsToColor(color: UIColor, brightness: Int, transitionTime: NSTimeInterval)
-    func turnOffLights()
-    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval)
+    func setLightsToColor(color: UIColor,
+        brightness: Int,
+        transitionTime: NSTimeInterval) -> Future<AnyObject>
+    
+    func turnOffLights() -> Future<AnyObject>
+    
+    func scheduleDailyRecurringAlarmForHours(hours: Int,
+        mins: Int,
+        seconds: Int,
+        forColor: UIColor,
+        brightness: Int,
+        transitionTime: NSTimeInterval) -> Future<AnyObject>
 }
 
 class PhilipsHueService : HueService {
@@ -41,32 +55,39 @@ class PhilipsHueService : HueService {
     var philipsHueConnection : PhilipsHueConnection
     var philipsHueCacheWrapper : CacheWrapper
     
-    init(networking: Networking, philipsHueConnection: PhilipsHueConnection, philipsHueCacheWrapper: CacheWrapper) {
-        self.networkClient = networking
-        self.philipsHueConnection = philipsHueConnection
-        self.philipsHueCacheWrapper = philipsHueCacheWrapper
+    init(networking: Networking,
+        philipsHueConnection: PhilipsHueConnection,
+        philipsHueCacheWrapper: CacheWrapper) {
+            self.networkClient = networking
+            self.philipsHueConnection = philipsHueConnection
+            self.philipsHueCacheWrapper = philipsHueCacheWrapper
     }
     
-    func setLightsToColor(color: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
-        if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
-            username = self.philipsHueCacheWrapper.getBridgeInformation().username {
-                for light in self.philipsHueCacheWrapper.getAllLights() {
-                    let lightModel = light.modelNumber
-                    let lightColorPoint = PHUtilities.calculateXY(color, forModel: lightModel)
-                    let body = [
-                        "xy" : [lightColorPoint.x, lightColorPoint.y],
-                        "on" : true,
-                        "bri" : brightness,
-                        "transitionTime" : NSNumber(double: transitionTime * 10)
-                    ]
-                    
-                    let urlString = String(format: "http://%@/api/%@/lights/%@/state", ipAddress, username, light.identifier)
-                    self.networkClient.put(urlString, parameters:body)
-                }
-        }
+    func setLightsToColor(color: UIColor,
+        brightness: Int,
+        transitionTime: NSTimeInterval) -> Future<AnyObject> {
+            if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
+                username = self.philipsHueCacheWrapper.getBridgeInformation().username {
+                    for light in self.philipsHueCacheWrapper.getAllLights() {
+                        let lightModel = light.modelNumber
+                        let lightColorPoint = PHUtilities.calculateXY(color, forModel: lightModel)
+                        let body = [
+                            "xy" : [lightColorPoint.x, lightColorPoint.y],
+                            "on" : true,
+                            "bri" : brightness,
+                            "transitionTime" : NSNumber(double: transitionTime * 10)
+                        ]
+                        
+                        let urlString = String(format: "http://%@/api/%@/lights/%@/state", ipAddress, username, light.identifier)
+                        return self.networkClient.put(urlString, parameters:body)
+                    }
+            }
+        let p = Promise<AnyObject>()
+        p.completeWithFail(PhilipsHueServiceError.GeneralError)
+        return p.future
     }
     
-    func turnOffLights() {
+    func turnOffLights() -> Future<AnyObject> {
         if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
             username = self.philipsHueCacheWrapper.getBridgeInformation().username {
                 for light in self.philipsHueCacheWrapper.getAllLights() {
@@ -75,58 +96,74 @@ class PhilipsHueService : HueService {
                     ]
                     
                     let urlString = String(format: "http://%@/api/%@/lights/%@/state", ipAddress, username, light.identifier)
-                    self.networkClient.put(urlString, parameters:body)
+                    return self.networkClient.put(urlString, parameters:body)
                 }
         }
+        
+        let p = Promise<AnyObject>()
+        p.completeWithFail(PhilipsHueServiceError.GeneralError)
+        return p.future
     }
     
-    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
-        let transitionTimeInMs = transitionTime * 10
-        if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
-            username = self.philipsHueCacheWrapper.getBridgeInformation().username {
-                
-                for light in self.philipsHueCacheWrapper.getAllLights() {
-                    let lightModel = light.modelNumber
-                    let lightColorPoint = PHUtilities.calculateXY(forColor, forModel: lightModel)
-                    let body = [
-                        "xy" : [lightColorPoint.x, lightColorPoint.y],
-                        "on" : true,
-                        "bri" : brightness,
-                    ]
+    func scheduleDailyRecurringAlarmForHours(hours: Int,
+        mins: Int,
+        seconds: Int,
+        forColor: UIColor,
+        brightness: Int,
+        transitionTime: NSTimeInterval) -> Future<AnyObject> {
+            let transitionTimeInMs = transitionTime * 10
+            if let ipAddress = self.philipsHueCacheWrapper.getBridgeInformation().ipAddress,
+                username = self.philipsHueCacheWrapper.getBridgeInformation().username {
                     
-                    let mutableBody = body.mutableCopy() as! NSMutableDictionary
-                    
-                    if transitionTime > 0 {
-                        mutableBody["transitiontime"] = NSNumber(double: transitionTimeInMs)
-                    }
-                    
-                    let request = [ "status" : "enabled",
-                        "description" : "",
-                        "name" : "Welcome Home Circadian Lights",
-                        "localtime" : recurringTimeInLocalTime(hours: hours,
-                            mins: mins,
-                            seconds: seconds,
-                            recurrences: AlarmRecurrence.Everyday
-                        ),
-                        "command" : [
-                            "address" : String(format:"/api/%@/lights/%@/state", username, light.identifier),
-                            "method" : "PUT",
-                            "body" : mutableBody
+                    for light in self.philipsHueCacheWrapper.getAllLights() {
+                        let lightModel = light.modelNumber
+                        let lightColorPoint = PHUtilities.calculateXY(forColor, forModel: lightModel)
+                        let body = [
+                            "xy" : [lightColorPoint.x, lightColorPoint.y],
+                            "on" : true,
+                            "bri" : brightness,
                         ]
-                    ]
-                    
-                    let urlString = String(format: "http://%@/api/%@/schedules", ipAddress, username)
-                    self.networkClient.post(urlString, parameters:request as! [String : AnyObject])
-                }
-        }
+                        
+                        let mutableBody = body.mutableCopy() as! NSMutableDictionary
+                        
+                        if transitionTime > 0 {
+                            mutableBody["transitiontime"] = NSNumber(double: transitionTimeInMs)
+                        }
+                        
+                        let request = [ "status" : "enabled",
+                            "description" : "",
+                            "name" : "Welcome Home Circadian Lights",
+                            "localtime" : recurringTimeInLocalTime(hours: hours,
+                                mins: mins,
+                                seconds: seconds,
+                                recurrences: AlarmRecurrence.Everyday
+                            ),
+                            "command" : [
+                                "address" : String(format:"/api/%@/lights/%@/state", username, light.identifier),
+                                "method" : "PUT",
+                                "body" : mutableBody
+                            ]
+                        ]
+                        
+                        let urlString = String(format: "http://%@/api/%@/schedules", ipAddress, username)
+                        return self.networkClient.post(urlString, parameters:request as! [String : AnyObject])
+                    }
+            }
+            
+            let p = Promise<AnyObject>()
+            p.completeWithFail(PhilipsHueServiceError.GeneralError)
+            return p.future
     }
     
     // MARK : Formatting
-    private func recurringTimeInLocalTime(hours hours: Int, mins: Int, seconds: Int, recurrences:[AlarmRecurrence]) -> String {
-        var mask = 0
-        for r in recurrences {
-            mask += r.rawValue
-        }
-        return String(format: "W%03d/T%02d:%02d:%02d", mask, hours, mins, seconds)
+    private func recurringTimeInLocalTime(hours hours: Int,
+        mins: Int,
+        seconds: Int,
+        recurrences:[AlarmRecurrence]) -> String {
+            var mask = 0
+            for r in recurrences {
+                mask += r.rawValue
+            }
+            return String(format: "W%03d/T%02d:%02d:%02d", mask, hours, mins, seconds)
     }
 }

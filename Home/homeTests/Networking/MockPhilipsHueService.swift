@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FutureKit
 
 @testable import home
 
@@ -16,16 +17,18 @@ class MockPhilipsHueService : HueService {
     var receivedLightBrightness = Set<Int>()
     var receivedLightTransitionTime = Set<NSTimeInterval>()
     var didReceiveSetLightsToColor = false
-    func setLightsToColor(color: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
+    func setLightsToColor(color: UIColor, brightness: Int, transitionTime: NSTimeInterval) -> Future<AnyObject> {
         self.didReceiveTurnOffLights = true
         self.receivedLightColor.insert(color)
         self.receivedLightBrightness.insert(brightness)
         self.receivedLightTransitionTime.insert(transitionTime)
+        return Promise().future
     }
     
     var didReceiveTurnOffLights = false
-    func turnOffLights() {
+    func turnOffLights() -> Future<AnyObject> {
         self.didReceiveTurnOffLights = true
+        return Promise().future
     }
     
     var didReceiveScheduleDailyRecurringAlarmForTime = false
@@ -35,7 +38,9 @@ class MockPhilipsHueService : HueService {
     var receivedScheduleLightColor = Set<UIColor>()
     var receivedScheduleBrightness = Set<Int>()
     var receivedScheduleTransitionTime = Set<NSTimeInterval>()
-    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) {
+    var scheduleCount = 0
+    var scheduleSet = Set<String>()
+    func scheduleDailyRecurringAlarmForHours(hours: Int, mins: Int, seconds: Int, forColor: UIColor, brightness: Int, transitionTime: NSTimeInterval) -> Future<AnyObject> {
         self.didReceiveScheduleDailyRecurringAlarmForTime = true
         self.receivedScheduleHours.insert(hours)
         self.receivedScheduleMins.insert(mins)
@@ -43,6 +48,16 @@ class MockPhilipsHueService : HueService {
         self.receivedScheduleLightColor.insert(forColor)
         self.receivedScheduleBrightness.insert(brightness)
         self.receivedScheduleTransitionTime.insert(transitionTime)
+        let p = Promise<AnyObject>()
+        let successJson = [
+            "success" : [
+                "id" : String(scheduleCount)
+            ]
+        ]
+        
+        p.completeWithSuccess(successJson)
+        scheduleCount++
+        return p.future
     }
     
     func resetMessages() {

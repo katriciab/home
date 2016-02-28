@@ -181,16 +181,6 @@
                                     <action selector="goodNightTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kir-vj-JuT"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
-                                <rect key="frame" x="118" y="599" width="139" height="43"/>
-                                <fontDescription key="fontDescription" name="Audrey-Bold" family="Audrey" pointSize="25"/>
-                                <state key="normal" title="SCHEDULE">
-                                    <color key="titleColor" red="0.94117647058823528" green="0.52156862745098043" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="schedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdd-Na-pWw"/>
-                                </connections>
-                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-7I-lxW" userLabel="Sundown Time Container">
                                 <rect key="frame" x="0.0" y="146" width="326" height="188"/>
                                 <subviews>
@@ -245,13 +235,23 @@
                                     <constraint firstItem="tQf-BH-fc1" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="ugz-IZ-7jN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frI-Od-3gy" userLabel="Coffee" customClass="CoffeeButton" customModule="home" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frI-Od-3gy" userLabel="Coffee" customClass="CoffeeButton" customModule="home" customModuleProvider="target">
                                 <rect key="frame" x="162.5" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5t8-cW-HsD"/>
                                     <constraint firstAttribute="width" constant="50" id="FKn-tT-9he"/>
                                 </constraints>
                                 <state key="normal" image="coffee"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT">
+                                <rect key="frame" x="117.5" y="599" width="139" height="43"/>
+                                <fontDescription key="fontDescription" name="Audrey-Bold" family="Audrey" pointSize="25"/>
+                                <state key="normal" title="SCHEDULE">
+                                    <color key="titleColor" red="0.94117647058823528" green="0.52156862745098043" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="schedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdd-Na-pWw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.78823529411764703" green="1" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>

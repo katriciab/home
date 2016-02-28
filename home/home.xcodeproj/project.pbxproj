@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE100B491C82C14400B4DF7D /* CoffeeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE100B481C82C14400B4DF7D /* CoffeeButton.swift */; };
 		EE100B4F1C82C6B000B4DF7D /* BackgroundEraser.m in Sources */ = {isa = PBXBuildFile; fileRef = EE100B4E1C82C6B000B4DF7D /* BackgroundEraser.m */; };
+		EE100B551C83677800B4DF7D /* SchedulesDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE100B541C83677800B4DF7D /* SchedulesDataController.swift */; };
 		EE111A4F1C6C3A41007CE029 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4B1C6C3A0A007CE029 /* Nimble.framework */; };
 		EE111A501C6C3A41007CE029 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE111A4C1C6C3A0A007CE029 /* Quick.framework */; };
 		EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B365B1C6FD9B300C7B88F /* MockNetworkClient.swift */; };
@@ -110,6 +111,7 @@
 		EE100B481C82C14400B4DF7D /* CoffeeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeButton.swift; path = "../../../../../Home/Home/User Interface/Lights UI/Views/CoffeeButton.swift"; sourceTree = "<group>"; };
 		EE100B4D1C82C6B000B4DF7D /* BackgroundEraser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundEraser.h; path = "../../../../Home/Home/User Interface/Utilities/BackgroundEraser.h"; sourceTree = "<group>"; };
 		EE100B4E1C82C6B000B4DF7D /* BackgroundEraser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundEraser.m; path = "../../../../Home/Home/User Interface/Utilities/BackgroundEraser.m"; sourceTree = "<group>"; };
+		EE100B541C83677800B4DF7D /* SchedulesDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesDataController.swift; sourceTree = "<group>"; };
 		EE111A471C6C359E007CE029 /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = ../Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
 		EE111A481C6C359E007CE029 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = ../Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		EE111A4B1C6C3A0A007CE029 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -225,6 +227,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE100B501C83666500B4DF7D /* Data Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE100B541C83677800B4DF7D /* SchedulesDataController.swift */,
+			);
+			name = "Data Controllers";
+			path = "../../Home/Home/Data Controllers";
+			sourceTree = "<group>";
+		};
 		EE48E1BA1C5ECB3100A2305F /* Lumberjack */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +320,7 @@
 		EE97F7201C5DB96200C3ED77 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				EE100B501C83666500B4DF7D /* Data Controllers */,
 				EEDF43F81C7289D2008E9472 /* Home Connections */,
 				EEDF43FF1C7289D2008E9472 /* Models */,
 				EEDF44011C7289D2008E9472 /* Networking */,
@@ -700,6 +712,7 @@
 				EEDF44511C7289D2008E9472 /* NSObject+StringFromClass.swift in Sources */,
 				EE48E1D01C5ECB3100A2305F /* DispatchQueueLogFormatter.m in Sources */,
 				EEDF443E1C7289D2008E9472 /* PushLinkViewController.swift in Sources */,
+				EE100B551C83677800B4DF7D /* SchedulesDataController.swift in Sources */,
 				EE48E1CC1C5ECB3100A2305F /* DDFileLogger.m in Sources */,
 				EEDF44471C7289D2008E9472 /* HomeView.swift in Sources */,
 				EEDF444E1C7289D2008E9472 /* UIView+LoadingView.swift in Sources */,

@@ -19,12 +19,21 @@ class PhilipsHueLightsManagerSpec: QuickSpec {
         let mockHueService = philipsHueLightsManager.hueService as! MockPhilipsHueService
         
         describe("schedule circadian lights") {
+            var returnedSet = Set<String>()
             
             beforeEach {
                 philipsHueLightsManager.scheduleCircadianLights(
                     wakeUpTransitionTime: 60,
                     sunDownTransitionTime: 100,
                     bedTimeTransitionTime: 60)
+                .onSuccess(block: { result in
+                    returnedSet = result as! Set<String>
+                })
+            }
+            
+            it("when everything succeeds, return set of all ids") {
+                let expectedSet = Set(["0", "1", "2", "3"])
+                expect(returnedSet).to(equal(expectedSet))
             }
             
             it("should transition to full brightness and color at wake time, using the transition duration") {

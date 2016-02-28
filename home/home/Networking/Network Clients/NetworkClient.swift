@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 import FutureKit
 
+enum ErrorResponse : ErrorType {
+    case NetworkError
+}
+
 class NetworkClient : Networking {
     
     var manager : Manager
@@ -40,9 +44,32 @@ class NetworkClient : Networking {
                 print(response.data)     // server data
                 print(response.result)   // result of response serialization
                 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                    p.completeWithSuccess(JSON)
+                switch response.result {
+                case .Success(let JSON):
+                    print("Success with JSON: \(JSON)")
+                    if let jsonResult = JSON as? Array<Dictionary<String,AnyObject>> {
+                        if jsonResult[0]["error"] == nil {
+                            p.completeWithSuccess(jsonResult[0])
+                        } else {
+                            print("Success has error JSON: \(JSON)")
+                            p.completeWithFail(ErrorResponse.NetworkError)
+                        }
+                    } else {
+                        if let jsonResult = JSON as? Dictionary<String,AnyObject> {
+                            if jsonResult["error"] == nil {
+                                p.completeWithSuccess(jsonResult)
+                            } else {
+                                print("Success has error JSON: \(JSON)")
+                                p.completeWithFail(ErrorResponse.NetworkError)
+                            }
+                        }
+                    }
+                    break;
+                    
+                case .Failure(let error):
+                    print("Request failed with error: \(error)")
+                    p.completeWithFail(error)
+                    break;
                 }
         }
         
