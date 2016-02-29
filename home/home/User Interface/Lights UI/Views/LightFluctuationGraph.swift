@@ -10,6 +10,7 @@ import UIKit
 
 protocol LightFluctuationGraphDelegate {
     func startBedTimeAnimation()
+    func updateBottomTimeLabelToBedtime()
 }
 
 enum AnimationState {
@@ -133,6 +134,7 @@ class LightFluctuationGraph: UIView {
             pathAnimation.removedOnCompletion = false
             pathAnimation.path = path.CGPath;
             addAnimationToDotLayer(pathAnimation)
+            self.delegate?.updateBottomTimeLabelToBedtime()
             break;
         case .AnimateBedtime(let angleLeft):
             if angleLeft - 180 > 0 {
@@ -146,6 +148,7 @@ class LightFluctuationGraph: UIView {
                 pathAnimation.path = path.CGPath;
                 pathAnimation.delegate = self
                 addAnimationToDotLayer(pathAnimation)
+                self.delegate?.updateBottomTimeLabelToBedtime()
             } else {
                 self.delegate?.startBedTimeAnimation()
             }

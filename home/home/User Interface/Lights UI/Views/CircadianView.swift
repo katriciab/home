@@ -25,6 +25,7 @@ class CircadianView : UIView {
     
     @IBOutlet weak var wakeUpTimeContainer: UIView!
     @IBOutlet weak var wakeUpLineView: UIView!
+    @IBOutlet weak var wakeUpTimeLabel: UIButton!
     
     @IBOutlet weak var bottomActionButton: UIButton!
     @IBOutlet weak var coffee: CoffeeButton!

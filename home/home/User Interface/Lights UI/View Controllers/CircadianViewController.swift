@@ -58,6 +58,7 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
         }
     }
     
+    // MARK: Actions
     @IBAction func bottomActionTapped(sender: AnyObject) {
         print("Scheduling circadian lights")
         switch(self.circadianView().bottomActionState) {
@@ -80,5 +81,9 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
     // MARK: Light Fluctuation Graph Delegate
     func startBedTimeAnimation() {
         self.circadianView().bedTime()
+    }
+    
+    func updateBottomTimeLabelToBedtime() {
+        self.circadianView().wakeUpTimeLabel.setTitle("12:00AM", forState: .Normal)
     }
 }

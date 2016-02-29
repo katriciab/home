@@ -25,6 +25,8 @@
             <string>Audrey-Normal</string>
             <string>Audrey-Normal</string>
             <string>Audrey-Normal</string>
+            <string>Audrey-Normal</string>
+            <string>Audrey-Normal</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -40,33 +42,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-XS-ei9">
-                                <rect key="frame" x="20" y="37" width="335" height="64"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="SELECT YOUR">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="18" name="Audrey-Normal"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="20" name="Didot"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="BRIDGE">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="35" name="Audrey-Normal"/>
-                                            <font key="NSOriginalFont" size="35" name="Audrey-Normal"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT YOUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-sk-LYu">
+                                <rect key="frame" x="20" y="79" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Audrey-Normal" family="Audrey" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRIDGE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-XS-ei9">
+                                <rect key="frame" x="20" y="99.5" width="335" height="42.5"/>
+                                <fontDescription key="fontDescription" name="Audrey-Normal" family="Audrey" pointSize="35"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D2p-Xy-siP">
-                                <rect key="frame" x="0.0" y="121.5" width="375" height="545.5"/>
+                                <rect key="frame" x="0.0" y="162.5" width="375" height="504.5"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.80784313725490198" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BridgeTableViewCell" rowHeight="120" id="wtd-jC-yqb" customClass="BridgeTableViewCell" customModule="home" customModuleProvider="target">
@@ -125,18 +114,29 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.80784313725490198" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hgL-XS-ei9" firstAttribute="top" secondItem="j0s-4j-gul" secondAttribute="bottom" constant="17" id="2sf-dG-gaU"/>
                             <constraint firstAttribute="trailing" secondItem="hgL-XS-ei9" secondAttribute="trailing" constant="20" id="E6T-xo-h0A"/>
+                            <constraint firstItem="BYN-sk-LYu" firstAttribute="top" secondItem="j0s-4j-gul" secondAttribute="bottom" constant="15" id="EgD-Qf-39u"/>
                             <constraint firstAttribute="trailing" secondItem="D2p-Xy-siP" secondAttribute="trailing" id="IFI-eE-1L7"/>
+                            <constraint firstItem="hgL-XS-ei9" firstAttribute="top" secondItem="BYN-sk-LYu" secondAttribute="bottom" id="PET-FX-QdA"/>
+                            <constraint firstAttribute="trailing" secondItem="BYN-sk-LYu" secondAttribute="trailing" constant="20" id="Q6m-ij-QGD"/>
                             <constraint firstItem="hgL-XS-ei9" firstAttribute="leading" secondItem="oYg-vy-dvM" secondAttribute="leading" constant="20" id="cQp-wY-8sR"/>
                             <constraint firstItem="D2p-Xy-siP" firstAttribute="leading" secondItem="oYg-vy-dvM" secondAttribute="leading" id="cce-YC-K6l"/>
                             <constraint firstItem="LXf-Pq-9ay" firstAttribute="top" secondItem="D2p-Xy-siP" secondAttribute="bottom" id="ceb-Ab-Ywa"/>
                             <constraint firstItem="D2p-Xy-siP" firstAttribute="top" secondItem="hgL-XS-ei9" secondAttribute="bottom" constant="20.5" id="qiT-vr-oZj"/>
+                            <constraint firstItem="BYN-sk-LYu" firstAttribute="leading" secondItem="oYg-vy-dvM" secondAttribute="leading" constant="20" id="wl7-Lb-UK6"/>
                         </constraints>
                         <connections>
                             <outlet property="tableView" destination="D2p-Xy-siP" id="3Zx-cC-7hi"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="0GR-fc-7N0">
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="kHT-OZ-Q1C">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="KtI-58-How" id="wxQ-j9-xHC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1UZ-el-sK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -305,6 +305,7 @@
                             <outlet property="sundownBackground" destination="NtY-bL-sUp" id="yiC-ou-IJo"/>
                             <outlet property="wakeUpLineView" destination="JP4-Eh-bSg" id="JKJ-2h-46s"/>
                             <outlet property="wakeUpTimeContainer" destination="hmL-4v-nK7" id="Wbr-bP-2r0"/>
+                            <outlet property="wakeUpTimeLabel" destination="tQf-BH-fc1" id="Z5g-Tx-Ka2"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZM5-EO-jPO">
@@ -562,6 +563,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1f8-nc-f18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="253.5" y="252.5"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="xO6-7Q-Bds">
+            <objects>
+                <tableViewController id="hlo-pe-Ab8" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dbu-oa-lJu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eUj-Sn-caZ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eUj-Sn-caZ" id="8uN-39-DZ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hlo-pe-Ab8" id="2p1-eb-agd"/>
+                            <outlet property="delegate" destination="hlo-pe-Ab8" id="CHB-Kd-SnM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="EOT-AS-k8F"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmt-oo-iGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t8O-JU-b5q">
+            <objects>
+                <navigationController id="rs2-68-zCL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qE5-tq-Uuo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hlo-pe-Ab8" kind="relationship" relationship="rootViewController" id="qLX-a3-BDv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIs-ma-hLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
