@@ -1,5 +1,5 @@
 ### Welcome Home - is a home automation app.
-This app was created for people like myself who love to adorn their home space with lights everywhere, but really wish these lights were like the sun - bright during the day when I want to get things done, but becomes warmer as the sun comes down and as I reach my bed time. So, that's what this app does, and should be coming to the App Store soon, so [keep an eye out](http://twitter.com/katriciab)!
+This app was created for people like myself who love to adorn their home space with lights everywhere, but really wish these lights were like the sun. The app will schedule your Philips Hue lights so that they are bright during the day when I'm getting things done, but becomes warmer as the sun comes down and as I reach my bed time. So, that's what this app does, and should be coming to the App Store soon, so [keep an eye out](http://twitter.com/katriciab)!
 
 ![alt tag](https://github.com/katriciab/home/blob/master/github-screenshot.gif)
 
