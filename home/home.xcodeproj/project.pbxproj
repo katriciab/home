@@ -16,6 +16,7 @@
 		EE260C121C7297E7004202C1 /* PhilipsHueServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B36591C6FD73800C7B88F /* PhilipsHueServiceSpec.swift */; };
 		EE260C131C729898004202C1 /* TestInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4B365D1C6FDADE00C7B88F /* TestInjector.swift */; };
 		EE260C151C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE260C141C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift */; };
+		EE3F5F3A1C83D3D9008BA0EB /* MockHomeUserDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F5F391C83D3D9008BA0EB /* MockHomeUserDefaultSettings.swift */; };
 		EE48E1CA1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BC1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m */; };
 		EE48E1CB1C5ECB3100A2305F /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1BE1C5ECB3100A2305F /* DDASLLogger.m */; };
 		EE48E1CC1C5ECB3100A2305F /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EE48E1C01C5ECB3100A2305F /* DDFileLogger.m */; };
@@ -35,6 +36,8 @@
 		EE97F7571C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = EE97F7561C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m */; };
 		EEAC78591C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC78581C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift */; };
 		EEAC785B1C75677400DD6E85 /* MockPhilipsHueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAC785A1C75677400DD6E85 /* MockPhilipsHueService.swift */; };
+		EEAE99AF1C83C91000C820E9 /* SchedulesDataControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE99AE1C83C91000C820E9 /* SchedulesDataControllerSpec.swift */; };
+		EEAE99B11C83CBB500C820E9 /* MockPhilipsHueLightsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE99B01C83CBB500C820E9 /* MockPhilipsHueLightsManager.swift */; };
 		EEBF37C21C5EC70A005E0FAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C11C5EC70A005E0FAF /* UIKit.framework */; };
 		EEBF37C41C5EC710005E0FAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37C31C5EC710005E0FAF /* Foundation.framework */; };
 		EEBF37C61C5EC987005E0FAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */; };
@@ -81,6 +84,7 @@
 		EEDF444F1C7289D2008E9472 /* ColorFadeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */; };
 		EEDF44501C7289D2008E9472 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442C1C7289D2008E9472 /* ColorPalette.swift */; };
 		EEDF44511C7289D2008E9472 /* NSObject+StringFromClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */; };
+		EEE2A1A61C83B71900A68C05 /* HomeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2A1A51C83B71900A68C05 /* HomeUserDefaults.swift */; };
 		EEE4B7711C6ECCDB00FD2FA2 /* FutureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +121,7 @@
 		EE111A4B1C6C3A0A007CE029 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		EE111A4C1C6C3A0A007CE029 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		EE260C141C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockPhilipsHueCacheWrapper.swift; path = ../../../Home/homeTests/Networking/MockPhilipsHueCacheWrapper.swift; sourceTree = "<group>"; };
+		EE3F5F391C83D3D9008BA0EB /* MockHomeUserDefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockHomeUserDefaultSettings.swift; path = ../../../Home/homeTests/Utilities/MockHomeUserDefaultSettings.swift; sourceTree = "<group>"; };
 		EE48E1BB1C5ECB3100A2305F /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		EE48E1BC1C5ECB3100A2305F /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		EE48E1BD1C5ECB3100A2305F /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -153,6 +158,8 @@
 		EE97F7561C5DBB5C00C3ED77 /* Objective-CBridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Objective-CBridgingHeader.m"; sourceTree = "<group>"; };
 		EEAC78581C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhilipsHueLightsManagerSpec.swift; sourceTree = "<group>"; };
 		EEAC785A1C75677400DD6E85 /* MockPhilipsHueService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockPhilipsHueService.swift; path = ../../../Home/homeTests/Networking/MockPhilipsHueService.swift; sourceTree = "<group>"; };
+		EEAE99AE1C83C91000C820E9 /* SchedulesDataControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesDataControllerSpec.swift; sourceTree = "<group>"; };
+		EEAE99B01C83CBB500C820E9 /* MockPhilipsHueLightsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPhilipsHueLightsManager.swift; sourceTree = "<group>"; };
 		EEBF37BF1C5EC705005E0FAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EEBF37C11C5EC70A005E0FAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EEBF37C31C5EC710005E0FAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -194,6 +201,7 @@
 		EEDF442B1C7289D2008E9472 /* ColorFadeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFadeUtility.swift; sourceTree = "<group>"; };
 		EEDF442C1C7289D2008E9472 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		EEDF442D1C7289D2008E9472 /* NSObject+StringFromClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+StringFromClass.swift"; sourceTree = "<group>"; };
+		EEE2A1A51C83B71900A68C05 /* HomeUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeUserDefaults.swift; path = ../../../Home/Home/Utilities/HomeUserDefaults.swift; sourceTree = "<group>"; };
 		EEE4B76E1C6EC6DE00FD2FA2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		EEE4B7701C6ECCDB00FD2FA2 /* FutureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FutureKit.framework; path = ../Carthage/Build/iOS/FutureKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +276,7 @@
 		EE4B36541C6FD5D200C7B88F /* homeTests */ = {
 			isa = PBXGroup;
 			children = (
+				EEAE99AD1C83C8FB00C820E9 /* Data Controllers */,
 				EEAC78561C7566D400DD6E85 /* Home Connections */,
 				EE4B36581C6FD72100C7B88F /* Networking */,
 				EE4B36551C6FD5D200C7B88F /* Utilities */,
@@ -283,6 +292,7 @@
 				EE4B36561C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift */,
 				EE72D90B1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift */,
 				EED08C661C8235EC00378C00 /* CircularTimeToAngleCalculatorSpec.swift */,
+				EE3F5F391C83D3D9008BA0EB /* MockHomeUserDefaultSettings.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -371,8 +381,18 @@
 			isa = PBXGroup;
 			children = (
 				EEAC78581C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift */,
+				EEAE99B01C83CBB500C820E9 /* MockPhilipsHueLightsManager.swift */,
 			);
 			path = Lights;
+			sourceTree = "<group>";
+		};
+		EEAE99AD1C83C8FB00C820E9 /* Data Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE99AE1C83C91000C820E9 /* SchedulesDataControllerSpec.swift */,
+			);
+			name = "Data Controllers";
+			path = "../../Home/homeTests/Data Controllers";
 			sourceTree = "<group>";
 		};
 		EEDF43F81C7289D2008E9472 /* Home Connections */ = {
@@ -559,6 +579,7 @@
 				EE523C131C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift */,
 				EED08C641C82306F00378C00 /* CircularTimeToAngleCalculator.swift */,
 				EED08C681C823D7100378C00 /* NSDateComponents+Calculations.swift */,
+				EEE2A1A51C83B71900A68C05 /* HomeUserDefaults.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -727,6 +748,7 @@
 				EE523C141C7E977F00AF5FD5 /* CircadianLightForTimeUtility.swift in Sources */,
 				EEDF44461C7289D2008E9472 /* RootNavigationController.swift in Sources */,
 				EE48E1CE1C5ECB3100A2305F /* DDTTYLogger.m in Sources */,
+				EEE2A1A61C83B71900A68C05 /* HomeUserDefaults.swift in Sources */,
 				EEDF444F1C7289D2008E9472 /* ColorFadeUtility.swift in Sources */,
 				EEDF44421C7289D2008E9472 /* LightFluctuationGraph.swift in Sources */,
 				EE97F7221C5DB96200C3ED77 /* AppDelegate.swift in Sources */,
@@ -763,13 +785,16 @@
 			files = (
 				EE4B36571C6FD62F00C7B88F /* ColorFadeUtilitySpec.swift in Sources */,
 				EE260C0B1C729316004202C1 /* MockNetworkClient.swift in Sources */,
+				EEAE99B11C83CBB500C820E9 /* MockPhilipsHueLightsManager.swift in Sources */,
 				EED08C671C8235EC00378C00 /* CircularTimeToAngleCalculatorSpec.swift in Sources */,
 				EE260C151C729FE8004202C1 /* MockPhilipsHueCacheWrapper.swift in Sources */,
 				EE260C121C7297E7004202C1 /* PhilipsHueServiceSpec.swift in Sources */,
 				EE72D90C1C7EA613006194EF /* CircadianLightForTimeUtilitySpec.swift in Sources */,
 				EEAC785B1C75677400DD6E85 /* MockPhilipsHueService.swift in Sources */,
+				EE3F5F3A1C83D3D9008BA0EB /* MockHomeUserDefaultSettings.swift in Sources */,
 				EEAC78591C7566E300DD6E85 /* PhilipsHueLightsManagerSpec.swift in Sources */,
 				EE260C131C729898004202C1 /* TestInjector.swift in Sources */,
+				EEAE99AF1C83C91000C820E9 /* SchedulesDataControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

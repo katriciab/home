@@ -29,4 +29,11 @@ class MockPhilipsHueCacheWrapper: CacheWrapper {
         self.returnedLights.append(light)
         return self.returnedLights
     }
+    
+    var didReceiveGetAllSchedules = false
+    var returnedAllSchedules = Set<String>()
+    func getAllSchedules() -> Set<String> {
+        self.didReceiveGetAllSchedules = true
+        return returnedAllSchedules
+    }
 }

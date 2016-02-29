@@ -20,7 +20,7 @@ public class Injector: NSObject {
         container.registerForStoryboard(PushLinkViewController.self) { r, c in }
         
         container.registerForStoryboard(CircadianViewController.self) { r, c in
-            c.hueLightsManager = r.resolve(PhilipsHueLightsManager.self)
+            c.hueLightsManager = r.resolve(HueLightsManager.self)
             c.schedulesDataController = r.resolve(SchedulesDataController.self)
             c.circadianLightForTimeUtility = r.resolve(CircadianLightForTimeUtility.self)
         }
@@ -35,18 +35,19 @@ public class Injector: NSObject {
             NotificationPresenter(presenter: r.resolve(RootNavigationController.self)!)
         }
         
-        // Data Controllers
-        container.register(SchedulesDataController.self) { r in
-            SchedulesDataController(
-                philipsHueLightsManager: r.resolve(PhilipsHueLightsManager.self)!)
-        }.inObjectScope(.Container)
-        
         // Managers
-        container.register(PhilipsHueLightsManager.self) { r in
+        container.register(HueLightsManager.self) { r in
             PhilipsHueLightsManager(
                 philipsHueService: r.resolve(HueService.self)!,
                 circadianLightForTimeUtility: r.resolve(CircadianLightForTimeUtility.self)!)
         }
+        
+        // Data Controllers
+        container.register(SchedulesDataController.self) { r in
+            return SchedulesDataController(philipsHueLightsManager: r.resolve(HueLightsManager.self)!,
+                philipsHueCacheWrapper: PhilipsHueCacheWrapper(),
+                userDefaults: r.resolve(UserDefaultSettings.self)!)
+            }.inObjectScope(.Container)
         
         // Networking and Services
         container.register(Networking.self) { _ in
@@ -60,9 +61,12 @@ public class Injector: NSObject {
         }
         
         // Utilities
+        container.register(UserDefaultSettings.self) { _ in
+            return HomeUserDefaultSettings()
+        }
         container.register(CircadianLightForTimeUtility.self) { r in
             return CircadianLightForTimeUtility()
-        }.inObjectScope(.Container)
+            }.inObjectScope(.Container)
         
         // Philips Hue
         container.register(PHHueSDK.self) { _ in

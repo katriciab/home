@@ -11,7 +11,7 @@ import Swinject
 
 class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
     
-    var hueLightsManager : PhilipsHueLightsManager!
+    var hueLightsManager : HueLightsManager!
     var schedulesDataController : SchedulesDataController!
     var circadianLightForTimeUtility : CircadianLightForTimeUtility!
     
@@ -63,6 +63,9 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
         switch(self.circadianView().bottomActionState) {
         case .Schedule:
             self.schedulesDataController.setCircadianLightSchedules()
+            .onSuccess(block: { results in
+                self.circadianView().updateBottomActionLabel(.Sync)
+            })
             break;
         case .Sync:
             self.hueLightsManager.syncLightColorToTimeOfDay()

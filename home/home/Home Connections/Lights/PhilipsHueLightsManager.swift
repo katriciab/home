@@ -10,7 +10,13 @@ import UIKit
 import DynamicColor
 import FutureKit
 
-class PhilipsHueLightsManager {
+protocol HueLightsManager {
+    func syncLightColorToTimeOfDay()
+    func turnOffLights()
+    func scheduleCircadianLights(wakeUpTransitionTime wakeUpTransitionTime: NSTimeInterval, sunDownTransitionTime: NSTimeInterval, bedTimeTransitionTime: NSTimeInterval) -> Future<AnyObject>
+}
+
+class PhilipsHueLightsManager : HueLightsManager {
     
     var hueService : HueService
     var circadianLightForTimeUtility : CircadianLightForTimeUtility
@@ -172,21 +178,5 @@ class PhilipsHueLightsManager {
                 p.completeWithSuccess(bedTimeIds)
             })
         return p.future
-    }
-    
-    func removeAllSchedules() {
-        let cache = PHBridgeResourcesReader.readBridgeResourcesCache()
-        print(cache.schedules.count)
-        for (_, schedule) in cache.schedules {
-            let bridgeSendAPI = PHBridgeSendAPI()
-            let sched = schedule as! PHSchedule
-            bridgeSendAPI.removeScheduleWithId(sched.identifier) { (errors: [AnyObject]!) -> Void in
-                if errors != nil {
-                    print("Did not remove schedule because of error: \(errors)")
-                } else {
-                    print("Remove schedule")
-                }
-            }
-        }
     }
 }

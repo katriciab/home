@@ -10,12 +10,17 @@ import UIKit
 import FutureKit
 
 class SchedulesDataController {
-    var hueLightsManager : PhilipsHueLightsManager!
+    var hueLightsManager : HueLightsManager!
+    var hueCacheWrapper : CacheWrapper!
     var schedulesIds : Set<String>!
+    var userDefaults : UserDefaultSettings
     
-    init(philipsHueLightsManager: PhilipsHueLightsManager) {
-        self.hueLightsManager = philipsHueLightsManager
-        self.schedulesIds = Set<String>() // TODO get from cache
+    init(philipsHueLightsManager: HueLightsManager,
+        philipsHueCacheWrapper: CacheWrapper,
+        userDefaults: UserDefaultSettings) {
+            self.hueLightsManager = philipsHueLightsManager
+            self.hueCacheWrapper = philipsHueCacheWrapper
+            self.userDefaults = userDefaults
     }
     
     func setCircadianLightSchedules() -> Future<AnyObject> {
@@ -25,7 +30,8 @@ class SchedulesDataController {
             sunDownTransitionTime: 60,
             bedTimeTransitionTime: 60)
             .onSuccess(block: { results in
-                self.schedulesIds = results as? Set<String> // TODO add to cache
+                self.schedulesIds = results as? Set<String>
+                self.userDefaults.saveScheduleIds(self.schedulesIds)
                 p.completeWithSuccess(results)
             })
             .onFail(block: { error in
@@ -36,6 +42,18 @@ class SchedulesDataController {
     }
     
     func isCircadianLightSchedulesSet() -> Bool {
-        return self.schedulesIds.count > 0
+        if let schedulesIds = self.userDefaults.getScheduleIds() {
+            let bridgeSchedules = self.hueCacheWrapper.getAllSchedules()
+            var schedulesStillExist = true
+            for scheduleId in schedulesIds {
+                if(!bridgeSchedules.contains(scheduleId)) {
+                    schedulesStillExist = false
+                    break;
+                }
+            }
+            return schedulesStillExist
+        } else {
+            return false
+        }
     }
 }

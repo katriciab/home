@@ -19,8 +19,8 @@ extension NSDateComponents {
     }
     
     func isTimeLessThan(otherTime: NSDateComponents) -> Bool {
-        print("Time: \(self.hour), \(self.minute), \(self.second)")
-        print("Other time: \(otherTime.hour), \(otherTime.minute), \(otherTime.second)\n---\n")
+//        print("Time: \(self.hour), \(self.minute), \(self.second)")
+//        print("Other time: \(otherTime.hour), \(otherTime.minute), \(otherTime.second)\n---\n")
         
         if self.hour < otherTime.hour {
             return true
