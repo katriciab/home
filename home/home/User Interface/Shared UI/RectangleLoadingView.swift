@@ -64,7 +64,6 @@ class RectangleLoadingView: UIView, LoadingView {
         self.loadingLabel.font = UIFont(name: "Audrey", size: 14.0)
         self.boundingContainer.addSubview(self.loadingLabel)
         self.originalOriginX = self.loadingLabel.center.x
-        self.loadingLabel.addObserver(self, forKeyPath: "center", options:.New, context: nil)
     }
     
     deinit {
@@ -89,28 +88,19 @@ class RectangleLoadingView: UIView, LoadingView {
             self.animator.addBehavior(self.collision)
             
             let itemBehaviour = UIDynamicItemBehavior(items: [self.loadingLabel])
-            itemBehaviour.elasticity = 0.9
+            itemBehaviour.elasticity = 1.0
+            itemBehaviour.friction = 0.0
             self.animator.addBehavior(itemBehaviour)
             
             self.animator.addBehavior(self.gravity)
         }
+        
+        UIView.animateWithDuration(0.1, animations: {
+            self.colorBlock.frame = CGRectOffset(self.originalColorBlockFrame, -self.startingPointX, 0)
+        });
     }
     
     func stop() {
         self.isLoading = false;
-    }
-    
-    override func observeValueForKeyPath(keyPath: String?,
-        ofObject object: AnyObject?,
-        change: [String : AnyObject]?,
-        context: UnsafeMutablePointer<Void>) {
-            if let newValue = change?[NSKeyValueChangeNewKey] {
-                let newValueFloat = newValue.CGPointValue.x
-                let LabelDx = -(self.originalOriginX - newValueFloat)
-                let newRect = CGRectOffset(self.originalColorBlockFrame, LabelDx, 0)
-                if (newRect.minX > 0) {
-                    self.colorBlock.frame = newRect
-                }
-            }
     }
 }
