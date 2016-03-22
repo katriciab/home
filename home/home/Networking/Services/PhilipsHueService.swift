@@ -118,16 +118,14 @@ class PhilipsHueService : HueService {
                     for light in self.philipsHueCacheWrapper.getAllLights() {
                         let lightModel = light.modelNumber
                         let lightColorPoint = PHUtilities.calculateXY(forColor, forModel: lightModel)
-                        let body = [
+                        var body : [String : AnyObject] = [
                             "xy" : [lightColorPoint.x, lightColorPoint.y],
                             "on" : true,
                             "bri" : brightness,
                         ]
                         
-                        let mutableBody = body.mutableCopy() as! NSMutableDictionary
-                        
                         if transitionTime > 0 {
-                            mutableBody["transitiontime"] = NSNumber(double: transitionTimeInMs)
+                            body.updateValue(NSNumber(double: transitionTimeInMs), forKey: "transitiontime")
                         }
                         
                         let request = [ "status" : "enabled",
@@ -141,7 +139,7 @@ class PhilipsHueService : HueService {
                             "command" : [
                                 "address" : String(format:"/api/%@/lights/%@/state", username, light.identifier),
                                 "method" : "PUT",
-                                "body" : mutableBody
+                                "body" : body
                             ]
                         ]
                         
