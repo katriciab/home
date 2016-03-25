@@ -130,7 +130,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="0GR-fc-7N0">
-                        <barButtonItem key="leftBarButtonItem" image="Back" id="kHT-OZ-Q1C">
+                        <barButtonItem key="leftBarButtonItem" image="left" id="kHT-OZ-Q1C">
                             <connections>
                                 <action selector="backButtonTapped:" destination="KtI-58-How" id="wxQ-j9-xHC"/>
                             </connections>
@@ -309,7 +309,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ZM5-EO-jPO">
-                        <barButtonItem key="leftBarButtonItem" image="Back" id="CCd-wM-asw">
+                        <barButtonItem key="leftBarButtonItem" image="left" id="CCd-wM-asw">
                             <connections>
                                 <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="ZUF-SI-S9M"/>
                             </connections>
@@ -564,34 +564,6 @@
             </objects>
             <point key="canvasLocation" x="253.5" y="252.5"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="xO6-7Q-Bds">
-            <objects>
-                <tableViewController id="hlo-pe-Ab8" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dbu-oa-lJu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eUj-Sn-caZ">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eUj-Sn-caZ" id="8uN-39-DZ3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hlo-pe-Ab8" id="2p1-eb-agd"/>
-                            <outlet property="delegate" destination="hlo-pe-Ab8" id="CHB-Kd-SnM"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="EOT-AS-k8F"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hmt-oo-iGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="t8O-JU-b5q">
             <objects>
@@ -600,17 +572,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="hlo-pe-Ab8" kind="relationship" relationship="rootViewController" id="qLX-a3-BDv"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIs-ma-hLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
     <resources>
-        <image name="Back" width="29" height="29"/>
         <image name="coffee" width="29" height="29"/>
+        <image name="left" width="29" height="29"/>
         <image name="press_smartbridge" width="516" height="475"/>
     </resources>
 </document>
