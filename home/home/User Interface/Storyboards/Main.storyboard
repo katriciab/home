@@ -9,10 +9,8 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Audrey-Bold.otf">
-            <string>Audrey-Bold</string>
-        </mutableArray>
         <mutableArray key="Audrey-Medium.otf">
+            <string>Audrey-Medium</string>
             <string>Audrey-Medium</string>
         </mutableArray>
         <mutableArray key="Audrey-MediumOblique.otf">
@@ -172,7 +170,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-7I-lxW" userLabel="Sundown Time Container">
-                                <rect key="frame" x="0.0" y="146" width="326" height="188"/>
+                                <rect key="frame" x="0.0" y="146" width="336" height="188"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bg7-6x-vf8" userLabel="Line View">
                                         <rect key="frame" x="325" y="31" width="1" height="157"/>
@@ -181,35 +179,81 @@
                                             <constraint firstAttribute="width" constant="1" id="NPz-Lk-1nJ"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-WM-F4U" userLabel="Left Button">
+                                        <rect key="frame" x="248" y="8" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="2qh-5E-LR5"/>
+                                            <constraint firstAttribute="height" constant="15" id="LVy-tU-CvN"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="left_small"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwt-1M-7Mf" userLabel="Sundown Time Label">
-                                        <rect key="frame" x="274" y="0.0" width="52" height="31"/>
+                                        <rect key="frame" x="266" y="0.0" width="52" height="31"/>
                                         <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="15"/>
                                         <state key="normal" title="6:30 PM">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lb-Qk-M3o" userLabel="Right Button">
+                                        <rect key="frame" x="321" y="8" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="MXN-Yq-u2g"/>
+                                            <constraint firstAttribute="width" constant="15" id="cDS-Z3-uFI"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="right_small"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cwt-1M-7Mf" secondAttribute="trailing" id="3eh-tp-vB8"/>
                                     <constraint firstAttribute="bottom" secondItem="Bg7-6x-vf8" secondAttribute="bottom" id="3oI-UU-zpN"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bg7-6x-vf8" secondAttribute="trailing" id="90e-hk-d1o"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bg7-6x-vf8" secondAttribute="trailing" constant="10" id="90e-hk-d1o"/>
                                     <constraint firstItem="Bg7-6x-vf8" firstAttribute="top" secondItem="cwt-1M-7Mf" secondAttribute="bottom" id="A7O-o5-Cor"/>
+                                    <constraint firstItem="3lb-Qk-M3o" firstAttribute="leading" secondItem="cwt-1M-7Mf" secondAttribute="trailing" constant="3" id="AsL-C1-syS"/>
+                                    <constraint firstItem="cwt-1M-7Mf" firstAttribute="leading" secondItem="vnd-WM-F4U" secondAttribute="trailing" constant="3" id="SHs-dT-Ixs"/>
+                                    <constraint firstAttribute="trailing" secondItem="3lb-Qk-M3o" secondAttribute="trailing" id="V12-QZ-yQ1"/>
                                     <constraint firstItem="cwt-1M-7Mf" firstAttribute="top" secondItem="qCd-7I-lxW" secondAttribute="top" id="WWC-ws-YTY"/>
+                                    <constraint firstItem="3lb-Qk-M3o" firstAttribute="centerY" secondItem="cwt-1M-7Mf" secondAttribute="centerY" id="g3C-an-8RJ"/>
+                                    <constraint firstItem="vnd-WM-F4U" firstAttribute="centerY" secondItem="cwt-1M-7Mf" secondAttribute="centerY" id="qcA-Mz-Aec"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3eh-tp-vB8"/>
+                                    </mask>
+                                </variation>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmL-4v-nK7" userLabel="Wake Up Time Container">
-                                <rect key="frame" x="49" y="333" width="326" height="188"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmL-4v-nK7" userLabel="Wake Up Time Container">
+                                <rect key="frame" x="39" y="333" width="336" height="188"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKm-Ba-i1t" userLabel="Left Button">
+                                        <rect key="frame" x="0.0" y="165" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="Mqv-GO-rzG"/>
+                                            <constraint firstAttribute="width" constant="15" id="bVO-it-dGX"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="left_small"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-BH-fc1" userLabel="Wake Up Time Label">
-                                        <rect key="frame" x="0.0" y="157" width="53" height="31"/>
+                                        <rect key="frame" x="18" y="157" width="53" height="31"/>
                                         <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="15"/>
                                         <state key="normal" title="8:00 AM">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgb-iP-LjW" userLabel="Right Button">
+                                        <rect key="frame" x="74" y="165" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="iiJ-YL-jji"/>
+                                            <constraint firstAttribute="height" constant="15" id="lj8-Xa-4Gw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="right_small"/>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP4-Eh-bSg" userLabel="Line View">
-                                        <rect key="frame" x="0.0" y="0.0" width="1" height="157"/>
+                                        <rect key="frame" x="10" y="0.0" width="1" height="157"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="RnP-v8-5jm"/>
@@ -218,15 +262,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Pgb-iP-LjW" firstAttribute="leading" secondItem="tQf-BH-fc1" secondAttribute="trailing" constant="3" id="4xy-oh-ewc"/>
                                     <constraint firstAttribute="bottom" secondItem="tQf-BH-fc1" secondAttribute="bottom" id="BU9-pv-pIM"/>
                                     <constraint firstItem="JP4-Eh-bSg" firstAttribute="top" secondItem="hmL-4v-nK7" secondAttribute="top" id="GJs-mG-FgS"/>
                                     <constraint firstItem="tQf-BH-fc1" firstAttribute="top" secondItem="JP4-Eh-bSg" secondAttribute="bottom" id="JVo-0T-St2"/>
-                                    <constraint firstItem="JP4-Eh-bSg" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="WG7-AX-Ig9"/>
-                                    <constraint firstItem="tQf-BH-fc1" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="ugz-IZ-7jN"/>
+                                    <constraint firstItem="JP4-Eh-bSg" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" constant="10" id="WG7-AX-Ig9"/>
+                                    <constraint firstItem="pKm-Ba-i1t" firstAttribute="leading" secondItem="hmL-4v-nK7" secondAttribute="leading" id="mA0-OE-KOh"/>
+                                    <constraint firstItem="Pgb-iP-LjW" firstAttribute="centerY" secondItem="tQf-BH-fc1" secondAttribute="centerY" id="nw2-dH-pbB"/>
+                                    <constraint firstItem="tQf-BH-fc1" firstAttribute="leading" secondItem="pKm-Ba-i1t" secondAttribute="trailing" constant="3" id="u6k-ng-17V"/>
+                                    <constraint firstItem="pKm-Ba-i1t" firstAttribute="centerY" secondItem="tQf-BH-fc1" secondAttribute="centerY" id="zdu-t2-pXO"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5m-ek-qqM" customClass="ExpandingCircleBedTimeView" customModule="home" customModuleProvider="target">
-                                <rect key="frame" x="-0.5" y="146" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,7 +284,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frI-Od-3gy" userLabel="Coffee" customClass="CoffeeButton" customModule="home" customModuleProvider="target">
-                                <rect key="frame" x="162.5" y="587" width="50" height="50"/>
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5t8-cW-HsD"/>
                                     <constraint firstAttribute="width" constant="50" id="FKn-tT-9he"/>
@@ -244,8 +292,8 @@
                                 <state key="normal" image="coffee"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkP-RC-3UT" userLabel="Bottom Action Button">
-                                <rect key="frame" x="65.5" y="574" width="243" height="43"/>
-                                <fontDescription key="fontDescription" name="Audrey-Bold" family="Audrey" pointSize="25"/>
+                                <rect key="frame" x="66" y="575" width="243" height="42"/>
+                                <fontDescription key="fontDescription" name="Audrey-Medium" family="Audrey" pointSize="25"/>
                                 <state key="normal" title="SCHEDULE LIGHTS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -254,10 +302,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="em6-wO-XyE" userLabel="Underline">
-                                <rect key="frame" x="65" y="612" width="310" height="3"/>
+                                <rect key="frame" x="66" y="612" width="309" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="3" id="2V4-uF-wIA"/>
+                                    <constraint firstAttribute="height" constant="1" id="2V4-uF-wIA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -270,10 +318,10 @@
                             <constraint firstItem="NtY-bL-sUp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="9nD-j6-je7"/>
                             <constraint firstItem="Gvx-gC-ciz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Cr9-EF-onD"/>
                             <constraint firstAttribute="trailing" secondItem="IfP-rh-xK0" secondAttribute="trailing" id="EeJ-k2-ibR"/>
-                            <constraint firstItem="IfP-rh-xK0" firstAttribute="trailing" secondItem="qCd-7I-lxW" secondAttribute="trailing" constant="49" id="HeX-u9-QZD"/>
+                            <constraint firstItem="IfP-rh-xK0" firstAttribute="trailing" secondItem="qCd-7I-lxW" secondAttribute="trailing" constant="39" id="HeX-u9-QZD"/>
                             <constraint firstItem="b5m-ek-qqM" firstAttribute="width" secondItem="IfP-rh-xK0" secondAttribute="width" id="KYC-LY-o0E"/>
                             <constraint firstItem="b5m-ek-qqM" firstAttribute="centerY" secondItem="IfP-rh-xK0" secondAttribute="centerY" id="Kqe-IT-IIn"/>
-                            <constraint firstItem="hmL-4v-nK7" firstAttribute="leading" secondItem="IfP-rh-xK0" secondAttribute="leading" constant="49" id="Sj9-Tz-g6W"/>
+                            <constraint firstItem="hmL-4v-nK7" firstAttribute="leading" secondItem="IfP-rh-xK0" secondAttribute="leading" constant="39" id="Sj9-Tz-g6W"/>
                             <constraint firstItem="em6-wO-XyE" firstAttribute="top" secondItem="RkP-RC-3UT" secondAttribute="bottom" constant="-5" id="TfE-Dk-ewx"/>
                             <constraint firstItem="qCd-7I-lxW" firstAttribute="top" secondItem="IfP-rh-xK0" secondAttribute="top" id="Tr9-a7-Fri"/>
                             <constraint firstItem="em6-wO-XyE" firstAttribute="leading" secondItem="RkP-RC-3UT" secondAttribute="leading" id="Xtu-go-JH0"/>
@@ -580,6 +628,8 @@
     <resources>
         <image name="coffee" width="29" height="29"/>
         <image name="left" width="29" height="29"/>
+        <image name="left_small" width="29" height="29"/>
         <image name="press_smartbridge" width="516" height="475"/>
+        <image name="right_small" width="29" height="29"/>
     </resources>
 </document>
