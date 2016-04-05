@@ -33,6 +33,8 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
         super.viewDidLoad()
         self.title = "Circadian Lights"
         self.circadianView().lightFluctuationGraph.delegate = self
+        self.circadianView().wakeUpTimeView.updateTime(8, minute: 0);
+        self.circadianView().sunDownTimeView.updateTime(18, minute: 30);
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -84,6 +86,7 @@ class CircadianViewController: UIViewController, LightFluctuationGraphDelegate {
     }
     
     func updateBottomTimeLabelToBedtime() {
-        self.circadianView().wakeUpTimeLabel.setTitle("12:00AM", forState: .Normal)
+        self.circadianView().wakeUpTimeView.hour = 24
+        self.circadianView().wakeUpTimeView.minute = 0
     }
 }

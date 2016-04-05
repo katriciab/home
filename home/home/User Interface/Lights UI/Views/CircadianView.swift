@@ -21,11 +21,11 @@ class CircadianView : UIView {
     @IBOutlet weak var bedTimeBackground: UIView!
     
     @IBOutlet weak var sunDownTimeContainer: UIView!
-    @IBOutlet weak var sunDownTimeLabel: UIButton!
+    @IBOutlet weak var sunDownTimeView: TimeView!
     
     @IBOutlet weak var wakeUpTimeContainer: UIView!
     @IBOutlet weak var wakeUpLineView: UIView!
-    @IBOutlet weak var wakeUpTimeLabel: UIButton!
+    @IBOutlet weak var wakeUpTimeView: TimeView!
     
     @IBOutlet weak var bottomActionButton: UIButton!
     @IBOutlet weak var coffee: CoffeeButton!
@@ -55,7 +55,7 @@ class CircadianView : UIView {
             self.sunDownTimeContainer.frame = CGRect(x: oldSundownFrame.origin.x,
                 y: oldSundownFrame.origin.y - 100,
                 width: oldSundownFrame.size.width,
-                height: CGFloat(self.sunDownTimeLabel.frame.size.height))
+                height: CGFloat(self.sunDownTimeView.time.frame.size.height))
             
             let oldWakeContainerFrame = self.wakeUpTimeContainer.frame
             self.wakeUpTimeContainer.frame = CGRect(x: oldWakeContainerFrame.origin.x,
